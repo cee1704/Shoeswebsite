@@ -2,14 +2,6 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Poppins', sans-serif; background:#f8f9fa; color:#111; overflow-x:hidden; }
 a { text-decoration:none; color:inherit; }
-@font-face {
-    font-family: "Font Awesome 6 Free";
-    font-display: swap;
-    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2") format("woff2"),
-         url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff") format("woff");
-    font-weight: 900;
-    font-style: normal;
-}
 
 /* Navbar - White & Black with Red Accent */
 .navbar {
@@ -328,4 +320,5 @@ footer a:hover { color:#fff; }
     .navbar-brand h1 { font-size: 32px; }
     .navbar-icons i { font-size: 22px; }
 }
+
 
