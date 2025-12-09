@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service - Sneaker Head</title>
+  <link rel="shortcut icon" href="image/logo.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="navbar.css"> <!-- External navbar CSS -->
+
+  <style>
+    /* Body & Background */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('image/sneakers-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      margin:0;
+      padding:0;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: -1;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 140px auto 50px; /* pushed down to avoid navbar */
+      background: rgba(255,255,255,0.95);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      animation: fadeIn 0.8s ease-in-out;
+      color: #111;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    h1 {
+      color: #ff2929;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 22px;
+      color: #222;
+    }
+
+    p {
+      margin: 15px 0;
+      font-size: 16px;
+      color: #0b0b0b;
+    }
+
+    a {
+      color: #ff2929;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      padding: 25px;
+      background: #111;
+      color: #aaa;
+      font-size: 15px;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="navbar-brand"><h1>Shoe<span>s</span></h1></div>
+    <div class="navbar-links">
+        <a href="MainPage.html" class="nav-link">Home</a>
+        <a href="main_product.html" class="nav-link">Products</a>
+        <a href="About.html" class="nav-link">About</a>
+        <a href="Reviews.html" class="nav-link">Reviews</a>
+    </div>
+    <div class="navbar-icons">
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-user"></i>
+    </div>
+</nav>
+
+<!-- Terms of Service Content -->
+<div class="container">
+  <h1>Terms of Service</h1>
+  <p>Welcome to Sneaker Head. By using our website, you agree to the following terms and conditions.</p>
+
+  <h2>1. Use of Website</h2>
+  <p>You agree to use our website only for lawful purposes and not for fraudulent or harmful activities.</p>
+
+  <h2>2. Purchases</h2>
+  <p>All orders are subject to availability and confirmation of payment. Prices are subject to change without notice.</p>
+
+  <h2>3. Intellectual Property</h2>
+  <p>All content, logos, and designs on this site are owned by Sneaker Head and may not be used without permission.</p>
+
+  <h2>4. Limitation of Liability</h2>
+  <p>We are not liable for damages arising from the use of our website or products, except as required by law.</p>
+
+  <h2>5. Changes to Terms</h2>
+  <p>We reserve the right to update these Terms at any time. Continued use of the website means you accept changes.</p>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p style="color: rgb(150, 150, 150);">&copy; 2025 SneakerHead. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

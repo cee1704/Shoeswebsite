@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Reviews</title>
+<link rel="shortcut icon" href="image/logo.jpg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="review.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="navbar-brand"><h1>Shoe<span>s</span></h1></div>
+    <div class="navbar-nav">
+        <a class="nav-link" href="MainPage.html">Home</a>
+        <a class="nav-link" href="main_product.html">Products</a>
+        <a class="nav-link" href="About.html">About</a>
+        <a class="nav-link" href="Reviews.html">Review</a>
+    </div>
+    <div class="navbar-icons">
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-user"></i>
+    </div>
+</nav>
+
+<!-- Reviews Section -->
+<div class="review-section">
+    <h2>Customer Reviews</h2>
+
+    <!-- Form -->
+    <form id="reviewForm">
+        <input type="email" id="userEmail" placeholder="Your Email" required>
+        <textarea id="userReview" placeholder="Write your review..." required></textarea>
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <!-- Scrollable Reviews -->
+    <div class="review-container" id="reviewContainer">
+
+        <div class="review-card">
+            <div class="review-profile">
+                <img data-email="marlyn@example.com" alt="Marlyn Monro">
+                <div><h4>marlyn@example.com</h4><p>Customer</p></div>
+            </div>
+            <p class="review-text">Incredibly comfortable with excellent air cushioning and support for long hours on my feet.</p>
+        </div>
+
+        <div class="review-card">
+            <div class="review-profile">
+                <img data-email="max@example.com" alt="Max Webtern">
+                <div><h4>max@example.com</h4><p>Customer</p></div>
+            </div>
+            <p class="review-text">Great design and comfort. I love the style and how breathable the material is.</p>
+        </div>
+
+        <div class="review-card">
+            <div class="review-profile">
+                <img data-email="daisy@example.com" alt="Daisy Fernandes">
+                <div><h4>daisy@example.com</h4><p>Customer</p></div>
+            </div>
+            <p class="review-text">Perfect fit and very light. I can wear these all day without any discomfort.</p>
+        </div>
+
+        <div class="review-card">
+            <div class="review-profile">
+                <img data-email="chrisj@example.com" alt="Chris Jordan">
+                <div><h4>chrisj@example.com</h4><p>Customer</p></div>
+            </div>
+            <p class="review-text">Amazing sneakers! The grip and durability are top-notch. Perfect for my daily workouts.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-section">
+        <h4>About Us</h4>
+        <p>We provide the best sneakers with comfort, style, and durability. Stay ahead with our latest collections.</p>
+    </div>
+    <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="MainPage.html">Home</a>
+        <a href="main_product.html">Products</a>
+        <a href="About.html">About</a>
+        <a href="Reviews.html">Review</a>
+    </div>
+    <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+    <a href="https://www.facebook.com/nike/" target="_blank">FACEBOOK
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/nike/" target="_blank">INSTAGRAM
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://x.com/Nike" target="_blank">TWITTER
+        <i class="fa-brands fa-twitter"></i>
+    </a>
+    </div>
+</footer>
+
+<script>
+// Avatar generator
+function generateAvatar(email) {
+    const initials = email.charAt(0).toUpperCase();
+    const canvas = document.createElement('canvas');
+    canvas.width = 100; canvas.height = 100;
+    const ctx = canvas.getContext('2d');
+    const colors = ['#FF6B6B', '#FF0D0D', '#FFA500', '#4CAF50', '#2196F3'];
+    ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#fff";
+    ctx.font = "bold 50px Poppins";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(initials, canvas.width/2, canvas.height/2);
+    return canvas.toDataURL();
+}
+
+// Apply avatars
+document.querySelectorAll('img[data-email]').forEach(img => {
+    const email = img.getAttribute('data-email');
+    img.src = generateAvatar(email);
+    img.alt = email;
+});
+
+// Add new review
+document.getElementById('reviewForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = document.getElementById('userEmail').value;
+    const reviewText = document.getElementById('userReview').value;
+
+    const newReview = document.createElement('div');
+    newReview.classList.add('review-card');
+    newReview.innerHTML = `
+        <div class="review-profile">
+            <img src="${generateAvatar(email)}" alt="${email}">
+            <div><h4>${email}</h4><p>Customer</p></div>
+        </div>
+        <p class="review-text">${reviewText}</p>
+    `;
+    document.getElementById('reviewContainer').appendChild(newReview);
+    this.reset();
+    alert('Thank you for your review!');
+});
+
+// Dynamic active link
+const links = document.querySelectorAll('.navbar-nav .nav-link');
+links.forEach(link => {
+    if(link.href === window.location.href) {
+        link.classList.add('active');
+    } else {
+        link.classList.remove('active');
+    }
+});
+</script>
+
+</body>
+</html>

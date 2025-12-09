@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Sneaker Head</title>
+  <link rel="shortcut icon" href="image/logo.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="navbar.css"> <!-- Navbar CSS -->
+  <link rel="stylesheet" href="contact.css"> <!-- Page-specific CSS -->
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="navbar-brand"><h1>Shoe<span>s</span></h1></div>
+    <div class="navbar-links">
+        <a href="MainPage.html" class="nav-link">Home</a>
+        <a href="main_product.html" class="nav-link">Products</a>
+        <a href="About.html" class="nav-link">About</a>
+        <a href="Reviews.html" class="nav-link">Reviews</a>
+    </div>
+    <div class="navbar-icons">
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-user"></i>
+    </div>
+</nav>
+
+<!-- Contact Us Content -->
+<div class="container">
+  <h1>Contact Us</h1>
+  <p>If you have any questions, feedback, or inquiries, please reach out to us using the form below.</p>
+
+  <form id="contactForm">
+    <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+    <span id="nameError" class="error"></span>
+
+    <input type="email" id="email" name="email" placeholder="Your Email" required><br><br>
+    <span id="emailError" class="error"></span>
+
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <h2>Other Ways to Reach Us</h2>
+  <p><strong>Email:</strong> support@sneakerhead.com | <strong>Phone:</strong> +91-9876543210 | <strong>Address:</strong> SneakerHead HQ, Mumbai, India</p>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p style="color: rgb(161, 160, 160);">&copy; 2025 SneakerHead. All Rights Reserved.</p>
+</footer>
+
+<!-- JavaScript for validation -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let valid = true;
+
+  const name = document.getElementById("name").value.trim();
+  const nameError = document.getElementById("nameError");
+  if (!/^[A-Za-z\s]+$/.test(name)) {
+    nameError.textContent = "Name should contain only alphabets.";
+    valid = false;
+  } else {
+    nameError.textContent = "";
+  }
+
+  const email = document.getElementById("email").value.trim();
+  const emailError = document.getElementById("emailError");
+  if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)) {
+    emailError.textContent = "Enter a valid Gmail address (e.g., name@gmail.com).";
+    valid = false;
+  } else {
+    emailError.textContent = "";
+  }
+
+  if (valid) {
+    alert("Your message has been sent!");
+    document.getElementById("contactForm").reset();
+  }
+});
+</script>
+
+</body>
+</html>
