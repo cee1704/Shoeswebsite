@@ -5,132 +5,148 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Sneaker Head India | Customer Support</title>
 <link rel="shortcut icon" href="image/logo.jpg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
 <style>
 /* Reset & Base */
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
-body { background:#f5f5f5; color:#111; line-height:1.6; }
-h1,h2,h3,h4,h5,h6 { margin-bottom:10px; }
-a { color:#cc0000; text-decoration: underline; }
-a:hover, a:focus { color:#990000; outline:2px solid #ffcccb; outline-offset:2px; }
+body { background:#111; color:#fff; line-height:1.7; }
+a { color:#ff6b6b; text-decoration: underline; }
+a:hover, a:focus { color:#ff3b3b; outline:2px solid #ffcccb; outline-offset:2px; }
+button { cursor:pointer; border:none; background:none; color:inherit; font:inherit; padding:0; }
 
 /* Skip Link */
 .skip-link { position:absolute; left:-9999px; top:10px; background:#fff; color:#111; padding:10px; z-index:2000; }
 .skip-link:focus { left:10px; }
 
 /* Navbar */
-.navbar {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:0 2rem; height:90px; background:#fff; box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
+.navbar { display:flex; justify-content:space-between; align-items:center; padding:0 2rem; height:90px; background:#fff; color:#111; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
 .navbar-brand h1 { font-size:2rem; font-weight:900; }
 .navbar-brand span { color:#cc0000; }
-.navbar-nav a {
-  margin:0 10px; font-weight:600; font-size:1rem; color:#111; padding:5px 10px; border-radius:5px;
-}
+.navbar-nav a { margin:0 10px; font-weight:600; font-size:1rem; padding:5px 10px; border-radius:5px; color:#111; }
 .navbar-nav a.active { background:#ffeaea; color:#cc0000; }
-.navbar-icons i { margin-left:15px; font-size:1.2rem; cursor:pointer; }
-.navbar-icons i:focus { outline:2px solid #ffcccb; outline-offset:2px; }
+.navbar-icons button { margin-left:15px; font-size:1.2rem; color:#111; }
+.navbar-icons button:focus { outline:2px solid #ffcccb; outline-offset:2px; }
 
-/* Container */
-.container { max-width:900px; margin:120px auto 40px; background:#fff; padding:30px; border-radius:12px; }
-h1 { color:#cc0000; margin-bottom:20px; }
-h2 { font-size:22px; margin-top:25px; color:#222; }
+/* Main Container */
+main { margin-top:120px; }
+.container { max-width:900px; margin:40px auto; background:#f9f9f9; padding:30px; border-radius:12px; color:#111; }
+.container h1 { color:#d60000; font-size:30px; margin-bottom:20px; }
 label { font-weight:600; }
-input, textarea { width:100%; padding:10px; border-radius:6px; border:1px solid #555; font-size:16px; margin-bottom:10px; }
-button { padding:12px 20px; font-size:16px; background:#cc0000; color:#fff; border:none; border-radius:6px; cursor:pointer; }
-button:hover, button:focus { background:#990000; outline:2px solid #ffcccb; outline-offset:2px; }
-.error { color:#cc0000; font-size:14px; }
+input, textarea { width:100%; padding:10px; border-radius:6px; border:1px solid #555; font-size:16px; }
+button.submit-btn { padding:12px 20px; font-size:16px; background:#d60000; color:#fff; border-radius:6px; cursor:pointer; }
+button.submit-btn:hover { background:#a80000; }
+.error { color:#d60000; font-size:14px; margin-top:4px; }
+
+/* Other contact info */
+#other-contact p { font-size:16px; margin-top:20px; line-height:1.6; }
 
 /* Footer */
-footer { text-align:center; padding:20px; background:#222; color:#fff; margin-top:40px; }
-footer a { color:#fff; margin:0 5px; }
-footer a:hover, footer a:focus { color:#cc0000; outline:2px solid #ffcccb; outline-offset:2px; }
+footer { text-align:center; padding:20px; background:#000; color:#aaa; font-size:14px; }
+footer a { color:#ff6b6b; margin:0 5px; }
+footer a:hover, footer a:focus { color:#ff3b3b; outline:2px solid #ffcccb; outline-offset:2px; }
 </style>
 </head>
 
 <body>
 
-<!-- Skip Link -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Navbar -->
 <nav class="navbar" role="navigation" aria-label="Main Navigation">
   <div class="navbar-brand"><h1>Shoe<span>s</span></h1></div>
   <div class="navbar-nav">
-    <a href="index.html" class="nav-link">Home</a>
+    <a href="MainPage.html" class="nav-link">Home</a>
     <a href="main_product.html" class="nav-link">Products</a>
     <a href="About.html" class="nav-link">About</a>
     <a href="Reviews.html" class="nav-link">Reviews</a>
   </div>
   <div class="navbar-icons">
-    <i class="fa-solid fa-heart" tabindex="0" role="button" aria-label="Wishlist"></i>
-    <i class="fa-solid fa-cart-shopping" tabindex="0" role="button" aria-label="Cart"></i>
-    <i class="fa-solid fa-user" tabindex="0" role="button" aria-label="User Account"></i>
+    <button aria-label="Wishlist"><i class="fa-solid fa-heart" aria-hidden="true"></i></button>
+    <button aria-label="Shopping Cart"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i></button>
+    <button aria-label="User Profile"><i class="fa-solid fa-user" aria-hidden="true"></i></button>
   </div>
 </nav>
 
+<!-- Main Landmark -->
 <main id="main-content">
 
-<section role="region" aria-labelledby="contact-heading">
-  <div class="container">
-    <h1 id="contact-heading">Contact Sneaker Head Support</h1>
-    <p>If you have any questions, feedback, or inquiries about sneakers, orders, or services, please reach out to Sneaker Head India using the form below.</p>
+<div class="container">
+  <h1>Contact Sneaker Head Support</h1>
+  <p>If you have any questions, feedback, or inquiries about sneakers, orders, or services, please reach out using the form below.</p>
 
-    <form id="contactForm" autocomplete="on">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
-      <span id="nameError" class="error"></span>
+  <form id="contactForm" autocomplete="on">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
+    <span id="nameError" class="error"></span>
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email">
-      <span id="emailError" class="error"></span>
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email">
+    <span id="emailError" class="error"></span>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" placeholder="Your Message" required autocomplete="off"></textarea>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+    <span id="messageError" class="error"></span>
 
-      <button type="submit">Send Message</button>
-    </form>
+    <button type="submit" class="submit-btn">Send Message</button>
+  </form>
 
-    <h2>Other Ways to Reach Us</h2>
+  <section id="other-contact" aria-labelledby="other-contact-heading">
+    <h2 id="other-contact-heading">Other Ways to Reach Us</h2>
     <p>
       <strong>Email:</strong> <a href="mailto:support@sneakerhead.com">support@sneakerhead.com</a><br>
-      <strong>Phone:</strong> +91-9876543210<br>
+      <strong>Phone:</strong> <a href="tel:+919876543210">+91-9876543210</a><br>
       <strong>Address:</strong> Sneaker Head HQ, Mumbai, India
     </p>
-  </div>
-</section>
+  </section>
+</div>
 
 </main>
 
-<footer role="contentinfo">
-  <p>&copy; 2025 Sneaker Head India. All Rights Reserved.</p>
-  <div>
-    <a href="privacypolicy.html">Privacy Policy</a> |
-    <a href="terms.html">Terms of Service</a> |
-    <a href="contact.html">Contact Us</a>
-  </div>
-</footer>
-
+<!-- Form Validation Script -->
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(e){
   e.preventDefault();
   let valid = true;
+
   const name = document.getElementById("name").value.trim();
   const nameError = document.getElementById("nameError");
-  if(name.length < 2 || !/^[A-Za-z\s]+$/.test(name)) { nameError.textContent = "Enter a valid name using alphabets only."; valid=false; }
-  else { nameError.textContent = ""; }
+  if(name.length < 2 || !/^[A-Za-z\s]+$/.test(name)){
+    nameError.textContent = "Please enter a valid name using only alphabets.";
+    valid = false;
+  } else { nameError.textContent = ""; }
 
   const email = document.getElementById("email").value.trim();
   const emailError = document.getElementById("emailError");
-  if(!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)){ emailError.textContent="Enter a valid Gmail address."; valid=false; }
-  else{ emailError.textContent=""; }
+  if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)){
+    emailError.textContent = "Enter a valid email address.";
+    valid = false;
+  } else { emailError.textContent = ""; }
 
-  if(valid){ alert("Your message has been sent successfully!"); this.reset(); }
+  const message = document.getElementById("message").value.trim();
+  const messageError = document.getElementById("messageError");
+  if(message.length < 5){
+    messageError.textContent = "Please enter a message.";
+    valid = false;
+  } else { messageError.textContent = ""; }
+
+  if(valid){
+    alert("Your message has been sent successfully!");
+    document.getElementById("contactForm").reset();
+  }
 });
 </script>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <p>&copy; 2025 Sneaker Head India. All Rights Reserved.</p>
+  <div>
+    <a href="PrivacyPolicy.html">Privacy Policy</a> |
+    <a href="TermsOfService.html">Terms of Service</a> |
+    <a href="ContactUs.html">Contact Us</a>
+  </div>
+</footer>
 
 </body>
 </html>
