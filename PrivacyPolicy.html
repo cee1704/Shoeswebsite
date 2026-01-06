@@ -4,38 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Sneaker Head India Privacy Policy explaining data collection, usage, cookies, security, user rights, and contact information for our online branded sneaker store.">
+  <!-- SEO Meta -->
+  <meta name="description" content="Sneaker Head India Privacy Policy explaining data collection, usage, cookies, security, cookies policy, user rights, and customer contact information for our online branded sneaker store.">
 
   <title>Sneaker Head India – Privacy Policy | Online Sneaker Store Data Protection</title>
 
+  <!-- Canonical -->
   <link rel="canonical" href="https://sneakerhead.com/privacypolicy.html">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Sneaker Head India – Privacy Policy">
-  <meta property="og:description" content="Learn how Sneaker Head collects and protects customer information on our premium sneaker shopping website.">
+  <meta property="og:description" content="Learn how Sneaker Head collects, uses, and protects customer information on our premium sneaker shopping website in India.">
   <meta property="og:type" content="website">
 
-  <link rel="shortcut icon" href="image/logo.jpg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <!-- Preload critical assets -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Stylesheets optimized -->
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="about.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media="print" onload="this.media='all'">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sneaker Head India",
+    "url": "https://sneakerhead.com",
+    "logo": "https://sneakerhead.com/image/logo.jpg",
+    "description": "Premium branded sneaker and footwear store providing high quality shoes online in India.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9876543210",
+      "contactType": "customer service",
+      "areaServed": "IN"
+    }
+  }
+  </script>
 
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: url('image/sneakers-bg.jpg') no-repeat center center fixed;
-      background-size: cover;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #000;
       color: #fff;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      margin:0;
-      padding:0;
-      position: relative;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: -1;
+
+    a {
+      color: #ff2929;
+      text-decoration: underline;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      background: #fff;
+      color: #111;
+      padding: 10px;
+      z-index: 2000;
+    }
+
+    .skip-link:focus {
+      left: 10px;
+    }
+
+    header {
+      background: #fff;
     }
 
     .navbar {
@@ -61,7 +100,7 @@
       text-transform: uppercase;
     }
 
-    .navbar-brand span { color: #ff0000; }
+    .navbar-brand span { color: #c60000; }
 
     .navbar-links {
       display: flex;
@@ -81,7 +120,7 @@
 
     .nav-link:hover,
     .nav-link.active {
-      color: #ff0000;
+      color: #c60000;
       background: #ffeaea;
     }
 
@@ -110,38 +149,62 @@
       .navbar-icons a i { font-size: 22px; }
     }
 
+    main {
+      margin-top: 120px;
+    }
+
     .container {
       max-width: 900px;
-      margin: 140px auto 50px;
-      background: rgba(255,255,255,0.95);
+      margin: 20px auto 50px;
+      background: #f2f2f2;
       padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       color: #111;
     }
 
-    h1 { color: #ff2929; font-size: 32px; margin-bottom: 20px; }
-    h2 { margin-top: 30px; font-size: 22px; color: #222; }
-    p  { margin: 15px 0; font-size: 16px; color: #444; }
+    .container h1 {
+      color: #c60000;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
 
-    footer {
+    h2 {
+      margin-top: 25px;
+      font-size: 22px;
+      color: #222;
+    }
+
+    p {
+      margin: 15px 0;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .site-footer {
       margin-top: 50px;
       text-align: center;
       padding: 25px;
-      background: #111;
+      background: #000;
       color: #aaa;
       font-size: 15px;
     }
 
-    footer a { color: #f72828; }
+    .site-footer a {
+      color: #ff2929;
+      font-weight: 600;
+    }
+
   </style>
+
 </head>
 
 <body>
 
+<!-- Accessible Skip Link -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- Navbar -->
+<!-- Navbar inside header landmark -->
+<header>
 <nav class="navbar">
     <div class="navbar-brand"><h1>Shoe<span>s</span></h1></div>
 
@@ -154,49 +217,61 @@
 
     <div class="navbar-icons">
         <a href="wishlist.html" aria-label="Wishlist">
-            <i class="fa-solid fa-heart" aria-hidden="true"></i>
+            <i class="fa-solid fa-heart"></i>
         </a>
 
         <a href="cart.html" aria-label="Shopping Cart">
-            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
         </a>
 
         <a href="profile.html" aria-label="User Profile">
-            <i class="fa-solid fa-user" aria-hidden="true"></i>
+            <i class="fa-solid fa-user"></i>
         </a>
     </div>
 </nav>
+</header>
 
-<!-- Privacy Policy Content -->
-<main id="main-content" class="container">
-  <h1>Sneaker Head India Privacy Policy</h1>
+<!-- Main Landmark -->
+<main id="main-content">
+  <div class="container">
+    <h1> Sneaker Head India – Privacy Policy </h1>
 
-  <p>Your privacy is important to Sneaker Head. This Privacy Policy explains how we collect, use, store, and protect customer information when you use our online sneaker shopping website.</p>
+    <p>Your privacy is important to Sneaker Head India. This Privacy Policy explains how we collect, use, store, and protect your personal information when you visit or shop on our online sneaker store.</p>
 
-  <h2>1. Information We Collect</h2>
-  <p>We may collect personal details such as your name, email address, phone number, shipping address, and payment information when you place orders or contact our support team.</p>
+    <h2>1. Information We Collect</h2>
+    <p>We may collect details such as your name, email address, phone number, shipping address, and payment information when you place orders or contact our customer support team.</p>
 
-  <h2>2. How We Use Your Information</h2>
-  <p>Your data is used to process sneaker orders, manage deliveries, handle returns, improve website experience, and send updates or promotions only when you have opted-in.</p>
+    <h2>2. How We Use Your Information</h2>
+    <p>Your information is used to process orders, manage sneaker deliveries, handle product returns, improve our website services, and send promotional updates only when you have opted-in.</p>
 
-  <h2>3. Cookies and Tracking</h2>
-  <p>Our website may use cookies to remember user preferences, maintain login sessions, and analyze visitor behavior to improve sneaker recommendations and site usability.</p>
+    <h2>3. Cookies and Tracking</h2>
+    <p>Our website uses cookies to remember preferences, maintain secure login sessions, analyze visitor behavior, and improve sneaker recommendations.</p>
 
-  <h2>4. Sharing of Information</h2>
-  <p>Sneaker Head does not sell customer information. We share data only with trusted partners required for payment processing, courier services, or to comply with Indian laws.</p>
+    <h2>4. Sharing of Information</h2>
+    <p>Sneaker Head India does not sell your information. We share data only with trusted partners for payment processing, courier services, or to comply with applicable Indian laws.</p>
 
-  <h2>5. Data Security</h2>
-  <p>We use modern secure technologies and encrypted connections to protect customer data. However, users are encouraged to keep account credentials safe and use the site responsibly.</p>
+    <h2>5. Data Security</h2>
+    <p>We implement secure and encrypted technologies to protect customer information. However, no online platform is 100% secure, so users should protect account credentials responsibly.</p>
 
-  <h2>6. Your Rights</h2>
-  <p>You have the right to request access, correction, or deletion of your personal information stored with Sneaker Head India by contacting our official support email.</p>
+    <h2>6. Your Rights</h2>
+    <p>You have the right to request access, correction, or deletion of your personal information by contacting us at <a href="mailto:support@sneakerhead.com">support@sneakerhead.com</a>.</p>
 
-  <h2>7. Contact Us</h2>
-  <p>If you have any questions regarding this Privacy Policy, please contact Sneaker Head Support at: support@sneakerhead.com or call +91-9876543210.</p>
+    <h2>7. Contact Us</h2>
+    <p>For privacy-related concerns, you can reach Sneaker Head India at:<br>
+      <strong>Phone:</strong> +91-9876543210<br>
+      <strong>Email:</strong> support@sneakerhead.com
+    </p>
+  </div>
 </main>
 
-<footer>
-  <p>&copy; 2025 Sneaker Head India. All Rights Reserved. | <a href="privacypolicy.html">Privacy Policy</a></p>
+<!-- Footer with landmark -->
+<footer class="site-footer">
+  <p>&copy; 2025 Sneaker Head India. All Rights Reserved.</p>
+  <div>
+    <a href="privacypolicy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms of Service</a> |
+    <a href="contact.html">Contact Us</a>
+  </div>
 </footer>
 
 </body>
