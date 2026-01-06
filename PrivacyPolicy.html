@@ -33,12 +33,12 @@
     }
 
     a {
-      color: #ff5252;
+      color: #d60000; /* dark red for contrast */
       text-decoration: underline;
     }
     a:hover, a:focus {
-      color: #ff0000;
-      outline: 2px solid #ff5252;
+      color: #a80000;
+      outline: 2px solid #d60000;
       outline-offset: 2px;
     }
 
@@ -171,10 +171,14 @@
       font-size: 15px;
     }
     .site-footer a {
-      color: #ff5252;
+      color: #d60000;
       font-weight: 600;
     }
-
+    .site-footer a:hover, .site-footer a:focus {
+      color: #a80000;
+      outline: 2px solid #d60000;
+      outline-offset: 2px;
+    }
   </style>
 </head>
 <body>
@@ -196,13 +200,13 @@
 
     <div class="navbar-icons">
       <a href="wishlist.html" aria-label="Wishlist">
-        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-heart" aria-hidden="true"></i>
       </a>
       <a href="cart.html" aria-label="Shopping Cart">
-        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
       </a>
       <a href="profile.html" aria-label="User Profile">
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user" aria-hidden="true"></i>
       </a>
     </div>
   </nav>
