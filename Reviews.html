@@ -72,7 +72,7 @@ body {
 
 .navbar-links {
     display: flex;
-    gap: 40px;
+    gap: 35px;
     align-items: center;
     list-style: none;
     margin: 0;
@@ -84,9 +84,14 @@ body {
     font-weight: 700;
     font-size: 18px;
     color: #111;
-    padding: 8px 12px;
+    padding: 12px 18px; /* larger touch area */
     border-radius: 6px;
     text-decoration: none;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 .nav-link:hover,
 .nav-link:focus {
@@ -96,7 +101,7 @@ body {
     outline-offset: 2px;
 }
 .nav-link.active {
-    color: #8b0000; /* dark red for high contrast */
+    color: #8b0000;
     background-color: #ffeaea;
 }
 
@@ -104,16 +109,20 @@ body {
 .navbar-icons {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 25px; /* enough spacing for touch */
 }
 .navbar-icons a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 12px; /* minimum touch target */
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 6px;
 }
 .navbar-icons a i {
     font-size: 26px;
-    color: #111; /* dark icons for contrast */
+    color: #111;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -130,8 +139,10 @@ body {
 @media(max-width:992px){
     .navbar { padding: 0 1.5rem; height: 80px; }
     .navbar-links { gap: 20px; }
-    .nav-link { font-size: 16px; }
+    .nav-link { font-size: 16px; padding: 12px 14px; }
     .navbar-brand h1 { font-size: 32px; }
+    .navbar-icons { gap: 20px; }
+    .navbar-icons a { padding: 12px; }
     .navbar-icons a i { font-size: 22px; }
 }
 
@@ -203,7 +214,7 @@ button:hover, button:focus {
     background-color: #fff;
 }
 .review-text {
-    color: #111; /* high contrast for text */
+    color: #111;
 }
 .review-profile {
     display: flex;
