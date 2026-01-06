@@ -10,7 +10,6 @@
 <link rel="canonical" href="https://example.com/Reviews.html">
 
 <title>Customer Reviews | Sneaker Head India – Premium Sneakers Feedback</title>
-
 <link rel="shortcut icon" href="image/logo.jpg">
 
 <!-- Open Graph -->
@@ -65,17 +64,22 @@ body {
 .navbar-brand h1 {
     font-size: 42px;
     font-weight: 900;
-    color: #111;
     margin: 0;
     text-transform: uppercase;
 }
+.navbar-brand h1 a { color: #111; text-decoration: none; }
 .navbar-brand span { color: #c60000; }
 
 .navbar-links {
     display: flex;
     gap: 40px;
     align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+.navbar-links li { role: none; }
+
 .nav-link {
     font-weight: 700;
     font-size: 18px;
@@ -88,7 +92,8 @@ body {
 .nav-link:focus {
     color: #c60000;
     background-color: #ffeaea;
-    outline: none;
+    outline: 3px solid #c60000;
+    outline-offset: 2px;
 }
 .nav-link.active {
     color: #8b0000; /* dark red for high contrast */
@@ -101,16 +106,23 @@ body {
     align-items: center;
     gap: 30px;
 }
+.navbar-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
 .navbar-icons a i {
     font-size: 26px;
     color: #111; /* dark icons for contrast */
     cursor: pointer;
     transition: transform 0.3s;
 }
-.navbar-icons a i:hover,
-.navbar-icons a i:focus {
+.navbar-icons a:hover i,
+.navbar-icons a:focus i {
     transform: scale(1.2);
-    outline: 2px solid #c60000;
+}
+.navbar-icons a:focus {
+    outline: 3px solid #c60000;
     outline-offset: 2px;
 }
 
@@ -167,6 +179,9 @@ input, textarea, button {
     border: 1px solid #ccc;
     font-size: 16px;
 }
+input:focus, textarea:focus {
+    outline: 3px solid #c60000;
+}
 button {
     background-color: #c60000;
     color: #fff;
@@ -175,6 +190,8 @@ button {
 }
 button:hover, button:focus {
     background-color: #8b0000;
+    outline: 3px solid #c60000;
+    outline-offset: 2px;
 }
 
 /* Reviews */
@@ -188,8 +205,15 @@ button:hover, button:focus {
 .review-text {
     color: #111; /* high contrast for text */
 }
-.review-profile h3 {
-    color: #222;
+.review-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.review-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
 /* Footer */
@@ -201,6 +225,7 @@ footer {
 }
 footer a {
     color: #ff5252;
+    text-decoration: none;
 }
 footer a:hover, footer a:focus {
     color: #fff;
@@ -213,17 +238,18 @@ footer a:hover, footer a:focus {
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
+<!-- Navbar -->
 <header>
-<nav class="navbar" aria-label="Primary Navigation">
+<nav class="navbar" role="navigation" aria-label="Primary Navigation">
     <div class="navbar-brand">
-        <h1>Shoe<span>s</span></h1>
+        <h1><a href="MainPage.html">Shoe<span>s</span></a></h1>
     </div>
-    <div class="navbar-links" role="navigation">
-        <a class="nav-link" href="MainPage.html" aria-label="Go to Home Page">Home</a>
-        <a class="nav-link" href="main_product.html" aria-label="View Products">Products</a>
-        <a class="nav-link" href="About.html" aria-label="About Sneaker Head">About</a>
-        <a class="nav-link active" href="Reviews.html" aria-current="page">Reviews</a>
-    </div>
+    <ul class="navbar-links" role="menubar">
+        <li role="none"><a class="nav-link" href="MainPage.html" role="menuitem" tabindex="0">Home</a></li>
+        <li role="none"><a class="nav-link" href="main_product.html" role="menuitem" tabindex="0">Products</a></li>
+        <li role="none"><a class="nav-link" href="About.html" role="menuitem" tabindex="0">About</a></li>
+        <li role="none"><a class="nav-link active" href="Reviews.html" role="menuitem" aria-current="page" tabindex="0">Reviews</a></li>
+    </ul>
     <div class="navbar-icons">
         <a href="wishlist.html" aria-label="Wishlist Page"><i class="fa-solid fa-heart" aria-hidden="true"></i></a>
         <a href="cart.html" aria-label="Shopping Cart Page"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i></a>
@@ -232,9 +258,11 @@ footer a:hover, footer a:focus {
 </nav>
 </header>
 
+<!-- Main Content -->
 <main id="main-content" class="container" role="main">
 <h1>Customer Reviews</h1>
 
+<!-- Submit Review -->
 <section aria-labelledby="submit-review">
 <h2 id="submit-review">Submit Your Review</h2>
 <form id="reviewForm" aria-label="Customer Review Form">
@@ -249,6 +277,7 @@ footer a:hover, footer a:focus {
 </form>
 </section>
 
+<!-- Display Reviews -->
 <section aria-labelledby="all-reviews">
 <h2 id="all-reviews">What Customers Say</h2>
 <div class="review-container" id="reviewContainer">
@@ -270,6 +299,7 @@ footer a:hover, footer a:focus {
 </section>
 </main>
 
+<!-- Footer -->
 <footer role="contentinfo">
 <p>&copy; 2025 Sneaker Head India. All Rights Reserved.</p>
 <div>
@@ -279,7 +309,9 @@ footer a:hover, footer a:focus {
 </div>
 </footer>
 
+<!-- Scripts -->
 <script defer>
+// Generate avatars
 function generateAvatar(email) {
     const initials = email.charAt(0).toUpperCase();
     const canvas = document.createElement('canvas');
@@ -299,6 +331,8 @@ document.querySelectorAll('img[data-email]').forEach(img=>{
     const email = img.getAttribute('data-email');
     img.src = generateAvatar(email);
 });
+
+// Submit Review
 document.getElementById('reviewForm').addEventListener('submit', function(e){
     e.preventDefault();
     const email = document.getElementById('userEmail').value.trim();
@@ -306,9 +340,15 @@ document.getElementById('reviewForm').addEventListener('submit', function(e){
     if(!email.endsWith("@gmail.com")) { alert("Please enter a valid Gmail address."); return; }
     const newReview = document.createElement('article');
     newReview.classList.add('review-card');
-    newReview.innerHTML = `<div class="review-profile"><img src="${generateAvatar(email)}" alt="avatar"><div><h3>${email}</h3><p>Customer</p></div></div><p class="review-text">${reviewText}</p>`;
+    newReview.innerHTML = `
+        <div class="review-profile">
+            <img src="${generateAvatar(email)}" alt="avatar">
+            <div><h3>${email}</h3><p>Customer</p></div>
+        </div>
+        <p class="review-text">${reviewText}</p>`;
     document.getElementById('reviewContainer').appendChild(newReview);
-    this.reset(); alert('Thank you for your review!');
+    this.reset(); 
+    alert('Thank you for your review!');
 });
 </script>
 
