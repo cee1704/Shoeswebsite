@@ -3,55 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Sneaker Head for inquiries, feedback, customer support, or business assistance. We're here to help you.">
-  <title>Contact Us - Sneaker Head</title>
+
+  <meta name="description" content="Contact Sneaker Head India for sneaker inquiries, order support, returns, feedback, and business collaborations. Get customer assistance for premium branded footwear.">
+
+  <title>Contact Sneaker Head India | Customer Support and Sneaker Store Help</title>
+
+  <link rel="canonical" href="https://sneakerhead.com/contact.html">
   <link rel="shortcut icon" href="image/logo.jpg">
+
+  <meta property="og:title" content="Contact Sneaker Head India">
+  <meta property="og:description" content="Reach Sneaker Head customer support for orders, inquiries and feedback about premium sneakers.">
+  <meta property="og:type" content="website">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="navbar.css"> <!-- Navbar CSS -->
-  <link rel="stylesheet" href="contact.css"> <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="contact.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sneaker Head India",
+    "url": "https://sneakerhead.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9876543210",
+      "contactType": "customer service",
+      "email": "support@sneakerhead.com",
+      "areaServed": "IN"
+    }
+  }
+  </script>
+
 </head>
 <body>
+
+<!-- Skip Link -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Navbar -->
 <nav class="navbar">
     <div class="navbar-brand"><h1>Shoe<span>s</span></h1></div>
+
     <div class="navbar-links">
         <a href="MainPage.html" class="nav-link">Home</a>
         <a href="main_product.html" class="nav-link">Products</a>
         <a href="About.html" class="nav-link">About</a>
         <a href="Reviews.html" class="nav-link">Reviews</a>
     </div>
+
     <div class="navbar-icons">
-        <i class="fa-solid fa-heart"></i>
-        <i class="fa-solid fa-cart-shopping"></i>
-        <i class="fa-solid fa-user"></i>
+        <a href="wishlist.html" aria-label="Wishlist">
+            <i class="fa-solid fa-heart" aria-hidden="true"></i>
+        </a>
+
+        <a href="cart.html" aria-label="Shopping Cart">
+            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+        </a>
+
+        <a href="profile.html" aria-label="User Profile">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+        </a>
     </div>
 </nav>
 
 <!-- Contact Us Content -->
-<div class="container">
-  <h1>Contact Us</h1>
-  <p>If you have any questions, feedback, or inquiries, please reach out to us using the form below.</p>
+<main id="main-content" class="container">
+  <h1>Contact Sneaker Head Support</h1>
+
+  <p>If you have any questions, feedback, or inquiries about sneakers, orders, or services, please reach out to Sneaker Head India using the form below.</p>
 
   <form id="contactForm">
+    <label for="name">Your Name</label><br>
     <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
     <span id="nameError" class="error"></span>
 
+    <label for="email">Your Email</label><br>
     <input type="email" id="email" name="email" placeholder="Your Email" required><br><br>
     <span id="emailError" class="error"></span>
 
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <label for="message">Message</label><br>
+    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea><br><br>
 
     <button type="submit">Send Message</button>
   </form>
 
-  <h2>Other Ways to Reach Us</h2>
-  <p><strong>Email:</strong> support@sneakerhead.com | <strong>Phone:</strong> +91-9876543210 | <strong>Address:</strong> SneakerHead HQ, Mumbai, India</p>
-</div>
+  <section id="other-contact">
+    <h2>Other Ways to Reach Sneaker Head</h2>
+
+    <p>
+      <strong>Email:</strong> support@sneakerhead.com<br>
+      <strong>Phone:</strong> +91-9876543210<br>
+      <strong>Address:</strong> Sneaker Head HQ, Mumbai, India
+    </p>
+  </section>
+</main>
 
 <!-- Footer -->
-<footer>
-  <p style="color: rgb(161, 160, 160);">&copy; 2025 SneakerHead. All Rights Reserved.</p>
+<footer class="site-footer">
+  <p>&copy; 2025 Sneaker Head India. All Rights Reserved.</p>
 </footer>
 
 <!-- JavaScript for validation -->
@@ -63,6 +113,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 
   const name = document.getElementById("name").value.trim();
   const nameError = document.getElementById("nameError");
+
   if (!/^[A-Za-z\s]+$/.test(name)) {
     nameError.textContent = "Name should contain only alphabets.";
     valid = false;
@@ -72,6 +123,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 
   const email = document.getElementById("email").value.trim();
   const emailError = document.getElementById("emailError");
+
   if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)) {
     emailError.textContent = "Enter a valid Gmail address (e.g., name@gmail.com).";
     valid = false;
@@ -88,4 +140,3 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 
 </body>
 </html>
-
