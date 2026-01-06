@@ -1,185 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Contact Sneaker Head India for sneaker inquiries, order support, returns, feedback, and business collaborations. Get customer assistance for premium branded footwear.">
-  <title>Contact Sneaker Head India | Customer Support and Sneaker Store Help</title>
+<!-- SEO Meta Tags -->
+<meta name="description" content="Contact Sneaker Head India for sneaker inquiries, order support, returns, feedback, and business collaborations. Get customer assistance for premium branded footwear.">
+<title>Contact Sneaker Head India | Customer Support and Sneaker Store Help</title>
 
-  <link rel="canonical" href="https://sneakerhead.com/contact.html">
-  <link rel="shortcut icon" href="image/logo.jpg">
+<link rel="canonical" href="https://sneakerhead.com/contact.html">
+<link rel="shortcut icon" href="image/logo.jpg">
 
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="Contact Sneaker Head India">
-  <meta property="og:description" content="Reach Sneaker Head customer support for orders, inquiries, and feedback about premium sneakers.">
-  <meta property="og:type" content="website">
+<!-- Open Graph Tags -->
+<meta property="og:title" content="Contact Sneaker Head India">
+<meta property="og:description" content="Reach Sneaker Head customer support for orders, inquiries, and feedback about premium sneakers.">
+<meta property="og:type" content="website">
 
-  <!-- Preload critical Font Awesome font -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Defer non-critical CSS to remove render blocking -->
-  <link rel="stylesheet" href="navbar.css">
-  <link rel="stylesheet" href="contact.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media="print" onload="this.media='all'">
+<!-- Inline Styles for demo -->
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #111;
+  color: #fff;
+  margin: 0;
+}
+a { color: #cc0000; text-decoration: underline; }
+a:focus { outline: 2px solid #ffcccb; outline-offset: 2px; }
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Sneaker Head India",
-    "url": "https://sneakerhead.com",
-    "logo": "https://sneakerhead.com/image/logo.jpg",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-9876543210",
-      "contactType": "customer service",
-      "email": "support@sneakerhead.com",
-      "areaServed": "IN"
-    }
-  }
-  </script>
+.skip-link { position:absolute; left:-999px; top:auto; }
+.skip-link:focus { left:10px; top:10px; background:#fff; color:#111; padding:8px 12px; border-radius:5px; z-index:1000; }
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #111;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
+.navbar {
+  display:flex; justify-content:space-between; align-items:center; padding:0 2rem; height:80px; background:#fff; color:#111;
+  position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.navbar-brand h1 { font-size:1.8rem; font-weight:900; color:#111; }
+.navbar-brand span { color:#cc0000; }
+.navbar-links a {
+  margin:0 10px; font-weight:600; font-size:1rem; color:#111; padding:5px 8px; border-radius:5px;
+}
+.navbar-links a.active { background:#ffeaea; color:#cc0000; }
+.navbar-links a:focus { outline:2px solid #ffcccb; }
 
-    .container {
-      max-width: 900px;
-      margin: 120px auto 40px;
-      background: #f9f9f9;
-      padding: 30px;
-      border-radius: 12px;
-      color: #111;
-    }
+.navbar-icons a { margin-left:15px; color:#111; font-size:1.2rem; }
+.navbar-icons a:focus { outline:2px solid #ffcccb; }
 
-    h1 { font-size: 30px; color: #d60000; }
-    h2 { font-size: 22px; color: #222; }
+main { padding:120px 20px 40px; max-width:900px; margin:0 auto; }
+.container { background:#f9f9f9; color:#111; padding:30px; border-radius:12px; }
 
-    label { font-weight: 600; }
+h1 { font-size:28px; color:#d60000; margin-bottom:15px; }
+h2 { font-size:22px; margin-top:30px; color:#222; }
 
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #555;
-      font-size: 16px;
-    }
+label { font-weight:600; display:block; margin-top:10px; }
+input, textarea { width:100%; padding:10px; font-size:16px; border-radius:6px; border:1px solid #555; margin-top:5px; }
+input:focus, textarea:focus { outline:2px solid #cc0000; }
 
-    button {
-      padding: 12px 20px;
-      font-size: 16px;
-      background: #d60000;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+button { margin-top:15px; padding:12px 20px; font-size:16px; background:#d60000; color:#fff; border:none; border-radius:6px; cursor:pointer; }
+button:hover { background:#a80000; }
 
-    button:hover {
-      background: #a80000;
-    }
+.error { color:#d60000; font-size:14px; }
 
-    .error {
-      color: #d60000;
-      font-size: 14px;
-    }
+address { font-style:normal; line-height:1.6; margin-top:10px; }
 
-    .site-footer {
-      text-align: center;
-      padding: 20px;
-      background: #000;
-      color: #aaa;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: -999px;
-    }
-  </style>
+.site-footer { text-align:center; padding:20px; background:#000; color:#aaa; margin-top:40px; }
+.site-footer a { color:#fff; }
+.site-footer a:hover, .site-footer a:focus { color:#cc0000; outline:2px solid #ffcccb; }
+</style>
 
 </head>
 <body>
 
-<!-- Skip Link -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- Navbar -->
 <header>
-<nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
     <div class="navbar-brand"><h1>Shoe<span>s</span></h1></div>
-
     <div class="navbar-links">
-        <a href="MainPage.html" class="nav-link">Home</a>
-        <a href="main_product.html" class="nav-link">Products</a>
-        <a href="About.html" class="nav-link">About</a>
-        <a href="Reviews.html" class="nav-link">Reviews</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="main_product.html" class="nav-link">Products</a>
+      <a href="About.html" class="nav-link">About</a>
+      <a href="Reviews.html" class="nav-link">Reviews</a>
+      <a href="Contact.html" class="nav-link active">Contact</a>
     </div>
-
     <div class="navbar-icons">
-        <a href="wishlist.html" aria-label="Wishlist">
-            <i class="fa-solid fa-heart"></i>
-        </a>
-
-        <a href="cart.html" aria-label="Shopping Cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-        </a>
-
-        <a href="profile.html" aria-label="User Profile">
-            <i class="fa-solid fa-user"></i>
-        </a>
+      <a href="wishlist.html" aria-label="Wishlist"><i class="fa-solid fa-heart"></i></a>
+      <a href="cart.html" aria-label="Shopping Cart"><i class="fa-solid fa-cart-shopping"></i></a>
+      <a href="profile.html" aria-label="User Profile"><i class="fa-solid fa-user"></i></a>
     </div>
-</nav>
+  </nav>
 </header>
 
-<!-- Main Contact Section -->
-<main id="main-content">
-<div class="container">
-  <h1>Contact Sneaker Head Support</h1>
+<main id="main-content" role="main">
+  <div class="container">
+    <h1>Contact Sneaker Head Support</h1>
+    <p>If you have questions, feedback, or inquiries about sneakers, orders, or services, please reach out using the form below.</p>
 
-  <p>If you have any questions, feedback, or inquiries about sneakers, orders, or services, please reach out to Sneaker Head India using the form below.</p>
+    <form id="contactForm" autocomplete="on" novalidate>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
+      <span id="nameError" class="error" aria-live="polite"></span>
 
-  <form id="contactForm" autocomplete="on">
-    <label for="name">Your Name</label><br>
-    <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name"><br><br>
-    <span id="nameError" class="error"></span>
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
+      <span id="emailError" class="error" aria-live="polite"></span>
 
-    <label for="email">Your Email</label><br>
-    <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email"><br><br>
-    <span id="emailError" class="error"></span>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
 
-    <label for="message">Message</label><br>
-    <textarea id="message" name="message" rows="5" placeholder="Your Message" required autocomplete="off"></textarea><br><br>
+      <button type="submit">Send Message</button>
+    </form>
 
-    <button type="submit">Send Message</button>
-  </form>
-
-  <section id="other-contact">
-    <h2>Other Ways to Reach Sneaker Head</h2>
-
-    <p>
-      <strong>Email:</strong> support@sneakerhead.com<br>
-      <strong>Phone:</strong> +91-9876543210<br>
-      <strong>Address:</strong> Sneaker Head HQ, Mumbai, India
-    </p>
-  </section>
-</div>
-</div>
+    <section id="other-contact" aria-label="Other Contact Methods">
+      <h2>Other Ways to Reach Sneaker Head</h2>
+      <address>
+        <strong>Email:</strong> <a href="mailto:support@sneakerhead.com">support@sneakerhead.com</a><br>
+        <strong>Phone:</strong> <a href="tel:+919876543210">+91-9876543210</a><br>
+        <strong>Address:</strong> Sneaker Head HQ, Mumbai, India
+      </address>
+    </section>
+  </div>
 </main>
 
-<!-- Footer -->
-<footer class="site-footer">
+<footer class="site-footer" role="contentinfo">
   <p>&copy; 2025 Sneaker Head India. All Rights Reserved.</p>
 </footer>
 
-<!-- Improved JavaScript Validation -->
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
@@ -188,7 +137,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 
   const name = document.getElementById("name").value.trim();
   const nameError = document.getElementById("nameError");
-
   if (name.length < 2 || !/^[A-Za-z\s]+$/.test(name)) {
     nameError.textContent = "Please enter a valid name using only alphabets.";
     valid = false;
@@ -198,7 +146,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 
   const email = document.getElementById("email").value.trim();
   const emailError = document.getElementById("emailError");
-
   if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)) {
     emailError.textContent = "Enter a valid Gmail address (e.g., name@gmail.com).";
     valid = false;
