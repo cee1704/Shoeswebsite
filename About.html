@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
 <style>
-/* Reset and Base */
+/* General Reset */
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
 body { background:#f5f5f5; color:#111; line-height:1.6; }
 h1,h2,h3,h4,h5,h6 { margin-bottom:10px; }
@@ -18,7 +18,8 @@ a:hover, a:focus { color:#990000; outline:2px solid #ffcccb; outline-offset:2px;
 
 /* Skip Link */
 .skip-link {
-  position:absolute; left:-9999px; top:10px; background:#fff; color:#111; padding:10px; z-index:2000;
+  position:absolute; left:-9999px; top:10px; background:#fff; color:#111;
+  padding:10px; z-index:2000;
 }
 .skip-link:focus { left:10px; }
 
@@ -33,26 +34,29 @@ a:hover, a:focus { color:#990000; outline:2px solid #ffcccb; outline-offset:2px;
   margin:0 10px; font-weight:600; font-size:1rem; color:#111; padding:5px 10px; border-radius:5px;
 }
 .navbar-nav a.active { background:#ffeaea; color:#cc0000; }
-.navbar-icons i { margin-left:15px; font-size:1.2rem; cursor:pointer; }
-.navbar-icons i:focus { outline:2px solid #ffcccb; outline-offset:2px; }
+.navbar-nav a:focus { outline:2px solid #ffcccb; outline-offset:2px; }
+
+.navbar-icons button {
+  background:none; border:none; margin-left:15px; font-size:1.2rem; cursor:pointer; color:#111;
+}
+.navbar-icons button:focus { outline:2px solid #ffcccb; outline-offset:2px; }
 
 /* Sections */
 section { padding:60px 20px; }
+#stats h2, #values h2, #our-team h2 { text-align:center; margin-bottom:40px; }
 .stats-container, .about-container, .values-container, .team-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
 .stat-item, .about-item, .value-item, .team-member { background:#fff; padding:20px; border-radius:12px; text-align:center; flex:1 1 200px; min-width:200px; }
 .stat-item i, .about-item i, .value-item i { font-size:2rem; margin-bottom:10px; color:#cc0000; }
 .counter { font-size:1.8rem; font-weight:bold; margin:5px 0; }
 .about-item hr { border:0; border-top:2px solid #eee; margin:10px 0; }
 .team-member img { width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:10px; }
-
-/* Footer */
 footer { text-align:center; padding:20px; background:#222; color:#fff; margin-top:40px; }
 footer a { color:#fff; margin:0 5px; }
 footer a:hover, footer a:focus { color:#cc0000; outline:2px solid #ffcccb; outline-offset:2px; }
 
 /* Responsive */
 @media(max-width:768px){ 
-  .stats-container, .about-container, .values-container, .team-container {flex-direction:column; align-items:center;} 
+  .stats-container, .about-container, .values-container, .team-container{flex-direction:column; align-items:center;} 
 }
 </style>
 </head>
@@ -71,56 +75,57 @@ footer a:hover, footer a:focus { color:#cc0000; outline:2px solid #ffcccb; outli
     <a href="Reviews.html" class="nav-link">Review</a>
   </div>
   <div class="navbar-icons">
-    <i class="fa-solid fa-heart" tabindex="0" role="button" aria-label="Wishlist"></i>
-    <i class="fa-solid fa-cart-shopping" tabindex="0" role="button" aria-label="Cart"></i>
-    <i class="fa-solid fa-user" tabindex="0" role="button" aria-label="User Account"></i>
+    <button aria-label="Wishlist"><i class="fa-solid fa-heart"></i></button>
+    <button aria-label="Shopping Cart"><i class="fa-solid fa-cart-shopping"></i></button>
+    <button aria-label="User Account"><i class="fa-solid fa-user"></i></button>
   </div>
 </nav>
 
+<!-- Main Content -->
 <main id="main-content">
 
 <!-- Statistics Section -->
-<section id="stats" role="region" aria-labelledby="stats-heading">
-  <h2 id="stats-heading">Our Achievements in Numbers</h2>
+<section id="stats" aria-labelledby="stats-heading">
+  <h1 id="stats-heading">Our Achievements in Numbers</h1>
   <div class="stats-container">
-    <div class="stat-item"><i class="fa fa-shoe-prints"></i><h3 class="counter" data-target="5000">0</h3><p>Sneakers Sold</p></div>
-    <div class="stat-item"><i class="fa fa-smile"></i><h3 class="counter" data-target="100">0</h3><p>Happy Clients</p></div>
-    <div class="stat-item"><i class="fa fa-tags"></i><h3 class="counter" data-target="50">0</h3><p>Brands Available</p></div>
-    <div class="stat-item"><i class="fa fa-trophy"></i><h3 class="counter" data-target="20">0</h3><p>Awards Won</p></div>
+    <div class="stat-item"><i class="fa fa-shoe-prints" aria-hidden="true"></i><h2 class="counter" data-target="5000">0</h2><p>Sneakers Sold</p></div>
+    <div class="stat-item"><i class="fa fa-smile" aria-hidden="true"></i><h2 class="counter" data-target="100">0</h2><p>Happy Clients</p></div>
+    <div class="stat-item"><i class="fa fa-tags" aria-hidden="true"></i><h2 class="counter" data-target="50">0</h2><p>Brands Available</p></div>
+    <div class="stat-item"><i class="fa fa-trophy" aria-hidden="true"></i><h2 class="counter" data-target="20">0</h2><p>Awards Won</p></div>
   </div>
 </section>
 
 <!-- About Section -->
-<section id="about" role="region" aria-labelledby="about-heading">
-  <h2 id="about-heading" style="text-align:center; margin-bottom:30px;">About Us</h2>
+<section id="about" aria-labelledby="about-heading">
+  <h1 id="about-heading" style="text-align:center; margin-bottom:30px;">About Us</h1>
   <p style="text-align:center; background: rgba(170,170,170,0.7); padding:8px 15px; border-radius:10px; display:inline-block;">
     Learn more about our mission, vision, and achievements below!
   </p>
   <div class="about-container" style="margin-top:40px;">
-    <div class="about-item"><i class="fa fa-book"></i><h3>MISSION</h3><hr><p>Provide top-quality branded shoes and apparel at competitive prices.</p></div>
-    <div class="about-item"><i class="fa fa-globe"></i><h3>VISION</h3><hr><p>Become a global leader in footwear, emphasizing sustainability and style.</p></div>
-    <div class="about-item"><i class="fa fa-trophy"></i><h3>ACHIEVEMENTS</h3><hr><p>Top 10 sneaker companies globally in 2023, Best Online Fashion Store award winner.</p></div>
+    <div class="about-item"><i class="fa fa-book" aria-hidden="true"></i><h2>MISSION</h2><hr><p>Provide top-quality branded shoes and apparel at competitive prices.</p></div>
+    <div class="about-item"><i class="fa fa-globe" aria-hidden="true"></i><h2>VISION</h2><hr><p>Become a global leader in footwear, emphasizing sustainability and style.</p></div>
+    <div class="about-item"><i class="fa fa-trophy" aria-hidden="true"></i><h2>ACHIEVEMENTS</h2><hr><p>Top 10 sneaker companies globally in 2023, Best Online Fashion Store award winner.</p></div>
   </div>
 </section>
 
 <!-- Values Section -->
-<section id="values" role="region" aria-labelledby="values-heading">
-  <h2 id="values-heading">Our Core Values</h2>
+<section id="values" aria-labelledby="values-heading">
+  <h1 id="values-heading" style="text-align:center;">Our Core Values</h1>
   <div class="values-container">
-    <div class="value-item"><i class="fa fa-handshake"></i><h4>Integrity</h4><p>Honest and transparent business dealings at all times.</p></div>
-    <div class="value-item"><i class="fa fa-star"></i><h4>Quality</h4><p>Delivering premium products that our customers love.</p></div>
-    <div class="value-item"><i class="fa fa-leaf"></i><h4>Sustainability</h4><p>Eco-friendly practices to protect the environment.</p></div>
+    <div class="value-item"><i class="fa fa-handshake" aria-hidden="true"></i><h2>Integrity</h2><p>Honest and transparent business dealings at all times.</p></div>
+    <div class="value-item"><i class="fa fa-star" aria-hidden="true"></i><h2>Quality</h2><p>Delivering premium products that our customers love.</p></div>
+    <div class="value-item"><i class="fa fa-leaf" aria-hidden="true"></i><h2>Sustainability</h2><p>Eco-friendly practices to protect the environment.</p></div>
   </div>
 </section>
 
 <!-- Team Section -->
-<section id="our-team" role="region" aria-labelledby="team-heading">
-  <h2 id="team-heading">Meet Our Team</h2>
+<section id="our-team" aria-labelledby="team-heading">
+  <h1 id="team-heading" style="text-align:center; margin-bottom:50px;">Meet Our Team</h1>
   <div class="team-container">
-    <div class="team-member"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe"><h5>John Doe</h5><p>CEO & Founder</p></div>
-    <div class="team-member"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith"><h5>Jane Smith</h5><p>Head of Marketing</p></div>
-    <div class="team-member"><img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Mike Johnson"><h5>Mike Johnson</h5><p>Lead Designer</p></div>
-    <div class="team-member"><img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Emily Davis"><h5>Emily Davis</h5><p>Product Manager</p></div>
+    <div class="team-member"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe"><h2>John Doe</h2><p>CEO & Founder</p></div>
+    <div class="team-member"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith"><h2>Jane Smith</h2><p>Head of Marketing</p></div>
+    <div class="team-member"><img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Mike Johnson"><h2>Mike Johnson</h2><p>Lead Designer</p></div>
+    <div class="team-member"><img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Emily Davis"><h2>Emily Davis</h2><p>Product Manager</p></div>
   </div>
 </section>
 
@@ -130,33 +135,32 @@ footer a:hover, footer a:focus { color:#cc0000; outline:2px solid #ffcccb; outli
 <script>
 const counters = document.querySelectorAll('.counter');
 function animateCounters() {
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText;
-      const increment = target / 200;
-      if(count < target){ counter.innerText = Math.ceil(count + increment); requestAnimationFrame(updateCount); }
-      else counter.innerText = target;
-    };
-    updateCount();
-  });
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / 200;
+            if(count < target){ counter.innerText = Math.ceil(count + increment); requestAnimationFrame(updateCount); }
+            else counter.innerText = target;
+        };
+        updateCount();
+    });
 }
 let statsSection = document.getElementById('stats');
 let started = false;
 window.addEventListener('scroll', () => {
-  const sectionPos = statsSection.getBoundingClientRect().top;
-  if(sectionPos < window.innerHeight && !started){ started = true; animateCounters(); }
+    if(statsSection.getBoundingClientRect().top < window.innerHeight && !started){ started = true; animateCounters(); }
 });
 </script>
 
 <!-- Footer -->
 <footer role="contentinfo">
-  <p>&copy; 2025 All rights reserved by Sneaker Head Inc.</p>
-  <div>
-    <a href="PrivacyPolicy.html">Privacy Policy</a> | 
-    <a href="TermsOfService.html">Terms of Service</a> | 
-    <a href="ContactUs.html">Contact Us</a>
-  </div>
+    <p>&copy; 2025 All rights reserved by Sneaker Head Inc.</p>
+    <div>
+        <a href="PrivacyPolicy.html">Privacy Policy</a> | 
+        <a href="TermsOfService.html">Terms of Service</a> | 
+        <a href="ContactUs.html">Contact Us</a>
+    </div>
 </footer>
 
 </body>
