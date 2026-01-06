@@ -4,373 +4,161 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Browse premium Nike sneakers, check ratings, prices and shop your favorite shoes easily at Sneaker Head.">
+<!-- SEO Meta -->
+<title>Sneaker Head - Products</title>
+<meta name="description" content="Browse premium Nike sneakers, check ratings, prices, and shop your favorite shoes easily at Sneaker Head.">
+<meta name="keywords" content="Nike, Sneakers, Shop Shoes, Sneaker Head, Premium Sneakers">
 
-<title>Sneaker Head Website</title>
-
+<!-- Favicon -->
 <link rel="shortcut icon" href="image/logo.jpg">
 
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
-
-/* Reset */
+/* Reset & General */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
 body {
   background: #f5f5f5;
+  color: #111;
+  scroll-behavior: smooth;
 }
 
 /* Navbar */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90px;
-  background: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  top: 0; left: 0;
+  width: 100%; height: 90px;
+  background: #fff;
+  display: flex; justify-content: space-between; align-items: center;
   padding: 0 3rem;
   box-shadow: 0 6px 25px rgba(0,0,0,0.1);
   z-index: 1000;
 }
-
+.navbar.scrolled {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
 .navbar-brand h1 {
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: #111111; /* high contrast */
+  font-size: 2.2rem; font-weight: 900; color: #111;
 }
-
-.navbar-brand span {
-  color: #990000; /* darker red for better contrast */
-}
-
+.navbar-brand span { color: #990000; }
 .navbar-nav {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
+  display: flex; gap: 2rem; list-style: none;
 }
-
 .navbar-nav li a {
-  text-decoration: underline; /* ensures links are distinguishable */
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #111111;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.navbar-nav li a.active,
-.navbar-nav li a:hover {
-  background: #ffd6d6;
-  color: #990000; /* sufficient contrast */
-}
-
-.navbar-icons {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.icon-wrapper {
-  position: relative;
-  cursor: pointer;
-}
-
-.navbar-icons i {
-  font-size: 24px;
-  color: #111111;
-  transition: 0.3s;
-}
-
-.navbar-icons i:hover {
-  color: #990000;
-  transform: scale(1.2);
-}
-
-.cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: #990000;
-  color: #ffffff;
-  border-radius: 50%;
-  padding: 3px 6px;
-  font-size: 12px;
-}
-
-/* Dropdown */
-.cart-dropdown {
-  position: absolute;
-  top: 45px;
-  right: 0;
-  background: #ffffff;
-  border-radius: 10px;
-  width: 300px;
-  max-height: 350px;
-  overflow-y: auto;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  padding: 10px;
-  display: none;
-}
-
-.cart-dropdown.show {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.cart-dropdown ul {
-  list-style: none;
-}
-
-.cart-dropdown ul li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 0;
-  border-bottom: 1px solid #eeeeee;
-}
-
-.cart-dropdown li img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-}
-
-.cart-total {
-  font-weight: bold;
-  text-align: right;
-  margin-top: 5px;
-}
-
-.cart-pay-btn {
-  margin-top: 10px;
-  background: #990000;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
   text-decoration: underline;
+  font-weight: 700; font-size: 1.1rem; color: #111;
+  padding: 8px 12px; border-radius: 8px; transition: 0.3s;
+}
+.navbar-nav li a.active, .navbar-nav li a:hover {
+  background: #ffd6d6; color: #990000;
+}
+.navbar-icons { display: flex; gap: 20px; align-items: center; }
+.icon-wrapper { position: relative; cursor: pointer; }
+.navbar-icons i { font-size: 24px; color: #111; transition: 0.3s; }
+.navbar-icons i:hover { color: #990000; transform: scale(1.2); }
+.cart-badge {
+  position: absolute; top: -8px; right: -8px;
+  background: #990000; color: #fff; border-radius: 50%;
+  padding: 3px 6px; font-size: 12px;
 }
 
-.cart-pay-btn:hover {
-  background: #660000;
+/* Cart Dropdown */
+#cartDropdown {
+  position: absolute; top: 45px; right: 0;
+  background: #fff; border-radius: 10px; width: 300px;
+  max-height: 350px; overflow-y: auto; box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  padding: 10px; display: none; flex-direction: column; gap: 5px;
+  z-index: 1001;
 }
+#cartDropdown.show { display: flex; }
+#cartDropdown ul { list-style: none; padding: 0; margin: 0; }
+#cartDropdown li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 0; border-bottom: 1px solid #eee;
+}
+#cartDropdown li img { width: 50px; height: 50px; object-fit: contain; }
+.cart-total { font-weight: bold; text-align: right; margin-top: 5px; }
+.cart-pay-btn {
+  margin-top: 10px; background: #990000; color: #fff;
+  border: none; border-radius: 8px; padding: 8px 12px;
+  cursor: pointer; text-decoration: underline;
+}
+.cart-pay-btn:hover { background: #660000; }
 
-/* Products Section */
+/* Products */
 .products-section {
   padding: 130px 2rem 50px;
   text-align: center;
 }
-
-.products-section h1 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #111111;
-}
-
-/* Main grid */
+.products-section h1 { font-size: 2rem; margin-bottom: 20px; color: #111; }
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-  padding: 1rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px; padding: 1rem;
 }
-
 .card {
-  background: #ffffff;
-  border-radius: 15px;
-  overflow: hidden;
+  background: #fff; border-radius: 15px; overflow: hidden;
   transition: 0.3s;
 }
-
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+.card:hover { transform: scale(1.03); box-shadow: 0 12px 20px rgba(0,0,0,0.2); }
+.card-img-wrapper { position: relative; height: 220px; }
+.card-img-wrapper img { width: 100%; height: 100%; object-fit: contain; }
+.product-heart { position: absolute; top: 10px; right: 10px;
+  color: #555; font-size: 24px; border: 1px solid #ccc; padding: 4px; border-radius: 50%; cursor: pointer;
 }
-
-.card-img-wrapper {
-  position: relative;
-  height: 220px;
-}
-
-.card-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.product-heart {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #555555; /* not only color based */
-  font-size: 24px;
-  border: 1px solid #cccccc; /* makes it visible without color */
-  padding: 4px;
-  border-radius: 50%;
-}
-
-.product-heart.liked {
-  color: #990000;
-  border-color: #990000;
-}
-
-.card-body {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-body h2 {
-  margin-bottom: 8px;
-  font-size: 18px;
-  text-transform: uppercase;
-  color: #111111;
-}
-
-.card-body h3 {
-  color: #990000;
-  margin-bottom: 8px;
-}
-
-/* Stars */
-.stars {
-  display: flex;
-  gap: 5px;
-  margin-bottom: 12px;
-}
-
-.stars i {
-  color: #333333; /* default dark for accessibility */
-  font-size: 16px;
-}
-
+.product-heart.liked { color: #990000; border-color: #990000; }
+.card-body { padding: 15px; display: flex; flex-direction: column; }
+.card-body h2 { margin-bottom: 8px; font-size: 18px; text-transform: uppercase; color: #111; }
+.card-body h3 { color: #990000; margin-bottom: 8px; }
 .card-body button {
-  padding: 10px;
-  background: #990000;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  text-decoration: underline;
+  padding: 10px; background: #990000; color: #fff; border: none;
+  border-radius: 8px; cursor: pointer; font-weight: 600; text-decoration: underline;
 }
+.card-body button:hover { background: #660000; }
 
-.card-body button:hover {
-  background: #660000;
-}
-
-/* Feedback Section */
+/* Feedback */
 .feedback-section {
-  display: none;
-  padding: 50px;
-  background: #ffffff;
-  margin: 2rem;
-  border-radius: 12px;
+  display: none; padding: 50px; background: #fff;
+  margin: 2rem; border-radius: 12px;
 }
-
-.feedback-section h2 {
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  color: #111111;
-}
-
+.feedback-section h2 { margin-bottom: 20px; font-size: 1.8rem; color: #111; }
 .feedback-section form {
-  max-width: 500px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;
 }
-
-.feedback-section input,
-.feedback-section textarea {
-  padding: 12px;
-  border: 2px solid #333333; /* thicker border = accessibility improvement */
-  border-radius: 6px;
-  color: #111111;
+.feedback-section input, .feedback-section textarea {
+  padding: 12px; border: 2px solid #333; border-radius: 6px; color: #111;
 }
-
 .feedback-section button {
-  background: #990000;
-  color: #ffffff;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  text-decoration: underline;
+  background: #990000; color: #fff; padding: 12px; border: none;
+  border-radius: 6px; text-decoration: underline;
 }
-
 #feedbackMsg {
-  text-align: center;
-  margin-top: 15px;
-  display: none;
-  color: #006600;
-  font-weight: bold;
-}
-
-/* Payment Modal */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 420px;
-}
-
-.modal-header h2 {
-  font-size: 1.5rem;
-  color: #111111;
-}
-
-.btn-close {
-  background: none;
-  border: 2px solid #111111;
-  font-size: 1.3rem;
-  cursor: pointer;
-}
-
-.modal-body select,
-.modal-body input {
-  padding: 10px;
-  border: 2px solid #333333;
-  border-radius: 6px;
-  color: #111111;
+  text-align: center; margin-top: 15px; display: none; color: #006600; font-weight: bold;
 }
 
 /* Footer */
 footer {
-  background: #222222;
-  color: #ffffff;
-  padding: 30px 20px;
-  text-align: center;
+  background: #222; color: #fff; padding: 30px 20px; text-align: center;
 }
+footer a { color: #fff; text-decoration: underline; }
 
-footer a {
-  color: #ffffff;
-  text-decoration: underline;
+/* Payment Modal */
+.modal {
+  display: none; position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%; background: rgba(0,0,0,0.6);
+  justify-content: center; align-items: center; z-index: 2000;
 }
-
+.modal-content {
+  background: #fff; padding: 20px; border-radius: 12px; width: 90%; max-width: 420px;
+}
+.modal-header h2 { font-size: 1.5rem; color: #111; display: inline-block; }
+.btn-close { background: none; border: 2px solid #111; font-size: 1.3rem; cursor: pointer; float: right; }
+.modal-body select, .modal-body input { padding: 10px; border: 2px solid #333; border-radius: 6px; color: #111; }
 </style>
 </head>
 
@@ -378,9 +166,7 @@ footer a {
 
 <header>
 <nav class="navbar" aria-label="Main Navigation">
-  <div class="navbar-brand">
-    <h1>SHOE<span>S</span></h1>
-  </div>
+  <div class="navbar-brand"><h1>SHOE<span>S</span></h1></div>
 
   <ul class="navbar-nav">
     <li><a href="MainPage.html">Home</a></li>
@@ -391,15 +177,18 @@ footer a {
 
   <div class="navbar-icons">
     <div class="icon-wrapper">
-      <i class="fa-solid fa-heart" onclick="toggleWishlistDropdown()" aria-label="Wishlist"></i>
+      <i class="fa-solid fa-heart" aria-label="Wishlist"></i>
       <span id="wishlistCount" class="cart-badge">0</span>
     </div>
-
     <div class="icon-wrapper">
-      <i class-back="fa-solid fa-cart-shopping" onclick="toggleCartDropdown()" aria-label="Shopping Cart"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="toggleCartDropdown()" aria-label="Cart"></i>
       <span id="cartCount" class="cart-badge">0</span>
+      <div id="cartDropdown" aria-label="Shopping Cart Dropdown">
+        <ul id="cartItems"></ul>
+        <p class="cart-total">Total: $<span id="cartTotal">0</span></p>
+        <button class="cart-pay-btn" onclick="openPaymentModal()">Pay Now</button>
+      </div>
     </div>
-
     <i class="fa-solid fa-user" aria-label="User Account"></i>
   </div>
 </nav>
@@ -431,17 +220,14 @@ footer a {
       <h2>Complete Payment</h2>
       <button class="btn-close" onclick="closePaymentModal()" aria-label="Close">&times;</button>
     </div>
-
     <div class="modal-body">
       <ul id="paymentProducts"></ul>
       <p>Total: $<span id="paymentTotal"></span></p>
-
       <label for="paymentMethod">Payment Method</label>
       <select id="paymentMethod">
         <option value="cash">Cash</option>
         <option value="card">Card</option>
       </select>
-
       <button class="cart-pay-btn" onclick="confirmPayment()">Pay Now</button>
     </div>
   </div>
@@ -459,8 +245,7 @@ footer a {
 </footer>
 
 <script>
-
-// Accessible product data
+// Product Data
 const products = [
   { name:"NIKE", price:100.99, img:"image/shoes1.png" },
   { name:"NIKE ZOOM KD 9", price:120.99, img:"image/shoes2.png" },
@@ -474,18 +259,16 @@ const products = [
 
 let cartProducts = [];
 
+// Render products
 function renderProducts() {
   const container = document.getElementById('productsContainer');
   container.innerHTML = '';
-
-  products.forEach((p, i) => {
-    const card = document.createElement('div');
-    card.className = 'card';
-
+  products.forEach((p,i)=>{
+    const card = document.createElement('div'); card.className='card';
     card.innerHTML = `
       <div class="card-img-wrapper">
-        <img src="${p.img}" alt="${p.name}">
-        <i class="fa-solid fa-heart product-heart" aria-label="Add ${p.name} to wishlist"></i>
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+        <i class="fa-solid fa-heart product-heart" onclick="toggleWishlist(this)" aria-label="Add ${p.name} to wishlist"></i>
       </div>
       <div class="card-body">
         <h2>${p.name}</h2>
@@ -493,45 +276,68 @@ function renderProducts() {
         <button onclick="addToCart(${i})" aria-label="Add ${p.name} to cart">Add to Cart</button>
       </div>
     `;
-
     container.appendChild(card);
   });
 }
 
-function addToCart(idx) {
-  cartProducts.push(products[idx]);
-  updateCartBadge();
-}
+// Wishlist toggle
+function toggleWishlist(icon) { icon.classList.toggle('liked'); }
 
+// Cart functions
+function addToCart(idx) {
+  cartProducts.push(products[idx]); updateCartBadge(); renderCartDropdown();
+}
 function updateCartBadge() {
   document.getElementById('cartCount').innerText = cartProducts.length;
 }
-
 function toggleCartDropdown() {
   document.getElementById('cartDropdown').classList.toggle('show');
 }
-
-function toggleFeedback() {
-  const f = document.getElementById('feedbackSection');
-  f.style.display = f.style.display === 'block' ? 'none' : 'block';
+function renderCartDropdown() {
+  const ul = document.getElementById('cartItems'); ul.innerHTML='';
+  let total=0;
+  cartProducts.forEach(p=>{
+    total+=p.price;
+    const li=document.createElement('li');
+    li.innerHTML=`<img src="${p.img}" alt="${p.name}">${p.name} - $${p.price.toFixed(2)}`;
+    ul.appendChild(li);
+  });
+  document.getElementById('cartTotal').innerText=total.toFixed(2);
 }
 
-function closePaymentModal() {
-  document.getElementById('paymentModal').style.display = 'none';
+// Payment Modal
+function openPaymentModal() {
+  const modal=document.getElementById('paymentModal');
+  const ul=document.getElementById('paymentProducts');
+  const totalSpan=document.getElementById('paymentTotal');
+  ul.innerHTML=''; let total=0;
+  cartProducts.forEach(p=>{ total+=p.price;
+    const li=document.createElement('li'); li.innerText=`${p.name} - $${p.price.toFixed(2)}`; ul.appendChild(li);
+  });
+  totalSpan.innerText=total.toFixed(2);
+  modal.style.display='flex';
+}
+function closePaymentModal(){ document.getElementById('paymentModal').style.display='none'; }
+function confirmPayment(){
+  alert("Payment Successful!"); cartProducts=[]; updateCartBadge(); renderCartDropdown(); closePaymentModal();
 }
 
-function confirmPayment() {
-  alert("Payment Successful!");
-  cartProducts = [];
-  updateCartBadge();
+// Feedback form
+function toggleFeedback(){
+  const f=document.getElementById('feedbackSection');
+  f.style.display=f.style.display==='block'?'none':'block';
 }
+document.getElementById('feedbackForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('feedbackMsg').style.display='block';
+  this.reset();
+});
 
-function updateCartBadge() {
-  document.getElementById('cartCount').innerText = cartProducts.length;
-}
+// Navbar scroll effect
+const navbar=document.querySelector('.navbar');
+window.addEventListener('scroll',()=>{ navbar.classList.toggle('scrolled',window.scrollY>50); });
 
 renderProducts();
-
 </script>
 
 </body>
