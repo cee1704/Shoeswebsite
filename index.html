@@ -4,17 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Explore premium Nike sneakers, latest trends and exclusive deals from Sneaker Head. Shop high-quality shoes with fast delivery.">
-
+<!-- SEO Meta Tags -->
 <title>Sneaker Head Website</title>
+<meta name="description" content="Explore premium Nike sneakers, latest trends and exclusive deals from Sneaker Head. Shop high-quality shoes with fast delivery.">
+<meta name="keywords" content="Sneaker Head, Nike Sneakers, Shop Shoes, Sports Shoes, Premium Sneakers">
+<meta name="robots" content="index, follow">
 
+<!-- Open Graph for Social Sharing -->
+<meta property="og:title" content="Sneaker Head Website">
+<meta property="og:description" content="Explore premium Nike sneakers, latest trends and exclusive deals from Sneaker Head.">
+<meta property="og:image" content="https://www.sneakerhead.com/image/logo.jpg">
+<meta property="og:url" content="https://www.sneakerhead.com/">
+<meta property="og:type" content="website">
+
+<!-- Favicon -->
 <link rel="shortcut icon" href="image/logo.jpg">
+
+<!-- Font Awesome (deferred) -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"></noscript>
+
+<!-- External CSS -->
 <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css?display=swap">
-
 <style>
-
 /* Reset & General */
 * {
   margin: 0;
@@ -22,10 +35,10 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
 body {
   background: #f5f5f5;
   color: #111;
+  scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -35,188 +48,218 @@ body {
   left: 0;
   width: 100%;
   height: 90px;
-  background: #ffffff;
+  background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 3rem;
   box-shadow: 0 6px 25px rgba(0,0,0,0.1);
   z-index: 1000;
+  transition: all 0.3s ease;
 }
-
+.navbar.scrolled {
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
 .navbar-brand h1 {
   font-size: 2.2rem;
   font-weight: 900;
-  color: #111111;
+  color: #111;
 }
-
 .navbar-brand span {
-  color: #990000;   /* darker red for sufficient contrast */
+  color: #990000;
 }
-
-/* Navbar links */
 .navbar-links {
   display: flex;
   gap: 2rem;
   align-items: center;
 }
-
 .navbar-links a {
-  text-decoration: underline;  /* not only color based */
+  text-decoration: underline;
   font-weight: 700;
   font-size: 1.1rem;
-  color: #111111;
+  color: #111;
   padding: 8px 12px;
   border-radius: 8px;
   transition: all 0.3s;
 }
-
-.nav-link.active,
+.navbar-links a.active,
 .navbar-links a:hover {
   background: #ffd6d6;
   color: #990000;
 }
-
-/* Icons */
 .navbar-icons {
   display: flex;
   gap: 20px;
-  align-items: center;
 }
-
 .navbar-icons i {
   font-size: 24px;
-  color: #111111;
+  color: #111;
   cursor: pointer;
 }
-
 .navbar-icons i:hover {
   color: #990000;
   transform: scale(1.1);
+  transition: all 0.3s;
 }
 
 /* Hero Section */
-.main-section {
-  padding-top: 120px;
-}
-
 .hero-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 50px 20px;
+  padding: 150px 20px 50px;
+  flex-wrap: wrap;
 }
-
 .hero-text h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #111;
 }
-
 .hero-text span {
   color: #990000;
 }
-
+.hero-text p {
+  margin-top: 15px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
 .btn-shop {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 25px;
   background: #990000;
-  color: #ffffff;
+  color: #fff;
   text-decoration: underline;
   border-radius: 8px;
+}
+.btn-shop:hover {
+  background: #ff2929;
 }
 
 /* Video Section */
 .video-section {
-  padding: 40px;
+  padding: 40px 20px;
   text-align: center;
 }
-
 .video-section h2 {
   color: #111;
+  margin-bottom: 20px;
 }
 
 /* Featured Products */
 .featured-products {
-  padding: 40px;
+  padding: 40px 20px;
   text-align: center;
 }
-
 .featured-products h2 {
   color: #111;
+  margin-bottom: 20px;
 }
-
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
-  padding: 1rem;
 }
-
 .product-card {
-  background: #ffffff;
+  background: #fff;
   border-radius: 15px;
   padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 .product-card h5 {
   font-size: 18px;
-  color: #111;
+  margin: 15px 0 10px;
 }
-
-.price {
+.product-card .price {
   color: #990000;
   font-weight: bold;
+}
+.product-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #990000;
+  text-decoration: underline;
 }
 
 /* Gallery */
 .gallery {
-  padding: 50px;
+  padding: 50px 20px;
   text-align: center;
 }
-
 .gallery h2 {
   color: #111;
+  margin-bottom: 20px;
 }
-
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 10px;
-  padding: 1rem;
 }
-
 .gallery-grid img {
   width: 100%;
   border-radius: 8px;
-  border: 2px solid #333;  /* helps visibility */
+  border: 2px solid #333;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
-
-/* Main landmark area */
-#main-content {
-  max-width: 1200px;
-  margin: 0 auto;
+.gallery-grid img:hover {
+  transform: scale(1.05);
 }
 
 /* Footer */
 footer {
-  background: #222222;
-  color: #ffffff;
+  background: #222;
+  color: #fff;
   padding: 30px 20px;
   text-align: center;
 }
-
 footer a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: underline;
+  margin: 0 5px;
 }
 
-.lightbox {
+/* Lightbox */
+#lightbox {
+  position: fixed;
   display: none;
+  z-index: 2000;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+#lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text h1 { font-size: 2rem; }
+  .hero-text p { font-size: 0.95rem; }
+}
 </style>
 </head>
 
@@ -243,31 +286,31 @@ footer a {
 </nav>
 </header>
 
-<main id="main-content">
+<main id="main-content" role="main">
 
-<section id="main-content" aria-label="Website Main Content">
-
-<section class="hero-container">
+<!-- Hero Section -->
+<section class="hero-container" aria-label="Hero Section">
   <div class="hero-text">
     <h1>NIKE<br><span>Collection</span></h1>
     <p>Explore the latest Nike sneakers inspired by Miles Morales in Spider-Man: Into the Spider-Verse — a perfect fusion of style and performance.</p>
-    <a href="main_product.html" class="btn-shop">SHOP NOW</a>
+    <a href="main_product.html" class="btn-shop" role="button">SHOP NOW</a>
   </div>
-
   <div class="hero-shoe">
     <img src="image/shoes-removebg-preview.png" alt="Nike Sneakers Preview">
   </div>
 </section>
 
-<section class="video-section">
+<!-- Video Section -->
+<section class="video-section" aria-label="Promotional Video">
   <h2>Watch Our Latest Video</h2>
-  <video autoplay loop muted aria-label="Sneaker promotional video">
+  <video autoplay loop muted controls aria-label="Sneaker promotional video">
     <source src="image/vid.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </section>
 
-<section class="featured-products">
+<!-- Featured Products -->
+<section class="featured-products" aria-label="Featured Products">
   <h2>Featured Sneakers</h2>
   <div class="products-grid">
 
@@ -302,7 +345,8 @@ footer a {
   </div>
 </section>
 
-<section class="gallery">
+<!-- Gallery Section -->
+<section class="gallery" aria-label="Sneaker Gallery">
   <h2>More Sneakers</h2>
   <div class="gallery-grid">
 
@@ -318,10 +362,9 @@ footer a {
   </div>
 </section>
 
-</section>
-
 </main>
 
+<!-- Footer -->
 <footer aria-label="Footer">
   <p>&copy; 2025 Sneaker Head Website. All Rights Reserved.</p>
   <p>
@@ -331,36 +374,45 @@ footer a {
   </p>
 </footer>
 
+<!-- Lightbox -->
+<div id="lightbox" aria-hidden="true">
+  <span class="close" aria-label="Close">&times;</span>
+  <img id="lightbox-img" alt="">
+</div>
+
 <script>
-
-// Navbar shrink effect
+// Navbar scroll effect
 const navbar = document.querySelector('.navbar');
-
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
 // Lightbox functionality
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const galleryImgs = document.querySelectorAll(".gallery-grid img");
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const galleryImgs = document.querySelectorAll('.gallery-grid img');
+const closeBtn = document.querySelector('#lightbox .close');
 
-galleryImgs.forEach((img, i) => {
-  img.addEventListener("click", () => {
-    lightbox.style.display = "block";
+galleryImgs.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
     lightboxImg.src = img.src;
-    caption.textContent = img.alt;
+    lightboxImg.alt = img.alt;
+    lightbox.setAttribute('aria-hidden', 'false');
   });
 });
 
-document.querySelector(".close").onclick = () => {
-  lightbox.style.display = "none";
-};
+closeBtn.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+  lightbox.setAttribute('aria-hidden', 'true');
+});
 
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = 'none';
+    lightbox.setAttribute('aria-hidden', 'true');
+  }
+});
 </script>
 
 </body>
