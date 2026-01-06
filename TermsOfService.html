@@ -3,10 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
   <title>Terms of Service - Sneaker Head</title>
+  <meta name="description" content="Read the Terms of Service for Sneaker Head, including website use, purchases, intellectual property, and liability policies.">
+  <meta name="keywords" content="Sneaker Head, terms of service, shoes, online shopping, legal">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph for Social Media -->
+  <meta property="og:title" content="Terms of Service - Sneaker Head">
+  <meta property="og:description" content="Learn the terms of use, purchase policies, and legal information for Sneaker Head.">
+  <meta property="og:image" content="https://www.sneakerhead.com/image/logo.jpg">
+  <meta property="og:url" content="https://www.sneakerhead.com/terms.html">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
   <link rel="shortcut icon" href="image/logo.jpg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="navbar.css"> <!-- External navbar CSS -->
+
+  <!-- Font Awesome -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"></noscript>
+
+  <!-- External Navbar CSS -->
+  <link rel="stylesheet" href="navbar.css">
 
   <style>
     /* Body & Background */
@@ -17,10 +36,11 @@
       color: #fff;
       line-height: 1.6;
       scroll-behavior: smooth;
-      margin:0;
-      padding:0;
+      margin: 0;
+      padding: 0;
       position: relative;
     }
+
     body::before {
       content: "";
       position: fixed;
@@ -33,7 +53,7 @@
     /* Container */
     .container {
       max-width: 900px;
-      margin: 140px auto 50px; /* pushed down to avoid navbar */
+      margin: 140px auto 50px;
       background: rgba(255,255,255,0.95);
       padding: 40px;
       border-radius: 12px;
@@ -84,12 +104,23 @@
       font-size: 15px;
     }
 
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        margin: 100px 20px 40px;
+        padding: 25px;
+      }
+      h1 { font-size: 28px; }
+      h2 { font-size: 20px; }
+      p { font-size: 15px; }
+    }
   </style>
 </head>
+
 <body>
 
 <!-- Navbar -->
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
     <div class="navbar-brand"><h1>Shoe<span>s</span></h1></div>
     <div class="navbar-links">
         <a href="MainPage.html" class="nav-link">Home</a>
@@ -98,9 +129,9 @@
         <a href="Reviews.html" class="nav-link">Reviews</a>
     </div>
     <div class="navbar-icons">
-        <i class="fa-solid fa-heart"></i>
-        <i class="fa-solid fa-cart-shopping"></i>
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-heart" aria-label="Wishlist"></i>
+        <i class="fa-solid fa-cart-shopping" aria-label="Cart"></i>
+        <i class="fa-solid fa-user" aria-label="User Account"></i>
     </div>
 </nav>
 
@@ -123,11 +154,13 @@
 
   <h2>5. Changes to Terms</h2>
   <p>We reserve the right to update these Terms at any time. Continued use of the website means you accept changes.</p>
+
+  <p style="margin-top:30px;"><a href="MainPage.html">Back to Home</a></p>
 </div>
 
 <!-- Footer -->
 <footer>
-  <p style="color: rgb(150, 150, 150);">&copy; 2025 SneakerHead. All Rights Reserved.</p>
+  <p>&copy; 2025 SneakerHead. <a href="terms.html">Terms of Service</a>. All Rights Reserved.</p>
 </footer>
 
 </body>
