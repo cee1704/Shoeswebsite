@@ -4,27 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Contact Sneaker Head India for sneaker inquiries, order support, returns, feedback, and business collaborations. Get customer assistance for premium branded footwear.">
-
   <title>Contact Sneaker Head India | Customer Support and Sneaker Store Help</title>
 
   <link rel="canonical" href="https://sneakerhead.com/contact.html">
   <link rel="shortcut icon" href="image/logo.jpg">
 
+  <!-- Open Graph Tags -->
   <meta property="og:title" content="Contact Sneaker Head India">
-  <meta property="og:description" content="Reach Sneaker Head customer support for orders, inquiries and feedback about premium sneakers.">
+  <meta property="og:description" content="Reach Sneaker Head customer support for orders, inquiries, and feedback about premium sneakers.">
   <meta property="og:type" content="website">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <!-- Preload critical Font Awesome font -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Defer non-critical CSS to remove render blocking -->
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media="print" onload="this.media='all'">
 
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Sneaker Head India",
     "url": "https://sneakerhead.com",
+    "logo": "https://sneakerhead.com/image/logo.jpg",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-9876543210",
@@ -35,6 +42,69 @@
   }
   </script>
 
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 120px auto 40px;
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 12px;
+      color: #111;
+    }
+
+    h1 { font-size: 30px; color: #d60000; }
+    h2 { font-size: 22px; color: #222; }
+
+    label { font-weight: 600; }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #555;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background: #d60000;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #a80000;
+    }
+
+    .error {
+      color: #d60000;
+      font-size: 14px;
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #aaa;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -42,6 +112,7 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Navbar -->
+<header>
 <nav class="navbar">
     <div class="navbar-brand"><h1>Shoe<span>s</span></h1></div>
 
@@ -54,36 +125,38 @@
 
     <div class="navbar-icons">
         <a href="wishlist.html" aria-label="Wishlist">
-            <i class="fa-solid fa-heart" aria-hidden="true"></i>
+            <i class="fa-solid fa-heart"></i>
         </a>
 
         <a href="cart.html" aria-label="Shopping Cart">
-            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
         </a>
 
         <a href="profile.html" aria-label="User Profile">
-            <i class="fa-solid fa-user" aria-hidden="true"></i>
+            <i class="fa-solid fa-user"></i>
         </a>
     </div>
 </nav>
+</header>
 
-<!-- Contact Us Content -->
-<main id="main-content" class="container">
+<!-- Main Contact Section -->
+<main id="main-content">
+<div class="container">
   <h1>Contact Sneaker Head Support</h1>
 
   <p>If you have any questions, feedback, or inquiries about sneakers, orders, or services, please reach out to Sneaker Head India using the form below.</p>
 
-  <form id="contactForm">
+  <form id="contactForm" autocomplete="on">
     <label for="name">Your Name</label><br>
-    <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+    <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name"><br><br>
     <span id="nameError" class="error"></span>
 
     <label for="email">Your Email</label><br>
-    <input type="email" id="email" name="email" placeholder="Your Email" required><br><br>
+    <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email"><br><br>
     <span id="emailError" class="error"></span>
 
     <label for="message">Message</label><br>
-    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea><br><br>
+    <textarea id="message" name="message" rows="5" placeholder="Your Message" required autocomplete="off"></textarea><br><br>
 
     <button type="submit">Send Message</button>
   </form>
@@ -97,6 +170,8 @@
       <strong>Address:</strong> Sneaker Head HQ, Mumbai, India
     </p>
   </section>
+</div>
+</div>
 </main>
 
 <!-- Footer -->
@@ -104,7 +179,7 @@
   <p>&copy; 2025 Sneaker Head India. All Rights Reserved.</p>
 </footer>
 
-<!-- JavaScript for validation -->
+<!-- Improved JavaScript Validation -->
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
@@ -114,8 +189,8 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   const name = document.getElementById("name").value.trim();
   const nameError = document.getElementById("nameError");
 
-  if (!/^[A-Za-z\s]+$/.test(name)) {
-    nameError.textContent = "Name should contain only alphabets.";
+  if (name.length < 2 || !/^[A-Za-z\s]+$/.test(name)) {
+    nameError.textContent = "Please enter a valid name using only alphabets.";
     valid = false;
   } else {
     nameError.textContent = "";
@@ -132,7 +207,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   }
 
   if (valid) {
-    alert("Your message has been sent!");
+    alert("Your message has been sent successfully!");
     document.getElementById("contactForm").reset();
   }
 });
