@@ -1,247 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneaker Head Website - About</title>
+<link rel="shortcut icon" href="image/logo.jpg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
-  <meta name="description" content="Learn about Sneaker Head’s mission, vision, core values, and achievements as a premium branded sneaker and footwear store committed to quality and customer satisfaction.">
+<style>
+/* General Reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body { background:#f5f5f5; color:#111; line-height:1.6; }
+h1,h2,h3,h4,h5,h6 { margin-bottom:10px; }
+a { color:#cc0000; text-decoration: underline; }
+a:hover, a:focus { color:#990000; outline:2px solid #ffcccb; outline-offset:2px; }
 
-  <title>About Sneaker Head | Buy Premium Branded Sneakers Online</title>
+/* Navbar */
+.navbar {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:0 2rem; height:90px; background:#fff; box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.navbar-brand h1 { font-size:2rem; font-weight:900; }
+.navbar-brand span { color:#cc0000; }
+.navbar-nav a {
+  margin:0 10px; font-weight:600; font-size:1rem; color:#111; padding:5px 10px; border-radius:5px;
+}
+.navbar-nav a.active { background:#ffeaea; color:#cc0000; }
+.navbar-nav a:focus { outline:2px solid #ffcccb; outline-offset:2px; }
+.navbar-icons i { margin-left:15px; font-size:1.2rem; cursor:pointer; }
+.navbar-icons i:focus { outline:2px solid #ffcccb; outline-offset:2px; }
 
-  <link rel="canonical" href="https://sneakerhead.com/About.html">
-  <link rel="shortcut icon" href="image/logo.jpg">
+/* Sections */
+section { padding:60px 20px; }
+#stats h2, #values h2, #our-team h2 { text-align:center; margin-bottom:40px; }
+.stats-container, .about-container, .values-container, .team-container { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.stat-item, .about-item, .value-item, .team-member { background:#fff; padding:20px; border-radius:12px; text-align:center; flex:1 1 200px; min-width:200px; }
+.stat-item i, .about-item i, .value-item i { font-size:2rem; margin-bottom:10px; color:#cc0000; }
+.counter { font-size:1.8rem; font-weight:bold; margin:5px 0; }
 
-  <meta property="og:title" content="About Sneaker Head">
-  <meta property="og:description" content="Discover Sneaker Head’s mission, vision, values and achievements as a leading branded footwear store.">
-  <meta property="og:type" content="website">
+/* About Section */
+.about-item hr { border:0; border-top:2px solid #eee; margin:10px 0; }
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="about.css">
+/* Team images */
+.team-member img { width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:10px; }
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Sneaker Head Inc.",
-    "url": "https://sneakerhead.com",
-    "logo": "https://sneakerhead.com/image/logo.jpg",
-    "description": "Premium branded sneaker and footwear store providing high quality shoes online."
-  }
-  </script>
+/* Footer */
+footer { text-align:center; padding:20px; background:#222; color:#fff; margin-top:40px; }
+footer a { color:#fff; margin:0 5px; }
+footer a:hover, footer a:focus { color:#cc0000; outline:2px solid #ffcccb; outline-offset:2px; }
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
-      color: #222222;
-    }
-
-    .skip-link {
-      position:absolute;
-      left:-1000px;
-    }
-
-    .skip-link:focus {
-      left:10px;
-      top:10px;
-      background:#000;
-      color:#fff;
-      padding:10px;
-      z-index:1000;
-    }
-
-    .nav-link {
-      color:#000000;
-      text-decoration:none;
-      padding:8px;
-    }
-
-    .nav-link:focus, .nav-link:hover {
-      outline:2px solid #000;
-    }
-
-    footer a {
-      color:#0b3d91;
-      text-decoration:underline;
-    }
-
-    footer a:focus, footer a:hover {
-      outline:2px dashed #000;
-    }
-
-    .stats-container, .values-container, .team-container {
-      display:flex;
-      gap:20px;
-      justify-content:center;
-      padding:20px;
-    }
-
-    .stat-item p, .value-item p {
-      font-size:16px;
-    }
-
-    hr {
-      border:1px solid #000;
-    }
-  </style>
-
+/* Responsive */
+@media(max-width:768px){ .stats-container, .about-container, .values-container, .team-container{flex-direction:column; align-items:center;} }
+</style>
 </head>
 <body>
 
-<header class="site-header">
-
-<a href="#mainContent" class="skip-link">Skip to main content</a>
-
 <!-- Navbar -->
-<nav class="navbar" aria-label="Primary Navigation">
-    <div class="navbar-brand">
-        <h1>Shoe<span>s</span></h1>
-    </div>
-
-    <div class="navbar-nav">
-        <a href="MainPage.html" class="nav-link">Home</a>
-        <a href="main_product.html" class="nav-link">Products</a>
-        <a href="About.html" class="nav-link active">About</a>
-        <a href="Reviews.html" class="nav-link">Reviews</a>
-    </div>
-
-    <div class="navbar-icons">
-        <a href="wishlist.html" aria-label="Wishlist">
-            <i class="fa-solid fa-heart" aria-hidden="true"></i>
-        </a>
-        <a href="cart.html" aria-label="Shopping Cart">
-            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
-        </a>
-        <a href="profile.html" aria-label="User Profile">
-            <i class="fa-solid fa-user" aria-hidden="true"></i>
-        </a>
-    </div>
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <div class="navbar-brand"><h1>Shoe<span>s</span></h1></div>
+  <div class="navbar-nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="main_product.html" class="nav-link">Products</a>
+    <a href="About.html" class="nav-link active">About</a>
+    <a href="Reviews.html" class="nav-link">Review</a>
+  </div>
+  <div class="navbar-icons">
+    <i class="fa-solid fa-heart" aria-label="Wishlist"></i>
+    <i class="fa-solid fa-cart-shopping" aria-label="Cart"></i>
+    <i class="fa-solid fa-user" aria-label="User Account"></i>
+  </div>
 </nav>
 
-</header>
-
-<main id="mainContent">
+<main id="main-content">
 
 <!-- Statistics Section -->
-<section id="stats" aria-labelledby="statsHeading">
-    <h2 id="statsHeading">Sneaker Head Achievements and Milestones</h2>
-
-    <div class="stats-container">
-        <div class="stat-item">
-            <i class="fa fa-shoe-prints" aria-hidden="true"></i>
-            <h3 class="counter" data-target="5000">0</h3>
-            <p>Sneakers Sold Worldwide</p>
-        </div>
-
-        <div class="stat-item">
-            <i class="fa fa-smile" aria-hidden="true"></i>
-            <h3 class="counter" data-target="100">0</h3>
-            <p>Happy and Loyal Clients</p>
-        </div>
-
-        <div class="stat-item">
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            <h3 class="counter" data-target="50">0</h3>
-            <p>Top Sneaker Brands Available</p>
-        </div>
-
-        <div class="stat-item">
-            <i class="fa fa-trophy" aria-hidden="true"></i>
-            <h3 class="counter" data-target="20">0</h3>
-            <p>Industry Awards Won</p>
-        </div>
-    </div>
+<section id="stats" aria-labelledby="stats-heading">
+  <h2 id="stats-heading">Our Achievements in Numbers</h2>
+  <div class="stats-container">
+    <div class="stat-item"><i class="fa fa-shoe-prints"></i><h3 class="counter" data-target="5000">0</h3><p>Sneakers Sold</p></div>
+    <div class="stat-item"><i class="fa fa-smile"></i><h3 class="counter" data-target="100">0</h3><p>Happy Clients</p></div>
+    <div class="stat-item"><i class="fa fa-tags"></i><h3 class="counter" data-target="50">0</h3><p>Brands Available</p></div>
+    <div class="stat-item"><i class="fa fa-trophy"></i><h3 class="counter" data-target="20">0</h3><p>Awards Won</p></div>
+  </div>
 </section>
 
 <!-- About Section -->
-<section id="about" aria-labelledby="aboutHeading">
-    <h2 id="aboutHeading">About Sneaker Head</h2>
-
-    <div class="about-container">
-
-        <div class="about-item">
-            <i class="fa fa-book" aria-hidden="true"></i>
-            <h3>Mission</h3>
-            <hr>
-            <p>Provide top-quality branded shoes and apparel at competitive prices.</p>
-        </div>
-
-        <div class="about-item">
-            <i class="fa fa-globe" aria-hidden="true"></i>
-            <h3>Vision</h3>
-            <hr>
-            <p>Become a global leader in footwear, emphasizing sustainability and style.</p>
-        </div>
-
-        <div class="about-item">
-            <i class="fa fa-trophy" aria-hidden="true"></i>
-            <h3>Achievements</h3>
-            <hr>
-            <p>Ranked among top 10 sneaker companies globally in 2023 and Best Online Fashion Store award winner.</p>
-        </div>
-
-    </div>
+<section id="about" aria-labelledby="about-heading">
+  <h2 id="about-heading" style="text-align:center; margin-bottom:30px;">About Us</h2>
+  <p style="text-align:center; background: rgba(170,170,170,0.7); padding:8px 15px; border-radius:10px; display:inline-block;">
+    Learn more about our mission, vision, and achievements below!
+  </p>
+  <div class="about-container" style="margin-top:40px;">
+    <div class="about-item"><i class="fa fa-book"></i><h3>MISSION</h3><hr><p>Provide top-quality branded shoes and apparel at competitive prices.</p></div>
+    <div class="about-item"><i class="fa fa-globe"></i><h3>VISION</h3><hr><p>Become a global leader in footwear, emphasizing sustainability and style.</p></div>
+    <div class="about-item"><i class="fa fa-trophy"></i><h3>ACHIEVEMENTS</h3><hr><p>Top 10 sneaker companies globally in 2023, Best Online Fashion Store award winner.</p></div>
+  </div>
 </section>
 
 <!-- Values Section -->
-<section id="values" aria-labelledby="valuesHeading">
-    <h2 id="valuesHeading">Core Values of Sneaker Head</h2>
-
-    <div class="values-container">
-
-        <div class="value-item">
-            <i class="fa fa-handshake" aria-hidden="true"></i>
-            <h3>Integrity</h3>
-            <p>Honest and transparent business dealings at all times.</p>
-        </div>
-
-        <div class="value-item">
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <h3>Quality</h3>
-            <p>Delivering premium products that our customers love.</p>
-        </div>
-
-        <div class="value-item">
-            <i class="fa fa-leaf" aria-hidden="true"></i>
-            <h3>Sustainability</h3>
-            <p>Eco-friendly practices to protect the environment.</p>
-        </div>
-
-    </div>
+<section id="values" aria-labelledby="values-heading">
+  <h2 id="values-heading">Our Core Values</h2>
+  <div class="values-container">
+    <div class="value-item"><i class="fa fa-handshake"></i><h4>Integrity</h4><p>Honest and transparent business dealings at all times.</p></div>
+    <div class="value-item"><i class="fa fa-star"></i><h4>Quality</h4><p>Delivering premium products that our customers love.</p></div>
+    <div class="value-item"><i class="fa fa-leaf"></i><h4>Sustainability</h4><p>Eco-friendly practices to protect the environment.</p></div>
+  </div>
 </section>
 
 <!-- Team Section -->
-<section id="our-team" aria-labelledby="teamHeading">
-    <h2 id="teamHeading">Meet the Sneaker Head Team</h2>
-
-    <div class="team-container">
-
-        <div class="team-member">
-            <img src="image/team1.jpg" loading="lazy" alt="Founder and CEO">
-            <h3>John Doe</h3>
-            <p>CEO & Founder</p>
-        </div>
-
-        <div class="team-member">
-            <img src="image/team2.jpg" loading="lazy" alt="Marketing Head">
-            <h3>Jane Smith</h3>
-            <p>Head of Marketing</p>
-        </div>
-
-        <div class="team-member">
-            <img src="image/team3.jpg" loading="lazy" alt="Lead Designer">
-            <h3>Mike Johnson</h3>
-            <p>Lead Designer</p>
-        </div>
-
-        <div class="team-member">
-            <img src="image/team4.jpg" loading="lazy" alt="Product Manager">
-            <h3>Emily Davis</h3>
-            <p>Product Manager</p>
-        </div>
-
-    </div>
+<section id="our-team" aria-labelledby="team-heading">
+  <h2 id="team-heading">Meet Our Team</h2>
+  <div class="team-container">
+    <div class="team-member"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe"><h5>John Doe</h5><p>CEO & Founder</p></div>
+    <div class="team-member"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith"><h5>Jane Smith</h5><p>Head of Marketing</p></div>
+    <div class="team-member"><img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Mike Johnson"><h5>Mike Johnson</h5><p>Lead Designer</p></div>
+    <div class="team-member"><img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Emily Davis"><h5>Emily Davis</h5><p>Product Manager</p></div>
+  </div>
 </section>
 
 </main>
@@ -249,51 +124,34 @@
 <!-- Counter Script -->
 <script>
 const counters = document.querySelectorAll('.counter');
-
 function animateCounters() {
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const increment = target / 200;
-
-            if(count < target){
-                counter.innerText = Math.ceil(count + increment);
-                requestAnimationFrame(updateCount);
-            } else {
-                counter.innerText = target;
-            }
-        };
-
-        updateCount();
-    });
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = target / 200;
+      if(count < target){ counter.innerText = Math.ceil(count + increment); requestAnimationFrame(updateCount); }
+      else counter.innerText = target;
+    };
+    updateCount();
+  });
 }
-
 let statsSection = document.getElementById('stats');
 let started = false;
-
 window.addEventListener('scroll', () => {
-    const sectionPos = statsSection.getBoundingClientRect().top;
-    const screenPos = window.innerHeight;
-
-    if(sectionPos < screenPos && !started){
-        started = true;
-        animateCounters();
-    }
+  const sectionPos = statsSection.getBoundingClientRect().top;
+  if(sectionPos < window.innerHeight && !started){ started = true; animateCounters(); }
 });
 </script>
 
 <!-- Footer -->
-<footer aria-label="Footer Navigation">
-    <h2>Footer Links</h2>
-
-    <p>&copy; 2025 All rights reserved by Sneaker Head Inc.</p>
-
-    <div>
-        <a href="PrivacyPolicy.html">Privacy Policy</a> | 
-        <a href="TermsOfService.html">Terms of Service</a> | 
-        <a href="ContactUs.html">Contact Us</a>
-    </div>
+<footer role="contentinfo">
+  <p>&copy; 2025 All rights reserved by Sneaker Head Inc.</p>
+  <div>
+    <a href="PrivacyPolicy.html">Privacy Policy</a> | 
+    <a href="TermsOfService.html">Terms of Service</a> | 
+    <a href="ContactUs.html">Contact Us</a>
+  </div>
 </footer>
 
 </body>
