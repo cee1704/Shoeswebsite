@@ -5,16 +5,20 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- SEO Meta -->
 <title>Sneaker Head India | Buy Premium Nike Sneakers Online</title>
-<meta name="description" content="Sneaker Head India offers premium Nike sneakers, exclusive collections, fast delivery, and best prices in India. Shop now.">
+<meta name="description" content="Sneaker Head India offers premium Nike sneakers, exclusive collections, fast delivery, and best prices in India.">
 <meta name="keywords" content="Sneaker Head, Nike Shoes India, Buy Sneakers Online, Nike Collection">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Sneaker Head">
 
+<!-- Performance -->
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
+<!-- Main Styles -->
 <link rel="stylesheet" href="style.css">
 
+<!-- Font Awesome (non-blocking) -->
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       media="print"
@@ -24,18 +28,27 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </noscript>
 
+<!-- Preload Hero Image -->
 <link rel="preload" as="image" href="image/shoes-removebg-preview.webp">
 
 <style>
 body {
-  background:#fff;
+  background:#ffffff;
   color:#222;
-  font-family:Arial,sans-serif;
+  font-family: Arial, sans-serif;
   line-height:1.6;
 }
 
-a { color:#0056b3; text-decoration:underline; }
-a:focus, button:focus { outline:2px solid #ff6600; }
+a {
+  color:#0056b3;
+  text-decoration:underline;
+}
+
+a:focus,
+button:focus {
+  outline:2px solid #ff6600;
+  outline-offset:2px;
+}
 
 img, video {
   max-width:100%;
@@ -43,6 +56,7 @@ img, video {
   display:block;
 }
 
+/* Navbar icons as buttons */
 .navbar-icons button {
   background:none;
   border:none;
@@ -56,6 +70,7 @@ img, video {
 
 <header>
 <nav class="navbar" aria-label="Primary navigation">
+
   <h1 class="navbar-brand">Shoe<span>s</span></h1>
 
   <div class="navbar-links">
@@ -78,17 +93,18 @@ img, video {
       <i class="fa-solid fa-user" aria-hidden="true"></i>
     </button>
   </div>
+
 </nav>
 </header>
 
 <main id="main-content">
 
-<!-- HERO -->
-<section aria-labelledby="hero-heading">
+<!-- HERO SECTION -->
+<section class="hero">
   <div class="hero-container">
 
     <div class="hero-text">
-      <h2 id="hero-heading">Nike Collection</h2>
+      <h2>Nike Collection</h2>
       <p>Discover premium Nike sneakers inspired by Spider-Verse style and performance.</p>
       <a href="main_product.html" class="btn-shop">Shop Now</a>
     </div>
@@ -98,7 +114,8 @@ img, video {
         <source srcset="image/shoes-removebg-preview.avif" type="image/avif">
         <source srcset="image/shoes-removebg-preview.webp" type="image/webp">
         <img src="image/shoes-removebg-preview.png"
-             width="420" height="420"
+             width="420"
+             height="420"
              alt="Nike premium sneaker"
              loading="eager">
       </picture>
@@ -107,17 +124,18 @@ img, video {
   </div>
 </section>
 
-<!-- VIDEO -->
-<section aria-labelledby="video-heading">
-  <h2 id="video-heading">Latest Sneaker Video</h2>
+<!-- VIDEO SECTION -->
+<section class="video-section">
+  <h2>Latest Sneaker Video</h2>
   <video controls preload="metadata" muted width="800" height="450">
     <source src="image/vid.mp4" type="video/mp4">
+    Your browser does not support the video tag.
   </video>
 </section>
 
-<!-- PRODUCTS -->
-<section aria-labelledby="products-heading">
-  <h2 id="products-heading">Featured Sneakers</h2>
+<!-- PRODUCTS SECTION -->
+<section class="products-section">
+  <h2>Featured Sneakers</h2>
 
   <div class="products-grid">
 
@@ -146,7 +164,8 @@ img, video {
       <picture>
         <source srcset="image/blazer.webp" type="image/webp">
         <img src="image/blazer.jpg"
-             width="300" height="300"
+             width="300"
+             height="300"
              alt="Nike Blazer Mid"
              loading="lazy">
       </picture>
@@ -157,9 +176,9 @@ img, video {
   </div>
 </section>
 
-<!-- GALLERY -->
-<section aria-labelledby="gallery-heading">
-  <h2 id="gallery-heading">Sneaker Gallery</h2>
+<!-- GALLERY SECTION -->
+<section class="gallery-section">
+  <h2>Sneaker Gallery</h2>
 
   <div class="gallery-grid">
     <img src="image/gallery1.webp" width="250" height="250" alt="Sneaker gallery image 1" loading="lazy">
