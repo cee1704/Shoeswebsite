@@ -2,328 +2,174 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Browse Sneaker Head India’s collection of premium sneakers. Find top brands, prices, and detailed product info for online orders.">
-<title>Sneaker Head Website</title>
 
-<!-- Font Awesome -->
+<!-- Viewport (CRITICAL SEO FIX) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Sneaker Head India | Buy Premium Nike Sneakers Online</title>
+<meta name="description" content="Sneaker Head India – Shop premium Nike sneakers online. Explore latest collections, exclusive deals, fast delivery, and trusted quality across India.">
+<meta name="keywords" content="Nike Sneakers, Sneaker Head India, Buy Shoes Online, Nike Air Max, Nike Dunk">
+<meta name="author" content="Sneaker Head">
+
+<!-- Favicon -->
+<link rel="icon" href="image/logo.jpg" type="image/jpg">
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+<!-- Font Awesome (Non-blocking) -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+ media="print"
+ onload="this.media='all'">
+<noscript>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</noscript>
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="style.css">
 
 <style>
-/* Reset & General */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-body { background: #f5f5f5; color: #111; scroll-behavior: smooth; }
-h1,h2,h3,h4,h5,h6 { margin: 0; }
-a { text-decoration: underline; }
-
-/* Navbar */
-.navbar {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 90px;
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
-    z-index: 1000;
+body{
+  font-family: Arial, sans-serif;
+  background:#fff;
+  color:#222;
+  margin:0;
+  line-height:1.6;
 }
-.navbar-brand h1 { font-size: 2.2rem; font-weight: 900; }
-.navbar-brand span { color: #cc0000; }
-
-.navbar-nav {
-    display: flex; gap: 2rem; list-style: none;
-}
-.navbar-nav li a {
-    font-weight: 700; font-size: 1.1rem; color: #111;
-    padding: 8px 12px; border-radius: 8px; transition: 0.3s;
-}
-.navbar-nav li a.active,
-.navbar-nav li a:hover { background: #ffeaea; color: #cc0000; }
-.navbar-nav li a:focus { outline: 3px solid #ffcccb; outline-offset: 2px; }
-
-.navbar-icons { display: flex; gap: 20px; align-items: center; }
-.icon-wrapper { position: relative; cursor: pointer; }
-.navbar-icons i { font-size: 24px; color: #111; transition: 0.3s; }
-.navbar-icons i:hover { color: #cc0000; transform: scale(1.2); }
-.navbar-icons i:focus { outline: 3px solid #ffcccb; outline-offset: 2px; }
-.cart-badge {
-    position: absolute; top: -8px; right: -8px;
-    background: #cc0000; color: #fff; border-radius: 50%;
-    padding: 3px 6px; font-size: 12px;
-}
-
-/* Dropdowns */
-.cart-dropdown {
-    position: absolute; top: 45px; right: 0;
-    background: #fff; border-radius: 10px; width: 300px;
-    max-height: 350px; overflow-y: auto; box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    padding: 10px; display: none; z-index: 1001; flex-direction: column; gap: 5px;
-}
-.cart-dropdown.show { display: flex; }
-.cart-dropdown ul { list-style: none; padding: 0; margin: 0; }
-.cart-dropdown li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #eee; }
-.cart-dropdown li img { width: 50px; height: 50px; object-fit: contain; }
-.cart-total { font-weight: bold; text-align: right; margin-top: 5px; }
-.cart-pay-btn {
-    margin-top: 10px; background: #cc0000; color: #fff;
-    border: none; border-radius: 8px; padding: 8px 12px;
-    cursor: pointer; text-decoration: underline;
-}
-.cart-pay-btn:hover { background: #990000; }
-
-/* Products Section */
-.products-section {
-    padding: 130px 2rem 50px;
-    text-align: center;
-}
-.products-section h2 { font-size: 2rem; margin-bottom: 20px; }
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-}
-.card {
-    background: #fff; border-radius: 15px; overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;
-}
-.card:hover { transform: scale(1.03); box-shadow: 0 12px 20px rgba(0,0,0,0.2); }
-.card-img-wrapper { position: relative; height: 220px; }
-.card-img-wrapper img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s; }
-.card-img-wrapper:hover img { transform: scale(1.1); }
-.product-heart { position: absolute; top: 10px; right: 10px; font-size: 24px; color: #ccc; cursor: pointer; }
-.product-heart.liked { color: #cc0000; }
-.card-body { padding: 15px; display: flex; flex-direction: column; }
-.card-body h5 { font-size: 18px; text-transform: uppercase; margin-bottom: 8px; }
-.card-body h6 { color: #cc0000; margin-bottom: 8px; }
-.stars { display: flex; gap: 5px; margin-bottom: 12px; cursor: pointer; }
-.stars i { color: #ccc; font-size: 16px; transition: color 0.3s; }
-.stars i.selected, .stars i:hover, .stars i:hover ~ i { color: gold; }
-.card-body button { padding: 10px; background: #cc0000; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; text-decoration: underline; }
-.card-body button:hover { background: #990000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-
-/* Feedback */
-.feedback-btn { padding: 12px 25px; background: #cc0000; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 30px; }
-.feedback-section { display: none; padding: 50px; background: #f9f9f9; margin-top: 50px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-.feedback-section h2 { text-align: center; margin-bottom: 20px; }
-.feedback-section form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-.feedback-section input, .feedback-section textarea { padding: 12px; border: 1px solid #ccc; border-radius: 6px; }
-.feedback-section button { background: #cc0000; color: #fff; padding: 12px; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
-#feedbackMsg { text-align: center; margin-top: 15px; display: none; color: green; font-weight: bold; }
-
-/* Payment Modal */
-.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 2000; }
-.modal-content { background: #fff; padding: 20px; border-radius: 12px; width: 90%; max-width: 420px; }
-.modal-header { display: flex; justify-content: space-between; align-items: center; }
-.btn-close { background: none; border: none; font-size: 1.3rem; cursor: pointer; }
-.modal-body ul { list-style: none; padding: 0; margin-bottom: 12px; }
-.modal-body select, input { width: 100%; padding: 8px; margin: 6px 0; border-radius: 5px; border: 1px solid #ccc; }
-
-/* Footer */
-.footer { background: #222; color: #fff; padding: 30px 20px; text-align: center; }
+a{color:#0056b3;text-decoration:underline;}
+a:focus,a:hover{outline:2px solid #ff6600;color:#ff6600;}
+.navbar{background:#f8f8f8;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;}
+.navbar-links a{margin-right:15px;font-weight:600;}
+.btn-shop{background:#222;color:#fff;padding:10px 18px;border-radius:5px;display:inline-block;text-decoration:none;}
+.btn-shop:hover{background:#0056b3}
+.products-grid,.gallery-grid{display:grid;gap:20px}
+.products-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.gallery-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+img{max-width:100%;height:auto;display:block}
+footer{background:#111;color:#fff;text-align:center;padding:20px}
 </style>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<nav class="navbar" aria-label="Main Navigation">
-    <div class="navbar-brand"><h1>SHOE<span>S</span></h1></div>
-    <ul class="navbar-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="main_product.html" class="active">Products</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="Reviews.html">Reviews</a></li>
-    </ul>
-    <div class="navbar-icons">
-        <div class="icon-wrapper">
-            <i class="fa-solid fa-heart" onclick="toggleWishlistDropdown()" aria-label="Wishlist"></i>
-            <span id="wishlistCount" class="cart-badge">0</span>
-            <div class="cart-dropdown" id="wishlistDropdown" aria-label="Wishlist Dropdown">
-                <ul id="wishlistItems"><li>No products in wishlist</li></ul>
-                <div class="cart-total" id="wishlistTotal"></div>
-            </div>
-        </div>
-        <div class="icon-wrapper">
-            <i class="fa-solid fa-cart-shopping" onclick="toggleCartDropdown()" aria-label="Shopping Cart"></i>
-            <span id="cartCount" class="cart-badge">0</span>
-            <div class="cart-dropdown" id="cartDropdown" aria-label="Shopping Cart Dropdown">
-                <ul id="cartItems"><li>Cart is empty</li></ul>
-                <div class="cart-total" id="cartTotal"></div>
-                <button class="cart-pay-btn" onclick="openPaymentModal()">Checkout</button>
-            </div>
-        </div>
-        <i class="fa-solid fa-user" aria-label="User Account"></i>
-    </div>
-</nav>
+<header>
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <h1>Shoe<span>s</span></h1>
 
-<!-- Main Landmark -->
+  <div class="navbar-links">
+    <a href="index.html">Home</a>
+    <a href="main_product.html">Products</a>
+    <a href="About.html">About</a>
+    <a href="Reviews.html">Reviews</a>
+  </div>
+
+  <div class="navbar-icons">
+    <i class="fa-solid fa-heart" aria-label="Wishlist"></i>
+    <i class="fa-solid fa-cart-shopping" aria-label="Cart"></i>
+    <i class="fa-solid fa-user" aria-label="Account"></i>
+  </div>
+</nav>
+</header>
+
 <main id="main-content">
 
-<!-- Products Section -->
-<section class="products-section" aria-labelledby="products-heading">
-    <h2 id="products-heading">Products</h2>
-    <div class="products-grid" id="productsContainer"></div>
-    <button onclick="toggleFeedback()" class="feedback-btn">Leave Feedback</button>
+<!-- HERO -->
+<section aria-labelledby="hero-title">
+  <h2 id="hero-title">Nike Collection</h2>
+  <p>Discover exclusive Nike sneakers inspired by Spider-Verse energy and street performance.</p>
+
+  <picture>
+    <source srcset="image/shoes-removebg-preview.avif" type="image/avif">
+    <source srcset="image/shoes-removebg-preview.webp" type="image/webp">
+    <img src="image/shoes-removebg-preview.png"
+         alt="Nike sneaker hero image"
+         width="500"
+         height="320"
+         loading="eager">
+  </picture>
+
+  <a href="main_product.html" class="btn-shop">Shop Now</a>
 </section>
 
-<!-- Feedback Section -->
-<section class="feedback-section" id="feedbackSection" aria-labelledby="feedback-heading">
-  <h2 id="feedback-heading">Leave Your Feedback</h2>
-  <form id="feedbackForm">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="Name" required pattern="^[A-Za-z ]+$" title="Only letters and spaces allowed">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Email" required pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" title="Must be a valid Gmail address">
-    <label for="phone">Phone</label>
-    <input type="tel" id="phone" name="phone" placeholder="Phone" required pattern="^[789][0-9]{9}$" title="Enter 10 digit number starting with 7, 8, or 9">
-    <label for="message">Message</label>
-    <textarea id="message" name="message" placeholder="Message" required></textarea>
-    <button type="submit">Submit Feedback</button>
-  </form>
-  <p id="feedbackMsg">Thank you for your feedback!</p>
+<!-- VIDEO -->
+<section aria-labelledby="video-title">
+  <h2 id="video-title">Sneaker Collection Video</h2>
+  <video controls muted loop width="800">
+    <source src="image/vid.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- PRODUCTS -->
+<section aria-labelledby="products-title">
+<h2 id="products-title">Featured Sneakers</h2>
+
+<div class="products-grid">
+
+<article>
+<picture>
+  <source srcset="image/nikeair.avif" type="image/avif">
+  <source srcset="image/nikeair.webp" type="image/webp">
+  <img src="image/nikeair.jpg" alt="Nike Air Max 270 sneaker" width="300" height="220" loading="lazy">
+</picture>
+<h3>Nike Air Max 270</h3>
+<p>$150</p>
+<a class="btn-shop" href="main_product.html">View Details</a>
+</article>
+
+<article>
+<picture>
+  <source srcset="image/NIKE+DUNK+LOW+RETRO+SE.avif" type="image/avif">
+  <source srcset="image/NIKE+DUNK+LOW+RETRO+SE.webp" type="image/webp">
+  <img src="image/NIKE+DUNK+LOW+RETRO+SE.jpg" alt="Nike Dunk Low sneaker" width="300" height="220" loading="lazy">
+</picture>
+<h3>Nike Dunk Low</h3>
+<p>$130</p>
+<a class="btn-shop" href="main_product.html">View Details</a>
+</article>
+
+<article>
+<picture>
+  <source srcset="image/pegasus.avif" type="image/avif">
+  <source srcset="image/pegasus.webp" type="image/webp">
+  <img src="image/pegasus.jpg" alt="Nike Pegasus 38 sneaker" width="300" height="220" loading="lazy">
+</picture>
+<h3>Nike Pegasus 38</h3>
+<p>$120</p>
+<a class="btn-shop" href="main_product.html">View Details</a>
+</article>
+
+</div>
+</section>
+
+<!-- GALLERY -->
+<section aria-labelledby="gallery-title">
+<h2 id="gallery-title">Sneaker Gallery</h2>
+
+<div class="gallery-grid">
+<img src="image/gallery1.webp" alt="Nike sneaker gallery image" width="400" height="300" loading="lazy">
+<img src="image/gallery2.avif" alt="Nike sneaker gallery image" width="400" height="300" loading="lazy">
+<img src="image/gallery3.webp" alt="Nike sneaker gallery image" width="400" height="300" loading="lazy">
+<img src="image/gallery4.avif" alt="Nike sneaker gallery image" width="400" height="300" loading="lazy">
+<img src="image/gallery5.webp" alt="Nike sneaker gallery image" width="400" height="300" loading="lazy">
+<img src="image/gallery6.avif" alt="Nike sneaker gallery image" width="400" height="300" loading="lazy">
+</div>
 </section>
 
 </main>
 
-<!-- Payment Modal -->
-<div class="modal" id="paymentModal" role="dialog" aria-modal="true">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h3>Complete Payment</h3>
-            <button class="btn-close" onclick="closePaymentModal()" aria-label="Close">&times;</button>
-        </div>
-        <div class="modal-body">
-            <ul id="paymentProducts"></ul>
-            <p>Total: $<span id="paymentTotal"></span></p>
-            <label>Payment Method</label>
-            <select id="paymentMethod" onchange="toggleCardInput()">
-                <option value="cash">Cash</option>
-                <option value="card">Card</option>
-            </select>
-            <div id="cardInfo" style="display:none;">
-                <label>Card Number</label>
-                <input type="text" id="cardNumber" placeholder="Enter your card number">
-            </div>
-            <button class="cart-pay-btn" onclick="confirmPayment()">Pay Now</button>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer class="footer">
-    <p>&copy; 2025 Sneaker Head Website. All Rights Reserved.</p>
+<footer>
+<p>© 2025 Sneaker Head India · <a href="PrivacyPolicy.html">Privacy Policy</a></p>
 </footer>
 
-<script>
-// Products data
-const products = [
-  { name:"NIKE", price:100.99,img:"image/shoes1.png" },
-  { name:"NIKE ZOOM KD 9", price:120.99,img:"image/shoes2.png" },
-  { name:"NIKE AIR ZOOM", price:90.99,img:"image/shoes3.png" },
-  { name:"NIKE AIR MAX 2015", price:85.99,img:"image/shoes4.png" },
-  { name:"NIKE AIR HUARACHE", price:75.99,img:"image/shoes5.png" },
-  { name:"NIKE AIR VAPORMAX", price:180.99,img:"image/shoes6.png" },
-  { name:"NIKE LEBRON 18", price:200.99,img:"image/shoes7.png" },
-  { name:"NIKE DUNK LOW", price:140.99,img:"image/shoes8.png" },
-  { name:"NIKE AIR FORCE X", price:170.99,img:"image/shoes11.png" },
-  { name:"NIKE RETRO HIGH", price:190.99,img:"image/shoes12.png" }
-];
-
-let cartProducts = [], wishlistProducts = [];
-const productsContainer = document.getElementById('productsContainer');
-
-// Render products
-function renderProducts(){
-    productsContainer.innerHTML='';
-    products.forEach((p,i)=>{
-        const card=document.createElement('div');
-        card.className='card';
-        card.innerHTML=`
-            <div class="card-img-wrapper">
-                <img src="${p.img}" alt="${p.name}">
-                <i class="fa-solid fa-heart product-heart" onclick="toggleHeart(this,${i})"></i>
-            </div>
-            <div class="card-body">
-                <h5>${p.name}</h5>
-                <h6>$${p.price.toFixed(2)}</h6>
-                <div class="stars">
-                    <i class="fa-solid fa-star" data-value="1"></i>
-                    <i class="fa-solid fa-star" data-value="2"></i>
-                    <i class="fa-solid fa-star" data-value="3"></i>
-                    <i class="fa-solid fa-star" data-value="4"></i>
-                    <i class="fa-solid fa-star" data-value="5"></i>
-                </div>
-                <button onclick="addToCart(${i})">Add to Cart</button>
-            </div>
-        `;
-        productsContainer.appendChild(card);
-    });
-    initStars();
-}
-
-// Wishlist & Cart
-function toggleHeart(el, idx){
-    el.classList.toggle('liked');
-    const p=products[idx];
-    if(el.classList.contains('liked')) wishlistProducts.push(p);
-    else wishlistProducts = wishlistProducts.filter(x=>x!==p);
-    updateWishlistDropdown(); updateBadge('wishlist');
-}
-function updateBadge(type){
-    const el = type==='cart'?document.getElementById('cartCount'):document.getElementById('wishlistCount');
-    el.innerText = type==='cart'?cartProducts.length:wishlistProducts.length;
-}
-function updateWishlistDropdown(){
-    const ul=document.getElementById('wishlistItems'), totalEl=document.getElementById('wishlistTotal');
-    ul.innerHTML=''; if(wishlistProducts.length===0){ ul.innerHTML='<li>No products in wishlist</li>'; totalEl.innerText=''; return; }
-    let total=0;
-    wishlistProducts.forEach(p=>{ total+=p.price; const li=document.createElement('li'); li.innerHTML=`<img src="${p.img}"><div>${p.name} - $${p.price.toFixed(2)}</div>`; ul.appendChild(li); });
-    totalEl.innerText='Total: $'+total.toFixed(2);
-}
-function addToCart(i){ cartProducts.push(products[i]); updateCart(); }
-function updateCart(){
-    const ul=document.getElementById('cartItems'); ul.innerHTML=''; let total=0;
-    if(cartProducts.length===0){ ul.innerHTML='<li>Cart is empty</li>'; document.getElementById('cartTotal').innerText=''; updateBadge('cart'); return; }
-    cartProducts.forEach(p=>{ total+=p.price; const li=document.createElement('li'); li.innerHTML=`<img src="${p.img}"><div>${p.name} - $${p.price.toFixed(2)}</div>`; ul.appendChild(li); });
-    document.getElementById('cartTotal').innerText='Total: $'+total.toFixed(2); updateBadge('cart');
-}
-
-// Dropdowns
-function toggleCartDropdown(){ document.getElementById('cartDropdown').classList.toggle('show'); document.getElementById('wishlistDropdown').classList.remove('show'); }
-function toggleWishlistDropdown(){ document.getElementById('wishlistDropdown').classList.toggle('show'); document.getElementById('cartDropdown').classList.remove('show'); }
-
-// Stars
-function initStars(){
-    document.querySelectorAll('.stars').forEach(starDiv=>{
-        const stars=starDiv.querySelectorAll('i');
-        stars.forEach(star=>{
-            star.addEventListener('mouseover',()=>{ stars.forEach(s=>s.classList.remove('selected')); for(let i=0;i<star.dataset.value;i++) stars[i].classList.add('selected'); });
-            star.addEventListener('click',()=>{ stars.forEach(s=>s.dataset.selected='0'); for(let i=0;i<star.dataset.value;i++) stars[i].dataset.selected='1'; });
-        });
-        starDiv.addEventListener('mouseleave',()=>{ stars.forEach(s=>s.classList.remove('selected')); stars.forEach(s=>{ if(s.dataset.selected==='1') s.classList.add('selected'); }); });
-    });
-}
-
-// Feedback
-function toggleFeedback(){ const f=document.getElementById('feedbackSection'); f.style.display=f.style.display==='none'?'block':'none'; }
-document.getElementById('feedbackForm').addEventListener('submit', function(e){ e.preventDefault(); document.getElementById('feedbackMsg').style.display='block'; this.reset(); });
-
-// Payment
-function openPaymentModal(){
-    const modal=document.getElementById('paymentModal'); modal.style.display='flex';
-    const ul=document.getElementById('paymentProducts'); ul.innerHTML=''; let total=0;
-    cartProducts.forEach(p=>{ total+=p.price; const li=document.createElement('li'); li.innerText=`${p.name} - $${p.price.toFixed(2)}`; ul.appendChild(li); });
-    document.getElementById('paymentTotal').innerText=total.toFixed(2);
-}
-function closePaymentModal(){ document.getElementById('paymentModal').style.display='none'; }
-function toggleCardInput(){ document.getElementById('cardInfo').style.display=document.getElementById('paymentMethod').value==='card'?'block':'none'; }
-function confirmPayment(){ alert('Payment Successful!'); cartProducts=[]; updateCart(); closePaymentModal(); }
-
-// Initialize
-renderProducts();
+<!-- JS (Deferred) -->
+<script defer>
+window.addEventListener("scroll",()=>{
+ document.querySelector(".navbar")
+ .classList.toggle("scrolled",window.scrollY>50);
+});
 </script>
 
 </body>
 </html>
-
