@@ -4,142 +4,256 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sneaker Head India | Buy Premium Sneakers Online</title>
-<meta name="description" content="Browse Sneaker Head India’s collection of premium sneakers. Find top brands, prices, ratings, and detailed product information.">
+<title>Sneaker Head India | Premium Sneakers</title>
+<meta name="description" content="Shop premium sneakers in India. Wishlist, cart, ratings, and secure checkout available.">
 
-<!-- Font Awesome (non-blocking) -->
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link rel="stylesheet"
- href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
- media="print"
- onload="this.media='all'">
-<noscript>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</noscript>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial,sans-serif}
-body{background:#f5f5f5;color:#111;line-height:1.6}
-a{text-decoration:underline;color:#111}
-img{max-width:100%;height:auto;display:block}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial,sans-serif;}
+body{background:#f5f5f5;color:#111;line-height:1.6;}
+a{text-decoration:underline;color:#111;}
+button{cursor:pointer;font-size:1rem;}
+button:focus{outline:3px solid #ffb3b3;outline-offset:3px;}
 
-/* Navbar */
-.navbar{position:fixed;top:0;width:100%;height:90px;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 2rem;box-shadow:0 6px 25px rgba(0,0,0,.1);z-index:1000}
-.navbar-brand h1{font-size:2.2rem;font-weight:900}
-.navbar-brand span{color:#cc0000}
-.navbar-nav{display:flex;gap:2rem;list-style:none}
-.navbar-nav a{font-weight:700;padding:8px 12px;border-radius:8px}
-.navbar-nav a:hover,.navbar-nav a.active{background:#ffeaea;color:#cc0000}
-.navbar-icons{display:flex;gap:20px}
+header{position:fixed;top:0;width:100%;z-index:1000;}
+.navbar{
+ background:#fff;
+ height:90px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ padding:0 2rem;
+ box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+.brand h1{font-size:2.2rem;font-weight:900;}
+.brand span{color:#c40000;}
 
-/* Badges */
-.cart-badge{position:absolute;top:-8px;right:-8px;background:#cc0000;color:#fff;border-radius:50%;padding:3px 6px;font-size:12px}
+.nav-links{list-style:none;display:flex;gap:2rem;}
+.nav-links a{font-weight:700;padding:10px 14px;border-radius:10px;}
+.nav-links a:hover,.nav-links a.active{background:#ffe5e5;color:#c40000;}
 
-/* Products */
-.products-section{padding:130px 2rem 50px;text-align:center}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-.card{background:#fff;border-radius:15px;overflow:hidden;transition:.3s}
-.card:hover{transform:scale(1.03);box-shadow:0 12px 20px rgba(0,0,0,.2)}
-.card-img-wrapper{height:220px;display:flex;align-items:center;justify-content:center;position:relative}
-.card-img-wrapper img{object-fit:contain}
-.product-heart{position:absolute;top:10px;right:10px;font-size:24px;color:#ccc;cursor:pointer}
-.product-heart.liked{color:#cc0000}
-.card-body{padding:15px}
-.card-body h5{text-transform:uppercase}
-.card-body button{margin-top:10px;padding:10px;background:#cc0000;color:#fff;border:none;border-radius:8px;cursor:pointer}
+.nav-icons{display:flex;gap:20px;align-items:center;}
+.icon-btn{
+ background:none;
+ border:none;
+ position:relative;
+ font-size:26px;
+}
 
-/* Footer */
-footer{background:#222;color:#fff;text-align:center;padding:25px}
+.badge{
+ position:absolute;
+ top:-6px;
+ right:-8px;
+ background:#c40000;
+ color:#fff;
+ font-size:12px;
+ padding:3px 6px;
+ border-radius:50%;
+}
+
+.dropdown{
+ display:none;
+ position:absolute;
+ right:0;
+ top:40px;
+ width:300px;
+ background:#fff;
+ border-radius:12px;
+ box-shadow:0 8px 25px rgba(0,0,0,.25);
+ padding:12px;
+}
+.dropdown.show{display:block;}
+
+.dropdown ul{list-style:none;}
+.dropdown li{
+ display:flex;
+ gap:10px;
+ padding:8px 0;
+ border-bottom:1px solid #eee;
+}
+.dropdown img{width:45px;height:45px;object-fit:contain;}
+
+.total{text-align:right;font-weight:bold;margin-top:8px;}
+
+.primary-btn{
+ width:100%;
+ background:#c40000;
+ color:#fff;
+ border:none;
+ border-radius:10px;
+ padding:12px;
+ font-weight:700;
+ margin-top:10px;
+}
+.primary-btn:hover{background:#900000;}
+
+main{margin-top:110px;padding:2rem;}
+.products h2{text-align:center;font-size:2.2rem;margin-bottom:1.5rem;}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+ gap:22px;
+}
+
+.card{
+ background:#fff;
+ border-radius:16px;
+ overflow:hidden;
+ transition:.3s;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,.2);}
+
+.card-img{height:220px;position:relative;}
+.card-img img{width:100%;height:100%;object-fit:contain;}
+
+.like-btn{
+ position:absolute;
+ top:12px;
+ right:12px;
+ background:none;
+ border:none;
+ font-size:24px;
+ color:#aaa;
+}
+.like-btn.active{color:#c40000;}
+
+.card-body{padding:16px;}
+.price{color:#c40000;font-weight:bold;margin:6px 0;}
+
+.feedback{display:none;background:#fff;padding:30px;border-radius:14px;max-width:500px;margin:40px auto;}
+.feedback form{display:flex;flex-direction:column;gap:14px;}
+.feedback input,.feedback textarea{padding:12px;border-radius:8px;border:1px solid #aaa;}
+
+footer{background:#222;color:#fff;text-align:center;padding:25px;}
 </style>
 </head>
 
 <body>
 
 <header>
-<nav class="navbar" aria-label="Main Navigation">
-  <div class="navbar-brand"><h1>SHOE<span>S</span></h1></div>
+<nav class="navbar">
+  <div class="brand"><h1>SHOE<span>S</span></h1></div>
 
-  <ul class="navbar-nav">
+  <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="main_product.html" class="active">Products</a></li>
     <li><a href="About.html">About</a></li>
     <li><a href="Reviews.html">Reviews</a></li>
   </ul>
 
-  <div class="navbar-icons">
-    <div style="position:relative">
-      <i class="fa-solid fa-heart" onclick="toggleWishlistDropdown()" aria-label="Wishlist"></i>
-      <span id="wishlistCount" class="cart-badge">0</span>
+  <div class="nav-icons">
+
+    <!-- Wishlist -->
+    <button class="icon-btn" aria-expanded="false" aria-controls="wishlist-menu" onclick="toggleWishlist(this)">
+      <i class="fa-solid fa-heart"></i>
+      <span class="badge" id="wishlist-count">0</span>
+    </button>
+    <div class="dropdown" id="wishlist-menu">
+      <ul id="wishlist-items"><li>No items</li></ul>
     </div>
-    <div style="position:relative">
-      <i class="fa-solid fa-cart-shopping" onclick="toggleCartDropdown()" aria-label="Cart"></i>
-      <span id="cartCount" class="cart-badge">0</span>
+
+    <!-- Cart -->
+    <button class="icon-btn" aria-expanded="false" aria-controls="cart-menu" onclick="toggleCart(this)">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="badge" id="cart-count">0</span>
+    </button>
+    <div class="dropdown" id="cart-menu">
+      <ul id="cart-items"><li>Cart empty</li></ul>
+      <p class="total" id="cart-total"></p>
+      <button class="primary-btn">Checkout</button>
     </div>
-    <i class="fa-solid fa-user" aria-label="User"></i>
+
+    <button class="icon-btn">
+      <i class="fa-solid fa-user"></i>
+    </button>
+
   </div>
 </nav>
 </header>
 
-<main id="main-content">
-
-<section class="products-section" aria-labelledby="products-heading">
-<h2 id="products-heading">Our Products</h2>
-<div class="products-grid" id="productsContainer"></div>
+<main>
+<section class="products">
+<h2>Our Products</h2>
+<div class="grid" id="productGrid"></div>
+<button class="primary-btn" onclick="toggleFeedback()">Leave Feedback</button>
 </section>
 
+<section class="feedback" id="feedback">
+<h2>Feedback</h2>
+<form>
+<input type="text" placeholder="Name" required>
+<input type="email" placeholder="Email" required>
+<textarea rows="4" placeholder="Message" required></textarea>
+<button class="primary-btn">Submit</button>
+</form>
+</section>
 </main>
 
 <footer>
 <p>&copy; 2025 Sneaker Head India. All Rights Reserved.</p>
 </footer>
 
-<script defer>
+<script>
 const products=[
-{name:"NIKE",price:100.99,img:"image/shoes1.png"},
-{name:"NIKE ZOOM KD 9",price:120.99,img:"image/shoes2.png"},
-{name:"NIKE AIR ZOOM",price:90.99,img:"image/shoes3.png"},
-{name:"NIKE AIR MAX 2015",price:85.99,img:"image/shoes4.png"},
-{name:"NIKE AIR HUARACHE",price:75.99,img:"image/shoes5.png"},
-{name:"NIKE AIR VAPORMAX",price:180.99,img:"image/shoes6.png"}
+ {name:"NIKE AIR MAX",price:120,img:"image/shoes1.png"},
+ {name:"NIKE DUNK LOW",price:140,img:"image/shoes2.png"},
+ {name:"NIKE ZOOM",price:100,img:"image/shoes3.png"}
 ];
 
-let cart=[],wishlist=[];
-const container=document.getElementById("productsContainer");
+const grid=document.getElementById("productGrid");
+const cart=[],wish=[];
 
-function renderProducts(){
-container.innerHTML="";
-products.forEach((p,i)=>{
-const card=document.createElement("div");
-card.className="card";
-card.innerHTML=`
-<div class="card-img-wrapper">
-  <img src="${p.img}" alt="${p.name} sneaker" width="300" height="220" loading="lazy">
-  <i class="fa-solid fa-heart product-heart" onclick="toggleHeart(this,${i})"></i>
-</div>
-<div class="card-body">
-  <h5>${p.name}</h5>
-  <p>$${p.price.toFixed(2)}</p>
-  <button onclick="addToCart(${i})">Add to Cart</button>
-</div>`;
-container.appendChild(card);
-});
+function render(){
+ grid.innerHTML="";
+ products.forEach((p,i)=>{
+  grid.innerHTML+=`
+   <div class="card">
+    <div class="card-img">
+     <img src="${p.img}" alt="${p.name}">
+     <button class="like-btn" onclick="toggleLike(this,${i})">
+       <i class="fa-solid fa-heart"></i>
+     </button>
+    </div>
+    <div class="card-body">
+     <h3>${p.name}</h3>
+     <p class="price">$${p.price}</p>
+     <button class="primary-btn" onclick="addCart(${i})">Add to Cart</button>
+    </div>
+   </div>`;
+ });
 }
 
-function toggleHeart(el,i){
-el.classList.toggle("liked");
-el.classList.contains("liked") ? wishlist.push(products[i]) : wishlist.pop();
-document.getElementById("wishlistCount").innerText=wishlist.length;
+function addCart(i){
+ cart.push(products[i]);
+ document.getElementById("cart-count").textContent=cart.length;
 }
 
-function addToCart(i){
-cart.push(products[i]);
-document.getElementById("cartCount").innerText=cart.length;
+function toggleLike(btn,i){
+ btn.classList.toggle("active");
+ wish.push(products[i]);
+ document.getElementById("wishlist-count").textContent=wish.length;
 }
 
-function toggleCartDropdown(){alert("Cart items: "+cart.length)}
-function toggleWishlistDropdown(){alert("Wishlist items: "+wishlist.length)}
+function toggleCart(btn){
+ const menu=document.getElementById("cart-menu");
+ menu.classList.toggle("show");
+ btn.setAttribute("aria-expanded",menu.classList.contains("show"));
+}
 
-renderProducts();
+function toggleWishlist(btn){
+ const menu=document.getElementById("wishlist-menu");
+ menu.classList.toggle("show");
+ btn.setAttribute("aria-expanded",menu.classList.contains("show"));
+}
+
+function toggleFeedback(){
+ const f=document.getElementById("feedback");
+ f.style.display=f.style.display==="block"?"none":"block";
+}
+
+render();
 </script>
 
 </body>
