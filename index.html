@@ -2,204 +2,152 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO Meta -->
-<title>Sneaker Head India | Buy Premium Nike Sneakers Online</title>
+<title>Sneaker Head India | Premium Nike Sneakers</title>
+
 <meta name="description" content="Sneaker Head India offers premium Nike sneakers, exclusive collections, fast delivery, and best prices in India.">
-<meta name="keywords" content="Sneaker Head, Nike Shoes India, Buy Sneakers Online, Nike Collection">
+<meta name="keywords" content="Nike Sneakers India, Sneaker Head, Buy Nike Shoes Online">
 <meta name="robots" content="index, follow">
-<meta name="author" content="Sneaker Head">
 
+<link rel="shortcut icon" href="image/logo.jpg">
 
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="style.css"></noscript>
 
-
-<link rel="stylesheet" href="style.css">
-
-<!-- Font Awesome (non-blocking) -->
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       media="print"
       onload="this.media='all'">
-
 <noscript>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </noscript>
-
-<!-- Preload Hero Image -->
-<link rel="preload" as="image" href="image/shoes-removebg-preview.webp">
-
-<style>
-body {
-  background:#ffffff;
-  color:#222;
-  font-family: Arial, sans-serif;
-  line-height:1.6;
-}
-
-a {
-  color:#0056b3;
-  text-decoration:underline;
-}
-
-a:focus,
-button:focus {
-  outline:2px solid #ff6600;
-  outline-offset:2px;
-}
-
-img, video {
-  max-width:100%;
-  height:auto;
-  display:block;
-}
-
-/* Navbar icons as buttons */
-.navbar-icons button {
-  background:none;
-  border:none;
-  font-size:1.4rem;
-  cursor:pointer;
-}
-</style>
 </head>
 
 <body>
 
-<header>
 <nav class="navbar" aria-label="Primary navigation">
-
-  <h1 class="navbar-brand">Shoe<span>s</span></h1>
+  <div class="navbar-brand">
+    <h1>Shoe<span>s</span></h1>
+  </div>
 
   <div class="navbar-links">
-    <a href="index.html">Home</a>
-    <a href="main_product.html">Products</a>
-    <a href="About.html">About</a>
-    <a href="Reviews.html">Reviews</a>
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="main_product.html" class="nav-link">Products</a>
+    <a href="About.html" class="nav-link">About</a>
+    <a href="Reviews.html" class="nav-link">Reviews</a>
   </div>
 
   <div class="navbar-icons">
-    <button aria-label="Open wishlist">
-      <i class="fa-solid fa-heart" aria-hidden="true"></i>
-    </button>
-
-    <button aria-label="Open cart">
-      <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
-    </button>
-
-    <button aria-label="User account">
-      <i class="fa-solid fa-user" aria-hidden="true"></i>
-    </button>
+    <button aria-label="Wishlist"><i class="fa-solid fa-heart"></i></button>
+    <button aria-label="Cart"><i class="fa-solid fa-cart-shopping"></i></button>
+    <button aria-label="Account"><i class="fa-solid fa-user"></i></button>
   </div>
-
 </nav>
-</header>
 
 <main id="main-content">
 
-<!-- HERO SECTION -->
-<section class="hero">
+<section class="main-section">
   <div class="hero-container">
-
     <div class="hero-text">
-      <h2>Nike Collection</h2>
-      <p>Discover premium Nike sneakers inspired by Spider-Verse style and performance.</p>
-      <a href="main_product.html" class="btn-shop">Shop Now</a>
+      <h2 class="hero-title">NIKE <span>Collection</span></h2>
+      <p>
+        Explore the latest Nike sneakers inspired by Spider-Verse energy —
+        a perfect fusion of style, innovation, and performance.
+      </p>
+      <a href="main_product.html" class="btn-shop">
+        Shop Now <i class="fa-solid fa-chevron-right"></i>
+      </a>
     </div>
 
     <div class="hero-shoe">
-      <picture>
-        <source srcset="image/shoes-removebg-preview.avif" type="image/avif">
-        <source srcset="image/shoes-removebg-preview.webp" type="image/webp">
+      <div class="circle-mask">
         <img src="image/shoes-removebg-preview.png"
              width="420"
              height="420"
-             alt="Nike premium sneaker"
-             loading="eager">
-      </picture>
+             alt="Nike premium sneaker">
+      </div>
     </div>
-
   </div>
 </section>
 
-
 <section class="video-section">
-  <h2>Latest Sneaker Video</h2>
-  <video controls preload="metadata" muted width="800" height="450">
+  <h2>Watch Our Latest Video</h2>
+  <video autoplay loop muted playsinline width="900" height="500">
     <source src="image/vid.mp4" type="video/mp4">
-    Your browser does not support the video tag.
   </video>
 </section>
 
-<!-- PRODUCTS SECTION -->
-<section class="products-section">
+<section class="featured-products">
   <h2>Featured Sneakers</h2>
 
   <div class="products-grid">
 
     <article class="product-card">
-      <img src="image/nikeair.avif" width="300" height="300"
-           alt="Nike Air Max 270" loading="lazy">
-      <h3>Nike Air Max 270</h3>
-      <p>$150</p>
+      <img src="image/nikeair.avif" width="260" height="260" alt="Nike Air Max 270" loading="lazy">
+      <div class="card-body">
+        <h3>Nike Air Max 270</h3>
+        <p class="price">$150</p>
+        <a href="main_product.html" class="btn-shop small">View Details</a>
+      </div>
     </article>
 
     <article class="product-card">
-      <img src="image/NIKE+DUNK+LOW+RETRO+SE.avif" width="300" height="300"
-           alt="Nike Dunk Low" loading="lazy">
-      <h3>Nike Dunk Low</h3>
-      <p>$130</p>
+      <img src="image/NIKE+DUNK+LOW+RETRO+SE.avif" width="260" height="260" alt="Nike Dunk Low" loading="lazy">
+      <div class="card-body">
+        <h3>Nike Dunk Low</h3>
+        <p class="price">$130</p>
+        <a href="main_product.html" class="btn-shop small">View Details</a>
+      </div>
     </article>
 
     <article class="product-card">
-      <img src="image/pegasus.avif" width="300" height="300"
-           alt="Nike Pegasus 38" loading="lazy">
-      <h3>Nike Pegasus 38</h3>
-      <p>$120</p>
+      <img src="image/pegasus.avif" width="260" height="260" alt="Nike Pegasus 38" loading="lazy">
+      <div class="card-body">
+        <h3>Nike Pegasus 38</h3>
+        <p class="price">$120</p>
+        <a href="main_product.html" class="btn-shop small">View Details</a>
+      </div>
     </article>
 
     <article class="product-card">
-      <picture>
-        <source srcset="image/blazer.webp" type="image/webp">
-        <img src="image/blazer.jpg"
-             width="300"
-             height="300"
-             alt="Nike Blazer Mid"
-             loading="lazy">
-      </picture>
-      <h3>Nike Blazer Mid</h3>
-      <p>$110</p>
+      <img src="image/blazer.jpg" width="260" height="260" alt="Nike Blazer Mid" loading="lazy">
+      <div class="card-body">
+        <h3>Nike Blazer Mid</h3>
+        <p class="price">$110</p>
+        <a href="main_product.html" class="btn-shop small">View Details</a>
+      </div>
     </article>
 
   </div>
 </section>
 
-
-<section class="gallery-section">
-  <h2>Sneaker Gallery</h2>
-
+<section class="gallery">
+  <h2>More Sneakers</h2>
   <div class="gallery-grid">
-    <img src="image/gallery1.webp" width="250" height="250" alt="Sneaker gallery image 1" loading="lazy">
-    <img src="image/gallery2.avif" width="250" height="250" alt="Sneaker gallery image 2" loading="lazy">
-    <img src="image/gallery3.webp" width="250" height="250" alt="Sneaker gallery image 3" loading="lazy">
-    <img src="image/gallery4.avif" width="250" height="250" alt="Sneaker gallery image 4" loading="lazy">
-    <picture>
-      <source srcset="image/gallery5.webp" type="image/webp">
-      <img src="image/gallery5.jpg" width="250" height="250" alt="Sneaker gallery image 5" loading="lazy">
-    </picture>
+    <img src="image/gallery1.webp" width="200" height="200" alt="Sneaker gallery 1" loading="lazy">
+    <img src="image/gallery2.avif" width="200" height="200" alt="Sneaker gallery 2" loading="lazy">
+    <img src="image/gallery3.webp" width="200" height="200" alt="Sneaker gallery 3" loading="lazy">
+    <img src="image/gallery4.avif" width="200" height="200" alt="Sneaker gallery 4" loading="lazy">
+    <img src="image/gallery5.jpg" width="200" height="200" alt="Sneaker gallery 5" loading="lazy">
   </div>
 </section>
 
 </main>
 
 <footer>
-  <p>© 2025 Sneaker Head India | <a href="PrivacyPolicy.html">Privacy Policy</a></p>
+  <p>
+    © 2025 Sneaker Head India |
+    <a href="PrivacyPolicy.html">Privacy Policy</a>
+  </p>
 </footer>
 
-<script defer src="script.js"></script>
+<script defer>
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
 
 </body>
 </html>
-
