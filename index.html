@@ -4,173 +4,88 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sneaker Head India | Buy Premium Nike Sneakers</title>
-<meta name="description" content="Sneaker Head India offers premium Nike sneakers with fast delivery and best prices in India.">
-
-<link rel="shortcut icon" href="image/logo.jpg">
+<title>Sneaker Head India | Nike Sneakers</title>
+<meta name="description" content="Buy premium Nike sneakers online in India.">
 
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
 <link rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'">
-<noscript>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</noscript>
-
-<link rel="preload" as="image" href="image/shoes.webp" fetchpriority="high">
+      onload="this.rel='stylesheet'">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,Arial,sans-serif;color:#111;background:#fff}
-.navbar{position:fixed;top:0;width:100%;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;z-index:1000;transition:.3s}
-.navbar.scrolled{background:#fff;box-shadow:0 8px 20px rgba(0,0,0,.08)}
-.navbar-brand span{color:#ff3c00}
-.navbar-links{display:flex;gap:2rem}
-.navbar-links a{text-decoration:none;color:#111;font-weight:500;position:relative}
-.navbar-links a::after{content:"";position:absolute;width:0;height:2px;background:#ff3c00;bottom:-5px;left:0;transition:.3s}
-.navbar-links a:hover::after,.navbar-links .active::after{width:100%}
-.navbar-icons{display:flex;gap:1.2rem;font-size:1.3rem}
-.main-section{min-height:100vh;background:linear-gradient(135deg,#f6f7ff,#eef0ff);padding-top:6rem;display:flex;align-items:center}
-.hero-container{max-width:1200px;margin:auto;padding:2rem;display:grid;grid-template-columns:1fr 1fr;align-items:center}
-.hero-text h1{font-size:3.5rem;line-height:1.1}
-.hero-text span{color:#ff3c00}
-.hero-text p{margin:1.5rem 0;color:#555}
-.btn-shop{display:inline-flex;gap:.5rem;padding:.8rem 1.6rem;background:#ff3c00;color:#fff;border-radius:30px;text-decoration:none;font-weight:600}
-.circle-mask{width:380px;height:380px;background:#ff3c00;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.circle-mask img{width:120%;transform:rotate(-20deg)}
-@media(max-width:900px){
-.hero-container{grid-template-columns:1fr;text-align:center}
-.navbar-links{display:none}
-}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#111}
+.navbar{position:fixed;top:0;width:100%;padding:1rem 2.5rem;display:flex;justify-content:space-between;background:#fff;z-index:10}
+.navbar a{text-decoration:none;color:#111;margin-left:1.5rem}
+.hero{min-height:100vh;display:grid;place-items:center;padding-top:5rem;background:#f6f7ff}
+.hero h1{font-size:3rem}
+.hero span{color:#ff3c00}
+.btn{margin-top:1.2rem;display:inline-block;padding:.7rem 1.4rem;background:#ff3c00;color:#fff;border-radius:30px}
+.products,.gallery{max-width:1200px;margin:4rem auto;padding:0 1.5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.card{border:1px solid #eee;border-radius:10px;padding:1rem;text-align:center}
+footer{text-align:center;padding:2rem 0;background:#fafafa}
 </style>
-
-<link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="style.css"></noscript>
-
 </head>
 
 <body>
 
 <nav class="navbar">
-  <div class="navbar-brand"><h1>Shoe<span>s</span></h1></div>
-  <div class="navbar-links">
-    <a href="#" class="active">Home</a>
+  <strong>Shoe<span style="color:#ff3c00">s</span></strong>
+  <div>
+    <a href="#">Home</a>
     <a href="main_product.html">Products</a>
     <a href="About.html">About</a>
-    <a href="Reviews.html">Reviews</a>
-  </div>
-  <div class="navbar-icons">
-    <i class="fa-solid fa-heart"></i>
-    <i class="fa-solid fa-cart-shopping"></i>
-    <i class="fa-solid fa-user"></i>
   </div>
 </nav>
 
-<section class="main-section">
-  <div class="hero-container">
-    <div class="hero-text">
-      <h1>NIKE<br><span>Collection</span></h1>
-      <p>Explore premium Nike sneakers inspired by Spider-Verse energy and performance.</p>
-      <a href="main_product.html" class="btn-shop">
-        SHOP NOW <i class="fa-solid fa-chevron-right"></i>
-      </a>
-    </div>
-    <div class="hero-shoe">
-      <div class="circle-mask">
-        <picture>
-          <source srcset="image/shoes.avif" type="image/avif">
-          <source srcset="image/shoes.webp" type="image/webp">
-          <img src="image/shoes.png"
-               width="420"
-               height="420"
-               fetchpriority="high"
-               loading="eager"
-               alt="Nike premium sneaker">
-        </picture>
-      </div>
-    </div>
+<section class="hero">
+  <div>
+    <h1>NIKE <span>Collection</span></h1>
+    <p>Premium sneakers built for performance.</p>
+    <a href="main_product.html" class="btn">Shop Now</a>
   </div>
+  <img
+    src="image/shoes.webp"
+    width="420"
+    height="420"
+    loading="eager"
+    fetchpriority="high"
+    alt="Nike sneaker">
 </section>
 
-<section class="video-section">
-  <h2>Watch Our Latest Video</h2>
-  <video autoplay loop muted preload="metadata">
-    <source src="image/vid.mp4" type="video/mp4">
-  </video>
-</section>
-
-<section class="featured-products">
+<section class="products">
   <h2>Featured Sneakers</h2>
-  <div class="products-grid">
-    <div class="product-card">
-      <img src="image/nikeair.avif" loading="lazy" alt="Nike Air Max 270">
-      <div class="card-body">
-        <h5>Nike Air Max 270</h5>
-        <p class="price">$150</p>
-        <a href="main_product.html" class="btn-shop">View Details</a>
-      </div>
+  <div class="grid">
+    <div class="card">
+      <img src="image/nikeair.avif" width="260" height="200" loading="lazy" alt="Nike Air Max">
+      <p>Nike Air Max</p>
     </div>
-    <div class="product-card">
-      <img src="image/NIKE+DUNK+LOW+RETRO+SE.avif" loading="lazy" alt="Nike Dunk Low">
-      <div class="card-body">
-        <h5>Nike Dunk Low</h5>
-        <p class="price">$130</p>
-        <a href="main_product.html" class="btn-shop">View Details</a>
-      </div>
+    <div class="card">
+      <img src="image/dunk.avif" width="260" height="200" loading="lazy" alt="Nike Dunk">
+      <p>Nike Dunk</p>
     </div>
-    <div class="product-card">
-      <img src="image/pegasus.avif" loading="lazy" alt="Nike Pegasus 38">
-      <div class="card-body">
-        <h5>Nike Pegasus 38</h5>
-        <p class="price">$120</p>
-        <a href="main_product.html" class="btn-shop">View Details</a>
-      </div>
-    </div>
-    <div class="product-card">
-      <img src="image/blazer.jpg" loading="lazy" alt="Nike Blazer Mid">
-      <div class="card-body">
-        <h5>Nike Blazer Mid</h5>
-        <p class="price">$110</p>
-        <a href="main_product.html" class="btn-shop">View Details</a>
-      </div>
+    <div class="card">
+      <img src="image/pegasus.avif" width="260" height="200" loading="lazy" alt="Nike Pegasus">
+      <p>Nike Pegasus</p>
     </div>
   </div>
 </section>
 
 <section class="gallery">
-  <h2>More Sneakers</h2>
-  <div class="gallery-grid">
-    <img src="image/gallery1.webp" loading="lazy" alt="Sneaker 1">
-    <img src="image/gallery2.avif" loading="lazy" alt="Sneaker 2">
-    <img src="image/gallery3.webp" loading="lazy" alt="Sneaker 3">
-    <img src="image/gallery4.avif" loading="lazy" alt="Sneaker 4">
-    <img src="image/gallery5.jpg" loading="lazy" alt="Sneaker 5">
-    <img src="image/gallery6.avif" loading="lazy" alt="Sneaker 6">
-    <img src="image/gallery7.jpg" loading="lazy" alt="Sneaker 7">
-    <img src="image/gallery8.avif" loading="lazy" alt="Sneaker 8">
+  <h2>Gallery</h2>
+  <div class="grid">
+    <img src="image/gallery1.avif" width="300" height="200" loading="lazy" alt="Sneaker">
+    <img src="image/gallery2.avif" width="300" height="200" loading="lazy" alt="Sneaker">
+    <img src="image/gallery3.avif" width="300" height="200" loading="lazy" alt="Sneaker">
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Sneaker Head India | <a href="PrivacyPolicy.html">Privacy Policy</a></p>
+  <p>© 2025 Sneaker Head India</p>
 </footer>
-
-<script>
-const navbar=document.querySelector(".navbar");
-window.addEventListener("scroll",()=>navbar.classList.toggle("scrolled",window.scrollY>50));
-const imgs=document.querySelectorAll(".gallery-grid img");
-const obs=new IntersectionObserver(e=>{
-  e.forEach(i=>{
-    if(i.isIntersecting){
-      i.target.classList.add("animate");
-      obs.unobserve(i.target);
-    }
-  });
-},{threshold:.2});
-imgs.forEach(i=>obs.observe(i));
-</script>
 
 </body>
 </html>
