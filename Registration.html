@@ -1,205 +1,325 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Create your account on Sneaker Head India to shop premium sneakers, manage orders, save favorites, and get exclusive offers. Fast, secure, and easy registration.">
-    <!-- SEO Improvements -->
-    <meta name="description" content="User registration form to create an account with secure validation including name, phone, address, email, gender, and pincode details.">
-    <link rel="canonical" href="https://example.com/registration.html">
+<meta charset="UTF-8">
 
-    <title>Account Registration | Sneaker Head India</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        body {
-            background: url('image/blue-background-7470781_640.jpg') no-repeat center center fixed;
-            background-size: cover;
-            background-color: #212529;
-            color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-        }
+<meta name="description" content="Create your account on Sneaker Head India to shop premium sneakers, manage orders, and receive exclusive offers.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example.com/registration.html">
 
-        .container {
-            background: rgba(0, 0, 0, 0.85);
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 750px;
-        }
+<title>Account Registration | Sneaker Head India</title>
 
-        h1 {
-            font-size: 28px;
-            text-align: center;
-            margin-bottom: 25px;
-        }
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-80KCM8C0QN"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-80KCM8C0QN');
+</script>
 
-        label {
-            font-weight: bold;
-        }
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        .form-control, .form-select {
-            background-color: #343a40;
-            color: white;
-        }
+<style>
 
-        .error {
-            font-size: 14px;
-            color: #ff6b6b;
-        }
+body{
+background:url('image/blue-background-7470781_640.jpg') no-repeat center center fixed;
+background-size:cover;
+background-color:#212529;
+color:#f8f9fa;
+margin:0;
+padding:0;
+font-family:Arial, sans-serif;
+}
 
-        .skip-link {
-            position: absolute;
-            left: -999px;
-        }
+.container{
+background:rgba(0,0,0,0.85);
+padding:30px;
+border-radius:12px;
+max-width:750px;
+}
 
-        .skip-link:focus {
-            left: 10px;
-            top: 10px;
-            background: white;
-            color: black;
-            padding: 5px;
-            z-index: 2000;
-        }
-    </style>
+h1{
+font-size:28px;
+text-align:center;
+margin-bottom:25px;
+}
+
+label{
+font-weight:bold;
+}
+
+.form-control,
+.form-select{
+background:#343a40;
+color:white;
+}
+
+.error{
+font-size:14px;
+color:#ff6b6b;
+}
+
+.skip-link{
+position:absolute;
+left:-999px;
+}
+
+.skip-link:focus{
+left:10px;
+top:10px;
+background:white;
+color:black;
+padding:6px;
+z-index:2000;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<!-- Skip Link for Accessibility -->
+
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- Main Landmark -->
 <main id="main-content">
-    <div class="container mt-5 shadow-lg">
-        <h1>Registration Form</h1>
 
-        <form id="registrationForm" action="insert.php" method="POST" onsubmit="return validateForm()" aria-label="User Registration Form">
+<div class="container mt-5 shadow-lg">
 
-            <div class="mb-3">
-                <label for="firstName" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="firstName" name="first_name"
-                       placeholder="Enter First Name" pattern="[A-Za-z\s]+" required
-                       aria-describedby="nameHelp">
-                <small id="nameHelp" class="form-text text-light">Only alphabets allowed</small>
-                <span id="firstNameError" class="error"></span>
-            </div>
+<h1>Registration Form</h1>
 
-            <div class="mb-3">
-                <label for="lastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastName" name="last_name"
-                       placeholder="Enter Last Name" pattern="[A-Za-z\s]+" required>
-                <span id="lastNameError" class="error"></span>
-            </div>
+<form id="registrationForm"
+action="insert.php"
+method="POST"
+onsubmit="return validateForm()"
+aria-label="User Registration Form">
 
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="phone" name="phone"
-                       placeholder="9876543210" pattern="[0-9]{10}" required>
-                <small class="form-text text-light">10 digit Indian mobile number</small>
-                <span id="phoneError" class="error"></span>
-            </div>
 
-            <div class="mb-3">
-                <label for="address" class="form-label">Address</label>
-                <textarea class="form-control" id="address" name="address"
-                          rows="3" placeholder="Enter Address" required></textarea>
-            </div>
 
-            <div class="mb-3">
-                <label for="birthdate" class="form-label">Birth Date</label>
-                <input type="date" class="form-control" id="birthdate"
-                       name="birthdate" required aria-label="Select Birth Date">
-            </div>
+<div class="mb-3">
+<label for="firstName">First Name</label>
 
-            <div class="mb-3">
-                <label for="email" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="email"
-                       name="email" placeholder="name@gmail.com" required>
-                <span id="emailError" class="error"></span>
-            </div>
+<input type="text"
+class="form-control"
+id="firstName"
+name="first_name"
+placeholder="Enter First Name"
+pattern="[A-Za-z\s]+"
+required>
 
-            <div class="mb-3">
-                <label for="gender" class="form-label">Gender</label>
-                <select class="form-select" id="gender" name="gender" required aria-label="Select Gender">
-                    <option value="">Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
+<span id="firstNameError" class="error"></span>
 
-            <div class="mb-3">
-                <label for="pincode" class="form-label">Pincode</label>
-                <input type="text" class="form-control" id="pincode"
-                       name="pincode" placeholder="Enter 6 digit Pincode"
-                       pattern="[0-9]{6}" required>
-                <small class="form-text text-light">Indian pincode format</small>
-                <span id="pincodeError" class="error"></span>
-            </div>
+</div>
 
-            <div class="d-flex justify-content-between mt-4">
-                <button type="submit" class="btn btn-success" aria-label="Submit Registration Form">Register</button>
-                <button type="reset" class="btn btn-warning text-dark">Clear</button>
-            </div>
 
-        </form>
-    </div>
+
+<div class="mb-3">
+
+<label for="lastName">Last Name</label>
+
+<input type="text"
+class="form-control"
+id="lastName"
+name="last_name"
+placeholder="Enter Last Name"
+pattern="[A-Za-z\s]+"
+required>
+
+<span id="lastNameError" class="error"></span>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label for="phone">Phone Number</label>
+
+<input type="tel"
+class="form-control"
+id="phone"
+name="phone"
+placeholder="9876543210"
+pattern="[0-9]{10}"
+required>
+
+<small class="text-light">10 digit Indian mobile number</small>
+
+<span id="phoneError" class="error"></span>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label for="address">Address</label>
+
+<textarea
+class="form-control"
+id="address"
+name="address"
+rows="3"
+placeholder="Enter Address"
+required></textarea>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label for="birthdate">Birth Date</label>
+
+<input type="date"
+class="form-control"
+id="birthdate"
+name="birthdate"
+required>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label for="email">Email Address</label>
+
+<input type="email"
+class="form-control"
+id="email"
+name="email"
+placeholder="name@gmail.com"
+required>
+
+<span id="emailError" class="error"></span>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label for="gender">Gender</label>
+
+<select class="form-select" id="gender" name="gender" required>
+
+<option value="">Select Gender</option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+<option value="Other">Other</option>
+
+</select>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label for="pincode">Pincode</label>
+
+<input type="text"
+class="form-control"
+id="pincode"
+name="pincode"
+placeholder="Enter 6 digit Pincode"
+pattern="[0-9]{6}"
+required>
+
+<small class="text-light">Indian pincode format</small>
+
+<span id="pincodeError" class="error"></span>
+
+</div>
+
+
+
+<div class="d-flex justify-content-between mt-4">
+
+<button type="submit"
+class="btn btn-success">
+Register
+</button>
+
+<button type="reset"
+class="btn btn-warning text-dark">
+Clear
+</button>
+
+</div>
+
+</form>
+
+</div>
+
 </main>
 
-<!-- Validation Script -->
+
+<!-- VALIDATION SCRIPT -->
+
 <script>
-function validateForm() {
-    let valid = true;
 
-    const fname = document.getElementById("firstName").value.trim();
-    const lname = document.getElementById("lastName").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const pincode = document.getElementById("pincode").value.trim();
+function validateForm(){
 
-    const namePattern = /^[A-Za-z\s]+$/;
-    const phonePattern = /^[0-9]{10}$/;
-    const pinPattern = /^[0-9]{6}$/;
+let valid=true;
 
-    document.querySelectorAll(".error").forEach(e => e.textContent="");
+const fname=document.getElementById("firstName").value.trim();
+const lname=document.getElementById("lastName").value.trim();
+const phone=document.getElementById("phone").value.trim();
+const email=document.getElementById("email").value.trim();
+const pincode=document.getElementById("pincode").value.trim();
 
-    if (!namePattern.test(fname)) {
-        document.getElementById("firstNameError").textContent = "Invalid first name";
-        valid = false;
-    }
+const namePattern=/^[A-Za-z\s]+$/;
+const phonePattern=/^[0-9]{10}$/;
+const pinPattern=/^[0-9]{6}$/;
 
-    if (!namePattern.test(lname)) {
-        document.getElementById("lastNameError").textContent = "Invalid last name";
-        valid = false;
-    }
+document.querySelectorAll(".error").forEach(e=>e.textContent="");
 
-    if (!phonePattern.test(phone)) {
-        document.getElementById("phoneError").textContent = "Phone must be 10 digits";
-        valid = false;
-    }
-
-    if (!email.endsWith("@gmail.com")) {
-        document.getElementById("emailError").textContent = "Only Gmail addresses allowed";
-        valid = false;
-    }
-
-    if (!pinPattern.test(pincode)) {
-        document.getElementById("pincodeError").textContent = "Pincode must be 6 digits";
-        valid = false;
-    }
-
-    if (valid) {
-        alert("Registration Successful!");
-    }
-
-    return valid;
+if(!namePattern.test(fname)){
+document.getElementById("firstNameError").textContent="Invalid first name";
+valid=false;
 }
+
+if(!namePattern.test(lname)){
+document.getElementById("lastNameError").textContent="Invalid last name";
+valid=false;
+}
+
+if(!phonePattern.test(phone)){
+document.getElementById("phoneError").textContent="Phone must be 10 digits";
+valid=false;
+}
+
+if(!email.endsWith("@gmail.com")){
+document.getElementById("emailError").textContent="Only Gmail allowed";
+valid=false;
+}
+
+if(!pinPattern.test(pincode)){
+document.getElementById("pincodeError").textContent="Pincode must be 6 digits";
+valid=false;
+}
+
+if(valid){
+alert("Registration Successful!");
+}
+
+return valid;
+
+}
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
-
+```
