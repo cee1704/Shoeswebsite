@@ -6,9 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Reviews | Sneaker Head India</title>
+<title>About Us | Sneaker Head India</title>
 
-<meta name="description" content="Read customer reviews for Sneaker Head India. Discover why sneaker lovers trust us for premium footwear.">
+<meta name="description" content="Learn about Sneaker Head India and see our website statistics, customers, and sneaker sales.">
 
 <link rel="shortcut icon" href="image/logo.jpg">
 
@@ -21,7 +21,7 @@ gtag('js', new Date());
 gtag('config', 'G-80KCM8C0QN');
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -53,12 +53,11 @@ background:white;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 position:sticky;
 top:0;
-z-index:1000;
 }
 
 .logo{
 font-size:28px;
-font-weight:900;
+font-weight:800;
 }
 
 .logo span{
@@ -76,7 +75,6 @@ font-weight:600;
 color:#111;
 padding:8px 12px;
 border-radius:8px;
-transition:.3s;
 }
 
 .nav-links a:hover,
@@ -85,26 +83,13 @@ background:#ffeaea;
 color:#cc0000;
 }
 
-.menu-btn{
-display:none;
-font-size:22px;
-cursor:pointer;
-}
-
 /* HERO */
 
 .hero{
 background:linear-gradient(135deg,#ff3c3c,#ff7a18);
 color:white;
-padding:70px 8%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-flex-wrap:wrap;
-}
-
-.hero-text{
-max-width:500px;
+text-align:center;
+padding:70px 20px;
 }
 
 .hero h1{
@@ -113,115 +98,63 @@ margin-bottom:10px;
 }
 
 .hero p{
+font-size:18px;
 opacity:0.9;
 }
 
-.hero-image img{
-width:260px;
-animation:float 3s ease-in-out infinite;
-}
+/* ABOUT SECTION */
 
-/* floating animation */
-
-@keyframes float{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0);}
-
-}
-
-/* CONTAINER */
-
-.container{
-max-width:1200px;
+.about{
+max-width:1000px;
 margin:auto;
-padding:40px 20px;
-}
-
-/* REVIEW GRID */
-
-.review-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.review-card{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
+padding:50px 20px;
 text-align:center;
-transition:.3s;
 }
 
-.review-card:hover{
-transform:translateY(-8px);
-box-shadow:0 12px 25px rgba(0,0,0,0.2);
+.about h2{
+margin-bottom:20px;
+font-size:32px;
 }
 
-.review-card img{
-width:70px;
-height:70px;
-border-radius:50%;
-margin-bottom:10px;
+.about p{
+font-size:16px;
+line-height:1.7;
+color:#444;
 }
 
-.stars{
-color:#ffb400;
-margin:5px 0;
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+max-width:1000px;
+margin:40px auto;
+padding:0 20px;
 }
 
-/* REVIEW FORM */
-
-.review-form{
-margin-top:50px;
+.stat-card{
 background:white;
 padding:30px;
 border-radius:15px;
-max-width:500px;
-margin-left:auto;
-margin-right:auto;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-}
-
-.review-form h3{
 text-align:center;
-margin-bottom:15px;
-}
-
-.review-form input,
-.review-form textarea,
-.review-form select{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:1px solid #ccc;
-outline:none;
-}
-
-.review-form input:focus,
-.review-form textarea:focus{
-border-color:#cc0000;
-}
-
-.review-form button{
-background:#cc0000;
-color:white;
-border:none;
-padding:14px;
-width:100%;
-border-radius:10px;
-font-weight:600;
-cursor:pointer;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
 transition:.3s;
 }
 
-.review-form button:hover{
-background:#900000;
-transform:translateY(-2px);
+.stat-card:hover{
+transform:translateY(-6px);
+}
+
+.stat-card i{
+font-size:35px;
+color:#cc0000;
+margin-bottom:10px;
+}
+
+.stat-card h3{
+font-size:28px;
+margin-bottom:5px;
 }
 
 /* FOOTER */
@@ -240,46 +173,12 @@ text-decoration:none;
 margin:0 5px;
 }
 
-footer a:hover{
-color:#ff3c3c;
-}
-
 /* MOBILE */
 
 @media(max-width:768px){
 
-.menu-btn{
-display:block;
-}
-
-.nav-links{
-position:absolute;
-top:70px;
-left:0;
-width:100%;
-background:white;
-flex-direction:column;
-align-items:center;
-display:none;
-padding:20px;
-}
-
-.nav-links.show{
-display:flex;
-}
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
 .hero h1{
 font-size:28px;
-}
-
-.hero-image img{
-margin-top:20px;
-width:200px;
 }
 
 }
@@ -290,100 +189,81 @@ width:200px;
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav class="navbar">
 
 <div class="logo">Shoe<span>s</span></div>
 
-<i class="fa-solid fa-bars menu-btn" onclick="toggleMenu()"></i>
-
 <div class="nav-links">
 <a href="index.html">Home</a>
 <a href="main_product.html">Products</a>
-<a href="About.html">About</a>
-<a href="Reviews.html" class="active">Reviews</a>
+<a href="About.html" class="active">About</a>
+<a href="Reviews.html">Reviews</a>
 </div>
 
 </nav>
 
+<!-- HERO -->
+
 <section class="hero">
 
-<div class="hero-text">
-<h1>Customer Reviews</h1>
-<p>See what sneaker lovers say about Sneaker Head India</p>
+<h1>About Sneaker Head India</h1>
+
+<p>Your trusted destination for premium sneakers in India</p>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<h2>Who We Are</h2>
+
+<p>
+Sneaker Head India is an online sneaker store dedicated to bringing the
+latest and most stylish footwear to sneaker lovers across India. Our
+mission is to provide premium quality sneakers, fast delivery, and a
+smooth online shopping experience.
+
+We work with trusted suppliers and ensure that every sneaker meets high
+quality standards. Thousands of sneaker enthusiasts visit our website
+to explore the newest collections from top brands.
+</p>
+
+</section>
+
+<!-- WEBSITE STATS -->
+
+<section class="stats">
+
+<div class="stat-card">
+<i class="fa fa-users"></i>
+<h3>3,500+</h3>
+<p>Website Visitors</p>
 </div>
 
-<div class="hero-image">
-<img src="image/nike.png" alt="Sneaker">
+<div class="stat-card">
+<i class="fa fa-shopping-cart"></i>
+<h3>1,200+</h3>
+<p>Sneakers Sold</p>
+</div>
+
+<div class="stat-card">
+<i class="fa fa-star"></i>
+<h3>4.8 / 5</h3>
+<p>Customer Rating</p>
+</div>
+
+<div class="stat-card">
+<i class="fa fa-globe"></i>
+<h3>15+</h3>
+<p>Cities Served</p>
 </div>
 
 </section>
 
-<div class="container">
-
-<div class="review-grid">
-
-<div class="review-card">
-<img src="https://randomuser.me/api/portraits/men/45.jpg">
-<h4>Rahul Sharma</h4>
-<div class="stars">
-<i class="fa fa-star"></i>
-<i class="fa fa-star"></i>
-<i class="fa fa-star"></i>
-<i class="fa fa-star"></i>
-<i class="fa fa-star"></i>
-</div>
-<p>Amazing sneakers! Quality and comfort are top-notch.</p>
-</div>
-
-<div class="review-card">
-<img src="https://randomuser.me/api/portraits/women/55.jpg">
-<h4>Priya Patel</h4>
-<div class="stars">
-<i class="fa fa-star"></i>
-<i class="fa fa-star"></i>
-<i class="fa fa-star"></i>
-<i class="fa fa-star"></i>
-</div>
-<p>Fast delivery and great customer service.</p>
-</div>
-
-<div class="review-card">
-<img src="https://randomuser.me/api/portraits/men/65.jpg">
-<h4>Arjun Mehta</h4>
-<div class="stars">
-<i class="fa fa-star"></i>
-<i class="fa fa-star"></i>
-<i class="fa fa-star"></i>
-<i class="fa fa-star"></i>
-<i class="fa fa-star"></i>
-</div>
-<p>Best sneaker store online. Highly recommended!</p>
-</div>
-
-</div>
-
-<div class="review-form">
-
-<h3>Leave a Review</h3>
-
-<input type="text" placeholder="Your Name">
-
-<select>
-<option>Rating</option>
-<option>⭐</option>
-<option>⭐⭐</option>
-<option>⭐⭐⭐</option>
-<option>⭐⭐⭐⭐</option>
-<option>⭐⭐⭐⭐⭐</option>
-</select>
-
-<textarea rows="4" placeholder="Write your review"></textarea>
-
-<button onclick="submitReview()">Submit Review</button>
-
-</div>
-
-</div>
+<!-- FOOTER -->
 
 <footer>
 
@@ -396,25 +276,6 @@ width:200px;
 </p>
 
 </footer>
-
-<script>
-
-function toggleMenu(){
-document.querySelector(".nav-links").classList.toggle("show");
-}
-
-function submitReview(){
-
-alert("Thank you for your review!");
-
-gtag('event','review_submitted',{
-event_category:'engagement',
-event_label:'customer_review'
-});
-
-}
-
-</script>
 
 </body>
 </html>
