@@ -2,14 +2,10 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>About Us | Sneaker Head India</title>
-
 <meta name="description" content="Learn more about Sneaker Head India, our team, and our sneaker community.">
-
 <link rel="shortcut icon" href="image/logo.jpg">
 
 <!-- GOOGLE ANALYTICS -->
@@ -22,329 +18,297 @@ gtag('config', 'G-80KCM8C0QN');
 </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
-
 /* GLOBAL */
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#f5f5f5;
-color:#111;
+  background:#f5f5f5;
+  color:#111;
 }
 
 /* NAVBAR */
-
 .navbar{
-display:flex;
-align-items:center;
-justify-content:center;
-padding:18px 8%;
-background:white;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-position:sticky;
-top:0;
-z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 8%;
+  background:white;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.nav-logo{
+  font-size:24px;
+  font-weight:800;
+  color:#cc0000;
+  text-decoration:none;
 }
 
 .nav-links{
-display:flex;
-gap:40px;
+  display:flex;
+  gap:40px;
+  justify-content:center;
+  flex:1; /* makes links centered in remaining space */
 }
 
 .nav-links a{
-text-decoration:none;
-font-weight:600;
-color:#111;
-padding:8px 15px;
-border-radius:8px;
-transition:.3s;
+  text-decoration:none;
+  font-weight:600;
+  color:#111;
+  padding:8px 15px;
+  border-radius:8px;
+  transition:.3s;
 }
 
 .nav-links a:hover,
 .nav-links a.active{
-background:#ffeaea;
-color:#cc0000;
+  background:#ffeaea;
+  color:#cc0000;
 }
 
 /* HERO */
-
 .hero{
-background:linear-gradient(135deg,#ff3c3c,#ff7a18);
-color:white;
-text-align:center;
-padding:70px 20px;
+  background:linear-gradient(135deg,#ff3c3c,#ff7a18);
+  color:white;
+  text-align:center;
+  padding:70px 20px;
 }
 
 .hero h1{
-font-size:42px;
-margin-bottom:10px;
+  font-size:42px;
+  margin-bottom:10px;
 }
 
 .hero p{
-font-size:18px;
-opacity:0.9;
+  font-size:18px;
+  opacity:0.9;
 }
 
 /* ABOUT */
-
 .about{
-max-width:900px;
-margin:auto;
-padding:50px 20px;
-text-align:center;
+  max-width:900px;
+  margin:auto;
+  padding:50px 20px;
+  text-align:center;
 }
 
 .about h2{
-font-size:32px;
-margin-bottom:20px;
+  font-size:32px;
+  margin-bottom:20px;
 }
 
 .about p{
-color:#444;
-line-height:1.7;
+  color:#444;
+  line-height:1.7;
 }
 
 /* STATS */
-
 .stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:25px;
-max-width:1000px;
-margin:40px auto;
-padding:0 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+  max-width:1000px;
+  margin:40px auto;
+  padding:0 20px;
 }
 
 .stat-card{
-background:white;
-padding:30px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-transition:.3s;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  transition:.3s;
 }
 
 .stat-card:hover{
-transform:translateY(-6px);
+  transform:translateY(-6px);
 }
 
 .stat-card i{
-font-size:35px;
-color:#cc0000;
-margin-bottom:10px;
+  font-size:35px;
+  color:#cc0000;
+  margin-bottom:10px;
 }
 
 .stat-card h3{
-font-size:28px;
+  font-size:28px;
 }
 
 /* TEAM */
-
 .team{
-padding:60px 20px;
-text-align:center;
+  padding:60px 20px;
+  text-align:center;
 }
 
 .team h2{
-font-size:32px;
-margin-bottom:30px;
+  font-size:32px;
+  margin-bottom:30px;
 }
 
 .team-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-max-width:1000px;
-margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  max-width:1000px;
+  margin:auto;
 }
 
 .team-card{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-transition:.3s;
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  transition:.3s;
 }
 
 .team-card:hover{
-transform:translateY(-8px);
+  transform:translateY(-8px);
 }
 
 .team-card img{
-width:90px;
-height:90px;
-border-radius:50%;
-margin-bottom:10px;
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  margin-bottom:10px;
 }
 
 .team-card h4{
-margin-bottom:5px;
+  margin-bottom:5px;
 }
 
 /* FOOTER */
-
 footer{
-background:#111;
-color:white;
-text-align:center;
-padding:25px;
-margin-top:50px;
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:50px;
 }
 
 footer a{
-color:white;
-text-decoration:none;
-margin:0 5px;
+  color:white;
+  text-decoration:none;
+  margin:0 5px;
 }
 
 footer a:hover{
-color:#ff3c3c;
+  color:#ff3c3c;
 }
 
 /* MOBILE */
-
 @media(max-width:768px){
+  .hero h1{
+    font-size:28px;
+  }
 
-.hero h1{
-font-size:28px;
+  .nav-links{
+    gap:20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
-
-.nav-links{
-gap:20px;
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-
 <nav class="navbar">
-
-<div class="nav-links">
-<a href="index.html">Home</a>
-<a href="main_product.html">Products</a>
-<a href="About.html" class="active">About</a>
-<a href="Reviews.html">Reviews</a>
-</div>
-
+  <a href="index.html" class="nav-logo">Sneaker Head</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="main_product.html">Products</a>
+    <a href="About.html" class="active">About</a>
+    <a href="Reviews.html">Reviews</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-
 <section class="hero">
-
-<h1>About Sneaker Head India</h1>
-<p>Your trusted destination for premium sneakers</p>
-
+  <h1>About Sneaker Head India</h1>
+  <p>Your trusted destination for premium sneakers</p>
 </section>
 
 <!-- ABOUT -->
-
 <section class="about">
-
-<h2>Who We Are</h2>
-
-<p>
-Sneaker Head India is an online sneaker store created for sneaker lovers
-across India. Our goal is to bring the latest and most stylish sneakers
-to customers at affordable prices. We focus on quality, comfort, and
-trendy designs that match modern fashion.
-</p>
-
-<p>
-Thousands of sneaker enthusiasts visit our website every month to explore
-exclusive sneaker collections and limited editions.
-</p>
-
+  <h2>Who We Are</h2>
+  <p>
+    Sneaker Head India is an online sneaker store created for sneaker lovers
+    across India. Our goal is to bring the latest and most stylish sneakers
+    to customers at affordable prices. We focus on quality, comfort, and
+    trendy designs that match modern fashion.
+  </p>
+  <p>
+    Thousands of sneaker enthusiasts visit our website every month to explore
+    exclusive sneaker collections and limited editions.
+  </p>
 </section>
 
 <!-- STATS -->
-
 <section class="stats">
-
-<div class="stat-card">
-<i class="fa fa-users"></i>
-<h3>3,500+</h3>
-<p>Website Visitors</p>
-</div>
-
-<div class="stat-card">
-<i class="fa fa-shopping-cart"></i>
-<h3>1,200+</h3>
-<p>Sneakers Sold</p>
-</div>
-
-<div class="stat-card">
-<i class="fa fa-star"></i>
-<h3>4.8 / 5</h3>
-<p>Customer Rating</p>
-</div>
-
-<div class="stat-card">
-<i class="fa fa-globe"></i>
-<h3>20+</h3>
-<p>Cities Served</p>
-</div>
-
+  <div class="stat-card">
+    <i class="fa fa-users"></i>
+    <h3>3,500+</h3>
+    <p>Website Visitors</p>
+  </div>
+  <div class="stat-card">
+    <i class="fa fa-shopping-cart"></i>
+    <h3>1,200+</h3>
+    <p>Sneakers Sold</p>
+  </div>
+  <div class="stat-card">
+    <i class="fa fa-star"></i>
+    <h3>4.8 / 5</h3>
+    <p>Customer Rating</p>
+  </div>
+  <div class="stat-card">
+    <i class="fa fa-globe"></i>
+    <h3>20+</h3>
+    <p>Cities Served</p>
+  </div>
 </section>
 
 <!-- TEAM -->
-
 <section class="team">
-
-<h2>Meet Our Team</h2>
-
-<div class="team-grid">
-
-<div class="team-card">
-<img src="https://randomuser.me/api/portraits/men/32.jpg">
-<h4>Rahul Sharma</h4>
-<p>Founder</p>
-</div>
-
-<div class="team-card">
-<img src="https://randomuser.me/api/portraits/women/44.jpg">
-<h4>Priya Patel</h4>
-<p>Marketing Manager</p>
-</div>
-
-<div class="team-card">
-<img src="https://randomuser.me/api/portraits/men/52.jpg">
-<h4>Arjun Mehta</h4>
-<p>Product Specialist</p>
-</div>
-
-</div>
-
+  <h2>Meet Our Team</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg">
+      <h4>Rahul Sharma</h4>
+      <p>Founder</p>
+    </div>
+    <div class="team-card">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg">
+      <h4>Priya Patel</h4>
+      <p>Marketing Manager</p>
+    </div>
+    <div class="team-card">
+      <img src="https://randomuser.me/api/portraits/men/52.jpg">
+      <h4>Arjun Mehta</h4>
+      <p>Product Specialist</p>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
-
 <footer>
-
-<p>© 2025 Sneaker Head India</p>
-
-<p>
-<a href="PrivacyPolicy.html">Privacy Policy</a> |
-<a href="TermsOfService.html">Terms</a> |
-<a href="ContactUs.html">Contact</a>
-</p>
-
+  <p>© 2025 Sneaker Head India</p>
+  <p>
+    <a href="PrivacyPolicy.html">Privacy Policy</a> |
+    <a href="TermsOfService.html">Terms</a> |
+    <a href="ContactUs.html">Contact</a>
+  </p>
 </footer>
 
 </body>
