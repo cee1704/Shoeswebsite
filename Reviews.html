@@ -2,10 +2,8 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
 <meta name="description" content="Read genuine customer reviews of Sneaker Head India sneakers and submit your own feedback.">
 <meta name="robots" content="index, follow">
@@ -23,349 +21,197 @@ gtag('js', new Date());
 gtag('config', 'G-80KCM8C0QN');
 </script>
 
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
+/* GLOBAL */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', Arial, sans-serif; }
+body { background: #f5f5f5; color: #222; line-height: 1.7; }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',Arial,sans-serif;
-}
+/* NAVBAR */
+.navbar { display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0; width: 100%; height: 90px; padding: 0 3rem; background: #fff; box-shadow: 0 6px 25px rgba(0,0,0,0.1); z-index:1000; }
+.logo { font-size: 32px; font-weight: 900; color: #cc0000; text-decoration: none; }
+.logo span { color: #222; }
+.nav-links { display: flex; gap: 35px; list-style: none; }
+.nav-links a { text-decoration: none; font-weight: 600; color: #111; padding: 10px 14px; border-radius: 6px; transition: 0.3s; }
+.nav-links a:hover, .nav-links a.active { background: #ffeaea; color: #cc0000; }
+.nav-icons { display: flex; gap: 25px; }
+.nav-icons i { font-size: 22px; cursor: pointer; color: #cc0000; transition: 0.3s; }
+.nav-icons i:hover { color: #8b0000; }
 
-body{
-background:#f5f5f5;
-color:#222;
-line-height:1.7;
-}
+/* MAIN CONTENT */
+main { margin-top: 120px; padding: 20px; }
+.container { max-width: 900px; margin: auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
+.container h1 { color: #cc0000; margin-bottom: 25px; text-align: center; font-size: 32px; }
+h2 { margin-top: 30px; color: #111; }
 
+/* FORM STYLES */
+label { display: block; margin-top: 15px; font-weight: 600; }
+input, textarea, select { width: 100%; padding: 12px; margin-top: 5px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; }
+textarea { resize: none; }
+button { margin-top: 20px; padding: 12px 20px; background: #cc0000; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px; transition: 0.3s; }
+button:hover { background: #8b0000; }
 
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:fixed;
-top:0;
-width:100%;
-height:90px;
-padding:0 3rem;
-background:#fff;
-box-shadow:0 6px 25px rgba(0,0,0,0.1);
-z-index:1000;
-}
-
-.logo{
-font-size:38px;
-font-weight:900;
-}
-
-.logo span{
-color:#c60000;
-}
-
-.nav-links{
-display:flex;
-gap:35px;
-list-style:none;
-}
-
-.nav-links a{
-text-decoration:none;
-font-weight:700;
-color:#111;
-padding:10px 14px;
-border-radius:6px;
-}
-
-.nav-links a:hover,
-.nav-links a.active{
-background:#ffeaea;
-color:#c60000;
-}
-
-.nav-icons{
-display:flex;
-gap:25px;
-}
-
-.nav-icons i{
-font-size:24px;
-cursor:pointer;
-}
-
-
-
-main{
-margin-top:120px;
-padding:20px;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-background:#fff;
-padding:40px;
-border-radius:12px;
-}
-
-.container h1{
-color:#c60000;
-margin-bottom:20px;
-}
-
-h2{
-margin-top:30px;
-}
-
-
-
-label{
-display:block;
-margin-top:15px;
-font-weight:600;
-}
-
-input, textarea{
-width:100%;
-padding:10px;
-margin-top:5px;
-border-radius:6px;
-border:1px solid #ccc;
-}
-
-button{
-margin-top:15px;
-padding:12px;
-background:#c60000;
-color:#fff;
-border:none;
-border-radius:6px;
-cursor:pointer;
-font-weight:bold;
-}
-
-button:hover{
-background:#8b0000;
-}
-
-
-.review-card{
-border:1px solid #ddd;
-border-radius:10px;
-padding:15px;
-margin-top:20px;
-}
-
-.review-profile{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.review-profile img{
-width:50px;
-height:50px;
-border-radius:50%;
-}
-
-.review-text{
-margin-top:10px;
-}
+/* REVIEW CARDS */
+.review-card { border: 1px solid #eee; border-radius: 12px; padding: 20px; margin-top: 20px; background: #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+.review-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+.review-profile { display: flex; align-items: center; gap: 15px; }
+.review-profile img { width: 50px; height: 50px; border-radius: 50%; }
+.review-text { margin-top: 12px; font-size: 16px; color: #333; }
+.review-stars { margin-top: 5px; color: #ffb400; font-size: 16px; }
 
 /* FOOTER */
+footer { background: #111; color: #aaa; text-align: center; padding: 25px; margin-top: 40px; font-size: 14px; }
+footer a { color: #ff5252; text-decoration: none; margin: 0 5px; }
+footer a:hover { text-decoration: underline; }
 
-footer{
-background:#111;
-color:#aaa;
-text-align:center;
-padding:25px;
-margin-top:40px;
+/* RESPONSIVE */
+@media(max-width:768px) {
+.navbar { flex-direction: column; height: auto; padding: 15px 2rem; }
+.nav-links { gap: 20px; margin-top: 10px; flex-wrap: wrap; justify-content: center; }
+.nav-icons { margin-top: 10px; justify-content: center; }
 }
-
-footer a{
-color:#ff5252;
-text-decoration:none;
-}
-
 </style>
-
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-
 <header>
-
 <nav class="navbar">
+  <a href="MainPage.html" class="logo">Shoe<span>s</span></a>
 
-<div class="logo">Shoe<span>s</span></div>
+  <ul class="nav-links">
+    <li><a href="MainPage.html">Home</a></li>
+    <li><a href="main_product.html">Products</a></li>
+    <li><a href="About.html">About</a></li>
+    <li><a class="active" href="Reviews.html">Reviews</a></li>
+  </ul>
 
-<ul class="nav-links">
-<li><a href="MainPage.html">Home</a></li>
-<li><a href="main_product.html">Products</a></li>
-<li><a href="About.html">About</a></li>
-<li><a class="active" href="Reviews.html">Reviews</a></li>
-</ul>
-
-<div class="nav-icons">
-<i class="fa-solid fa-heart"></i>
-<i class="fa-solid fa-cart-shopping"></i>
-<i class="fa-solid fa-user"></i>
-</div>
-
+  <div class="nav-icons">
+    <i class="fa-solid fa-heart"></i>
+    <i class="fa-solid fa-cart-shopping"></i>
+    <i class="fa-solid fa-user"></i>
+  </div>
 </nav>
-
 </header>
 
-
-
 <main>
-
 <div class="container">
-
 <h1>Customer Reviews</h1>
 
 <!-- REVIEW FORM -->
-
 <h2>Submit Your Review</h2>
-
 <form id="reviewForm">
-
 <label>Email Address</label>
 <input type="email" id="email" required placeholder="example@gmail.com">
 
 <label>Your Review</label>
 <textarea id="reviewText" rows="4" required placeholder="Write your review..."></textarea>
 
-<button type="submit">Submit Review</button>
+<label>Rating</label>
+<select id="rating" required>
+  <option value="">Select Rating</option>
+  <option value="1">1 ★</option>
+  <option value="2">2 ★★</option>
+  <option value="3">3 ★★★</option>
+  <option value="4">4 ★★★★</option>
+  <option value="5">5 ★★★★★</option>
+</select>
 
+<button type="submit">Submit Review</button>
 </form>
 
-
-
 <h2>What Customers Say</h2>
-
 <div id="reviews">
 
 <div class="review-card">
-<div class="review-profile">
-<img data-email="marlyn@example.com">
-<div>
-<strong>marlyn@example.com</strong>
-<p>Customer</p>
-</div>
-</div>
-<p class="review-text">
-Incredibly comfortable with excellent cushioning and support.
-</p>
+  <div class="review-profile">
+    <img data-email="marlyn@example.com">
+    <div>
+      <strong>marlyn@example.com</strong>
+      <p>Customer</p>
+      <div class="review-stars">★★★★★</div>
+    </div>
+  </div>
+  <p class="review-text">Incredibly comfortable with excellent cushioning and support.</p>
 </div>
 
 <div class="review-card">
-<div class="review-profile">
-<img data-email="max@example.com">
-<div>
-<strong>max@example.com</strong>
-<p>Customer</p>
-</div>
-</div>
-<p class="review-text">
-Great design and breathable material. Perfect everyday sneaker.
-</p>
-</div>
-
+  <div class="review-profile">
+    <img data-email="max@example.com">
+    <div>
+      <strong>max@example.com</strong>
+      <p>Customer</p>
+      <div class="review-stars">★★★★</div>
+    </div>
+  </div>
+  <p class="review-text">Great design and breathable material. Perfect everyday sneaker.</p>
 </div>
 
 </div>
-
+</div>
 </main>
 
-
-
-
 <footer>
-
 <p>© 2025 Sneaker Head India</p>
-
 <p>
-<a href="#">Privacy Policy</a> |
-<a href="#">Terms</a> |
-<a href="#">Contact</a>
+<a href="PrivacyPolicy.html">Privacy Policy</a> |
+<a href="TermsOfService.html">Terms</a> |
+<a href="ContactUs.html">Contact</a>
 </p>
-
 </footer>
 
-
-
-
 <script>
-
+// Generate avatar for email
 function avatar(email){
-
-const canvas=document.createElement("canvas");
-canvas.width=100;
-canvas.height=100;
-
-const ctx=canvas.getContext("2d");
-
-const colors=["#d32f2f","#1976d2","#388e3c","#f57c00","#7b1fa2"];
-
-ctx.fillStyle=colors[Math.floor(Math.random()*colors.length)];
-ctx.fillRect(0,0,100,100);
-
-ctx.fillStyle="#fff";
-ctx.font="bold 45px Arial";
-ctx.textAlign="center";
-ctx.textBaseline="middle";
-ctx.fillText(email.charAt(0).toUpperCase(),50,55);
-
-return canvas.toDataURL();
-
+  const canvas=document.createElement("canvas");
+  canvas.width=100;
+  canvas.height=100;
+  const ctx=canvas.getContext("2d");
+  const colors=["#d32f2f","#1976d2","#388e3c","#f57c00","#7b1fa2"];
+  ctx.fillStyle=colors[Math.floor(Math.random()*colors.length)];
+  ctx.fillRect(0,0,100,100);
+  ctx.fillStyle="#fff";
+  ctx.font="bold 45px Arial";
+  ctx.textAlign="center";
+  ctx.textBaseline="middle";
+  ctx.fillText(email.charAt(0).toUpperCase(),50,55);
+  return canvas.toDataURL();
 }
 
+// Apply avatars
 document.querySelectorAll("img[data-email]").forEach(img=>{
-img.src=avatar(img.dataset.email);
+  img.src=avatar(img.dataset.email);
 });
 
-
+// Handle form submit
 document.getElementById("reviewForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const email=document.getElementById("email").value;
+  const review=document.getElementById("reviewText").value;
+  const rating=document.getElementById("rating").value;
 
-e.preventDefault();
+  const stars="★".repeat(rating) + "☆".repeat(5-rating);
 
-const email=document.getElementById("email").value;
-const review=document.getElementById("reviewText").value;
-
-const card=document.createElement("div");
-card.className="review-card";
-
-card.innerHTML=`
-
-<div class="review-profile">
-<img src="${avatar(email)}">
-<div>
-<strong>${email}</strong>
-<p>Customer</p>
-</div>
-</div>
-
-<p class="review-text">${review}</p>
-
-`;
-
-document.getElementById("reviews").appendChild(card);
-
-this.reset();
-
-alert("Thank you for your review!");
-
+  const card=document.createElement("div");
+  card.className="review-card";
+  card.innerHTML=`
+  <div class="review-profile">
+    <img src="${avatar(email)}">
+    <div>
+      <strong>${email}</strong>
+      <p>Customer</p>
+      <div class="review-stars">${stars}</div>
+    </div>
+  </div>
+  <p class="review-text">${review}</p>
+  `;
+  document.getElementById("reviews").appendChild(card);
+  this.reset();
+  alert("Thank you for your review!");
 });
-
 </script>
 
 </body>
