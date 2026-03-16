@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,18 +37,14 @@ box-sizing:border-box;
 font-family:Poppins, Arial, sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:linear-gradient(135deg,#ff3c3c,#ff7a18);
 min-height:100vh;
 color:#111;
-}
-
-/* HEADER */
-
-header{
-position:sticky;
-top:0;
-z-index:1000;
 }
 
 /* NAVBAR */
@@ -61,6 +57,9 @@ justify-content:space-between;
 align-items:center;
 padding:15px 8%;
 box-shadow:0 5px 20px rgba(0,0,0,.15);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .brand h1{
@@ -93,6 +92,40 @@ background:#ffe5e5;
 color:#c40000;
 }
 
+/* MOBILE MENU */
+
+.menu-btn{
+display:none;
+font-size:24px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.menu-btn{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+align-items:center;
+display:none;
+padding:20px;
+}
+
+.nav-links.show{
+display:flex;
+}
+
+}
+
+/* ICONS */
+
 .nav-icons{
 display:flex;
 gap:18px;
@@ -123,9 +156,10 @@ border-radius:50%;
 .dropdown{
 display:none;
 position:absolute;
-right:0;
-top:45px;
-width:260px;
+right:10px;
+top:65px;
+width:90vw;
+max-width:260px;
 background:#fff;
 border-radius:12px;
 box-shadow:0 10px 30px rgba(0,0,0,.25);
@@ -148,8 +182,8 @@ border-bottom:1px solid #eee;
 }
 
 .dropdown img{
-width:45px;
-height:45px;
+width:40px;
+height:40px;
 object-fit:contain;
 }
 
@@ -174,6 +208,8 @@ transition:.3s;
 
 .primary-btn:hover{
 background:#900000;
+transform:translateY(-2px);
+box-shadow:0 8px 15px rgba(0,0,0,0.2);
 }
 
 /* MAIN */
@@ -189,6 +225,7 @@ background:white;
 padding:40px;
 border-radius:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
+animation:fadeIn 1s ease;
 }
 
 .products h2{
@@ -227,6 +264,11 @@ width:100%;
 height:100%;
 object-fit:contain;
 padding:15px;
+transition:0.4s;
+}
+
+.card:hover img{
+transform:scale(1.1) rotate(-5deg);
 }
 
 .like-btn{
@@ -290,22 +332,17 @@ padding:25px;
 margin-top:40px;
 }
 
-/* MOBILE */
+/* ANIMATION */
 
-@media(max-width:768px){
-
-.nav-links{
-display:none;
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
 }
-
-.products{
-padding:25px;
+to{
+opacity:1;
+transform:translateY(0);
 }
-
-main{
-padding:20px;
-}
-
 }
 
 </style>
@@ -314,13 +351,13 @@ padding:20px;
 
 <body>
 
-<header>
-
 <nav class="navbar">
 
 <div class="brand">
 <h1>SHOE<span>S</span></h1>
 </div>
+
+<i class="fa-solid fa-bars menu-btn" onclick="toggleMenu()"></i>
 
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
@@ -351,15 +388,9 @@ padding:20px;
 <button class="primary-btn">Checkout</button>
 </div>
 
-<button class="icon-btn">
-<i class="fa-solid fa-user"></i>
-</button>
-
 </div>
 
 </nav>
-
-</header>
 
 <main>
 
@@ -397,11 +428,15 @@ padding:20px;
 
 <footer>
 
-<p>© 2025 Sneaker Head India. All Rights Reserved.</p>
+<p>© 2025 Sneaker Head India</p>
 
 </footer>
 
 <script>
+
+function toggleMenu(){
+document.querySelector(".nav-links").classList.toggle("show");
+}
 
 const products=[
 {name:"NIKE AIR MAX",price:120,img:"image/shoes1.png"},
@@ -453,9 +488,18 @@ grid.innerHTML+=`
 }
 
 function addCart(i){
+
 cart.push(products[i]);
+
+gtag('event','add_to_cart',{
+item_name:products[i].name,
+price:products[i].price
+});
+
 document.getElementById("cart-count").textContent=cart.length;
+
 updateCart();
+
 }
 
 function toggleLike(btn,i){
@@ -525,4 +569,4 @@ render();
 
 </body>
 </html>
-```
+
