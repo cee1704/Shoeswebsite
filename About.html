@@ -8,7 +8,7 @@
 
 <title>About Us | Sneaker Head India</title>
 
-<meta name="description" content="Learn about Sneaker Head India and see our website statistics, customers, and sneaker sales.">
+<meta name="description" content="Learn more about Sneaker Head India, our team, and our sneaker community.">
 
 <link rel="shortcut icon" href="image/logo.jpg">
 
@@ -46,35 +46,28 @@ color:#111;
 
 .navbar{
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:15px 8%;
+justify-content:center;
+padding:18px 8%;
 background:white;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 position:sticky;
 top:0;
-}
-
-.logo{
-font-size:28px;
-font-weight:800;
-}
-
-.logo span{
-color:#cc0000;
+z-index:1000;
 }
 
 .nav-links{
 display:flex;
-gap:25px;
+gap:40px;
 }
 
 .nav-links a{
 text-decoration:none;
 font-weight:600;
 color:#111;
-padding:8px 12px;
+padding:8px 15px;
 border-radius:8px;
+transition:.3s;
 }
 
 .nav-links a:hover,
@@ -102,24 +95,23 @@ font-size:18px;
 opacity:0.9;
 }
 
-/* ABOUT SECTION */
+/* ABOUT */
 
 .about{
-max-width:1000px;
+max-width:900px;
 margin:auto;
 padding:50px 20px;
 text-align:center;
 }
 
 .about h2{
-margin-bottom:20px;
 font-size:32px;
+margin-bottom:20px;
 }
 
 .about p{
-font-size:16px;
-line-height:1.7;
 color:#444;
+line-height:1.7;
 }
 
 /* STATS */
@@ -154,6 +146,48 @@ margin-bottom:10px;
 
 .stat-card h3{
 font-size:28px;
+}
+
+/* TEAM */
+
+.team{
+padding:60px 20px;
+text-align:center;
+}
+
+.team h2{
+font-size:32px;
+margin-bottom:30px;
+}
+
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1000px;
+margin:auto;
+}
+
+.team-card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+transition:.3s;
+}
+
+.team-card:hover{
+transform:translateY(-8px);
+}
+
+.team-card img{
+width:90px;
+height:90px;
+border-radius:50%;
+margin-bottom:10px;
+}
+
+.team-card h4{
 margin-bottom:5px;
 }
 
@@ -173,12 +207,20 @@ text-decoration:none;
 margin:0 5px;
 }
 
+footer a:hover{
+color:#ff3c3c;
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
 
 .hero h1{
 font-size:28px;
+}
+
+.nav-links{
+gap:20px;
 }
 
 }
@@ -192,8 +234,6 @@ font-size:28px;
 <!-- NAVBAR -->
 
 <nav class="navbar">
-
-<div class="logo">Shoe<span>s</span></div>
 
 <div class="nav-links">
 <a href="index.html">Home</a>
@@ -209,8 +249,7 @@ font-size:28px;
 <section class="hero">
 
 <h1>About Sneaker Head India</h1>
-
-<p>Your trusted destination for premium sneakers in India</p>
+<p>Your trusted destination for premium sneakers</p>
 
 </section>
 
@@ -221,19 +260,20 @@ font-size:28px;
 <h2>Who We Are</h2>
 
 <p>
-Sneaker Head India is an online sneaker store dedicated to bringing the
-latest and most stylish footwear to sneaker lovers across India. Our
-mission is to provide premium quality sneakers, fast delivery, and a
-smooth online shopping experience.
+Sneaker Head India is an online sneaker store created for sneaker lovers
+across India. Our goal is to bring the latest and most stylish sneakers
+to customers at affordable prices. We focus on quality, comfort, and
+trendy designs that match modern fashion.
+</p>
 
-We work with trusted suppliers and ensure that every sneaker meets high
-quality standards. Thousands of sneaker enthusiasts visit our website
-to explore the newest collections from top brands.
+<p>
+Thousands of sneaker enthusiasts visit our website every month to explore
+exclusive sneaker collections and limited editions.
 </p>
 
 </section>
 
-<!-- WEBSITE STATS -->
+<!-- STATS -->
 
 <section class="stats">
 
@@ -257,8 +297,38 @@ to explore the newest collections from top brands.
 
 <div class="stat-card">
 <i class="fa fa-globe"></i>
-<h3>15+</h3>
+<h3>20+</h3>
 <p>Cities Served</p>
+</div>
+
+</section>
+
+<!-- TEAM -->
+
+<section class="team">
+
+<h2>Meet Our Team</h2>
+
+<div class="team-grid">
+
+<div class="team-card">
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+<h4>Rahul Sharma</h4>
+<p>Founder</p>
+</div>
+
+<div class="team-card">
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+<h4>Priya Patel</h4>
+<p>Marketing Manager</p>
+</div>
+
+<div class="team-card">
+<img src="https://randomuser.me/api/portraits/men/52.jpg">
+<h4>Arjun Mehta</h4>
+<p>Product Specialist</p>
+</div>
+
 </div>
 
 </section>
@@ -270,9 +340,9 @@ to explore the newest collections from top brands.
 <p>© 2025 Sneaker Head India</p>
 
 <p>
-<a href="#">Privacy Policy</a> |
-<a href="#">Terms</a> |
-<a href="#">Contact</a>
+<a href="PrivacyPolicy.html">Privacy Policy</a> |
+<a href="TermsOfService.html">Terms</a> |
+<a href="ContactUs.html">Contact</a>
 </p>
 
 </footer>
