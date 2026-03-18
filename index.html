@@ -57,9 +57,7 @@ font-size:28px;
 font-weight:bold;
 }
 
-.logo span{
-color:#ff3c3c;
-}
+.logo span{ color:#ff3c3c; }
 
 .nav-links{
 list-style:none;
@@ -74,9 +72,7 @@ color:#333;
 transition:.3s;
 }
 
-.nav-links a:hover{
-color:#ff3c3c;
-}
+.nav-links a:hover{ color:#ff3c3c; }
 
 .nav-icons i{
 margin-left:15px;
@@ -164,6 +160,8 @@ text-align:center;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
+.products h2{ margin-bottom:30px; }
+
 .product-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -195,6 +193,7 @@ padding:50px;
 background:#f5f5f5;
 border-radius:20px;
 text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 .gallery-grid{
@@ -209,9 +208,12 @@ width:100%;
 height:200px;
 object-fit:cover;
 border-radius:10px;
+transition:0.3s;
 }
 
-/* SUBSCRIBE BANNER */
+.gallery-grid img:hover{ transform:scale(1.05); }
+
+/* SUBSCRIBE */
 .subscribe-banner{
 margin:40px 8%;
 padding:50px;
@@ -235,6 +237,7 @@ padding:12px;
 border:none;
 border-radius:30px;
 width:250px;
+outline:none;
 }
 
 .subscribe-form button{
@@ -245,6 +248,11 @@ background:white;
 color:#ff3c3c;
 font-weight:bold;
 cursor:pointer;
+transition:0.3s;
+}
+
+.subscribe-form button:hover{
+transform:translateY(-2px);
 }
 
 /* FOOTER */
@@ -280,6 +288,7 @@ text-align:center;
 }
 
 .hero-text h1{ font-size:40px; }
+.hero-img img{ width:250px; }
 }
 
 </style>
@@ -294,11 +303,17 @@ text-align:center;
 <i class="fa-solid fa-bars menu-btn" onclick="toggleMenu()"></i>
 
 <ul class="nav-links" id="menu">
-<li><a href="#">Home</a></li>
-<li><a href="#">Products</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Reviews</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="main_product.html">Products</a></li>
+<li><a href="About.html">About</a></li>
+<li><a href="Reviews.html">Reviews</a></li>
 </ul>
+
+<div class="nav-icons">
+<i class="fa-solid fa-heart"></i>
+<i class="fa-solid fa-cart-shopping"></i>
+<i class="fa-solid fa-user"></i>
+</div>
 </nav>
 
 <!-- HERO -->
@@ -308,8 +323,8 @@ text-align:center;
 <div class="hero-text">
 <h1>NIKE</h1>
 <h2>Premium Collection</h2>
-<p>Explore the latest Nike sneakers inspired by street culture.</p>
-<a href="#" class="btn">SHOP NOW</a>
+<p>Explore the latest Nike sneakers inspired by street culture, performance, and modern fashion.</p>
+<a href="main_product.html" class="btn">SHOP NOW</a>
 </div>
 
 <div class="hero-img">
@@ -319,29 +334,65 @@ text-align:center;
 </div>
 </section>
 
+<!-- VIDEO -->
+<section class="video-section">
+<h2>Watch Our Latest Sneaker Drop</h2>
+<video controls autoplay muted loop>
+<source src="image/vid.mp4" type="video/mp4">
+</video>
+</section>
+
 <!-- PRODUCTS -->
 <section class="products">
 <h2>Featured Sneakers</h2>
 
 <div class="product-grid">
+
 <div class="product-card">
 <img src="image/nikeair.avif">
-<h3>Nike Air Max</h3>
+<h3>Nike Air Max 270</h3>
 <p>$150</p>
 </div>
 
 <div class="product-card">
+<img src="image/NIKE+DUNK+LOW+RETRO+SE.avif">
+<h3>Nike Dunk Low</h3>
+<p>$130</p>
+</div>
+
+<div class="product-card">
 <img src="image/pegasus.avif">
-<h3>Nike Pegasus</h3>
+<h3>Nike Pegasus 38</h3>
 <p>$120</p>
 </div>
+
+<div class="product-card">
+<img src="image/blazer.jpg">
+<h3>Nike Blazer Mid</h3>
+<p>$110</p>
 </div>
+
+</div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+<h2>More Sneakers</h2>
+
+<div class="gallery-grid">
+<img src="image/gallery1.webp">
+<img src="image/gallery2.avif">
+<img src="image/gallery3.webp">
+<img src="image/gallery4.avif">
+<img src="image/gallery5.jpg">
+</div>
+
 </section>
 
 <!-- SUBSCRIBE -->
 <section class="subscribe-banner">
 <h2>🔥 Join the Sneaker Club</h2>
-<p>Get exclusive drops & offers!</p>
+<p>Get exclusive drops, offers & updates directly in your inbox.</p>
 
 <form action="https://xxxx.list-manage.com/subscribe/post" method="post" class="subscribe-form">
 <input type="email" name="EMAIL" placeholder="Enter your email" required>
