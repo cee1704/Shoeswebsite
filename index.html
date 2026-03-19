@@ -10,12 +10,12 @@
 
 <meta name="description" content="Sneaker Head India offers premium Nike sneakers, exclusive collections, fast delivery, and best prices in India.">
 
-<!-- SEO ADDITIONS -->
+<!-- ✅ SEO ADDITIONS (no visual impact) -->
 <meta name="keywords" content="Nike shoes India, sneakers India, buy Nike sneakers online, sneaker store India, affordable sneakers India">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://cee1704.github.io/Shoeswebsite/index.html">
 
-<!-- Open Graph (for sharing) -->
+<!-- Open Graph -->
 <meta property="og:title" content="Sneaker Head India | Premium Nike Sneakers">
 <meta property="og:description" content="Shop premium Nike sneakers in India with best prices and fast delivery.">
 <meta property="og:image" content="https://cee1704.github.io/Shoeswebsite/image/logo.jpg">
@@ -37,60 +37,269 @@ gtag('config', 'G-80KCM8C0QN');
 
 <style>
 
-/* (ALL YOUR CSS EXACTLY SAME — unchanged) */
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
-body{background:linear-gradient(135deg,#ff3c3c,#ff7a18);color:#333;}
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
 
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:15px 8%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
-.logo{font-size:28px;font-weight:bold;}
-.logo span{color:#ff3c3c;}
-.nav-links{list-style:none;display:flex;gap:30px;}
-.nav-links a{text-decoration:none;font-weight:600;color:#333;transition:.3s;}
-.nav-links a:hover{color:#ff3c3c;}
-.nav-icons i{margin-left:15px;font-size:18px;cursor:pointer;}
-.menu-btn{display:none;font-size:22px;cursor:pointer;}
+body{
+background:linear-gradient(135deg,#ff3c3c,#ff7a18);
+color:#333;
+}
 
-.hero{margin:40px 8%;padding:80px 50px;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-radius:20px;color:white;}
-.hero-container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:40px;}
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+
+.logo span{
+color:#ff3c3c;
+}
+
+.nav-links{
+list-style:none;
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+font-weight:600;
+color:#333;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#ff3c3c;
+}
+
+.nav-icons i{
+margin-left:15px;
+font-size:18px;
+cursor:pointer;
+}
+
+.menu-btn{
+display:none;
+font-size:22px;
+cursor:pointer;
+}
+
+/* HERO */
+.hero{
+margin:40px 8%;
+padding:80px 50px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+border-radius:20px;
+color:white;
+}
+
+.hero-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
 .hero-text h1{font-size:65px;}
 .hero-text h2{font-size:36px;margin-top:10px;}
-.hero-text p{margin:20px 0;line-height:1.6;max-width:450px;}
 
-.btn{background:white;color:#ff3c3c;padding:12px 28px;border-radius:30px;text-decoration:none;font-weight:bold;transition:0.3s;}
-.btn:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+.hero-text p{
+margin:20px 0;
+line-height:1.6;
+max-width:450px;
+}
 
-.hero-img img{width:350px;max-width:100%;}
+.btn{
+background:white;
+color:#ff3c3c;
+padding:12px 28px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
 
-.video-section{margin:40px 8%;padding:50px;background:#f8f8f8;border-radius:20px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.1);}
-.video-section video{width:100%;max-width:900px;border-radius:10px;margin-top:20px;}
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
 
-.products{margin:40px 8%;padding:50px;background:white;border-radius:20px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.1);}
+.hero-img img{
+width:350px;
+max-width:100%;
+}
+
+/* VIDEO */
+.video-section{
+margin:40px 8%;
+padding:50px;
+background:#f8f8f8;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.video-section video{
+width:100%;
+max-width:900px;
+border-radius:10px;
+margin-top:20px;
+}
+
+/* PRODUCTS */
+.products{
+margin:40px 8%;
+padding:50px;
+background:white;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
 .products h2{margin-bottom:30px;}
 
-.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;}
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
 
-.product-card{background:#f9f9f9;padding:20px;border-radius:15px;transition:0.3s;}
-.product-card:hover{transform:translateY(-10px);box-shadow:0 10px 20px rgba(0,0,0,0.15);}
+.product-card{
+background:#f9f9f9;
+padding:20px;
+border-radius:15px;
+transition:0.3s;
+}
 
-.product-card img{width:100%;height:180px;object-fit:contain;}
+.product-card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
 
-.gallery{margin:40px 8%;padding:50px;background:#f5f5f5;border-radius:20px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.1);}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-top:25px;}
-.gallery-grid img{width:100%;height:200px;object-fit:cover;border-radius:10px;transition:0.3s;}
-.gallery-grid img:hover{transform:scale(1.05);}
+.product-card img{
+width:100%;
+height:180px;
+object-fit:contain;
+}
 
-.subscribe-banner{margin:40px 8%;padding:50px;border-radius:20px;background:linear-gradient(135deg,#111,#ff3c3c);color:white;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.2);}
-.subscribe-form{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:20px;}
-.subscribe-form input{padding:12px;border:none;border-radius:30px;width:250px;outline:none;}
-.subscribe-form button{padding:12px 25px;border:none;border-radius:30px;background:white;color:#ff3c3c;font-weight:bold;cursor:pointer;}
+/* GALLERY */
+.gallery{
+margin:40px 8%;
+padding:50px;
+background:#f5f5f5;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
 
-footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40px;}
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+margin-top:25px;
+}
 
+.gallery-grid img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+transition:0.3s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
+}
+
+/* SUBSCRIBE */
+.subscribe-banner{
+margin:40px 8%;
+padding:50px;
+border-radius:20px;
+background:linear-gradient(135deg,#111,#ff3c3c);
+color:white;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.subscribe-form{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin-top:20px;
+}
+
+.subscribe-form input{
+padding:12px;
+border:none;
+border-radius:30px;
+width:250px;
+outline:none;
+}
+
+.subscribe-form button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff3c3c;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+/* MOBILE */
 @media(max-width:768px){
 .menu-btn{display:block;}
-.nav-links{position:absolute;top:70px;left:0;width:100%;background:white;flex-direction:column;align-items:center;display:none;padding:20px;}
+
+.nav-links{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+align-items:center;
+display:none;
+padding:20px;
+}
+
 .nav-links.active{display:flex;}
-.hero-container{flex-direction:column;text-align:center;}
+
+.hero-container{
+flex-direction:column;
+text-align:center;
+}
+
 .hero-text h1{font-size:40px;}
 .hero-img img{width:250px;}
 }
@@ -173,14 +382,6 @@ footer{background:#111;color:white;text-align:center;padding:25px;margin-top:40p
 <p>$110</p>
 </div>
 </div>
-</section>
-
-<!-- EXTRA SEO CONTENT (invisible impact, no design break) -->
-<section style="margin:40px 8%; padding:30px; background:white; border-radius:20px;">
-<h2>Buy Nike Sneakers Online in India</h2>
-<p>
-Sneaker Head India offers premium Nike sneakers including Air Max, Dunk Low, Pegasus and more. Discover stylish sneakers, affordable pricing and fast delivery across India for sneaker lovers.
-</p>
 </section>
 
 <!-- SUBSCRIBE -->
